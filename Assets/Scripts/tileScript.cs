@@ -35,20 +35,25 @@ public class tileScript : MonoBehaviour
     {
         if (Isoccupied == 0)
         {
-            Debug.Log("Clicked on " + gameObject.ToString());
-            if (x == 0)
-            {
-                Instantiate(spawnWhitePlayer, spawnPos.position, spawnPos.rotation);
-                Isoccupied++;
-            }
-
-            else if (x == 1)
-            {
-                Instantiate(spawnDarkPlayer, spawnPos.position, spawnPos.rotation);
-                Isoccupied++;
-            }
+            placePlayer(x);
         }
         else
             Debug.Log("Tile " + gameObject.ToString() + " occupied!");
+    }
+
+    void placePlayer (int x)
+    {
+        Debug.Log("Clicked on " + gameObject.ToString());
+        if (x == 0)
+        {
+            Instantiate(spawnWhitePlayer, spawnPos.position, spawnPos.rotation);
+            Isoccupied++;
+        }
+
+        else if (x == 1)
+        {
+            Instantiate(spawnDarkPlayer, spawnPos.position, spawnPos.rotation);
+            Isoccupied++;
+        }
     }
 }
