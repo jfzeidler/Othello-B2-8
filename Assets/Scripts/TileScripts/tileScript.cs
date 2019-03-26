@@ -21,13 +21,7 @@ public class tileScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (x == 0)
-                x++;
-            else if (x == 1)
-                x--;
-        }
+
     }
 
     // What to do when clicking on a tile on the board
