@@ -24,6 +24,7 @@ public class Bitboard : MonoBehaviour
             }
             GameObject.Find("BitboardDisplay").GetComponent<Text>().text += "]";
         }
+        bitboard[4, 5] = 1; bitboard[5, 4] = 1;
     }
 
     // Update is called once per frame

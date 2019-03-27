@@ -7,10 +7,7 @@ public class BoardRules : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       while(true)
-        {
-
-        }
+        
     }
 
     // Update is called once per frame
@@ -18,4 +15,10 @@ public class BoardRules : MonoBehaviour
     {
 
     }
+
+    void captureRule()
+    {
+        int[,] TempBitboard = GameObject.Find("The-Board").GetComponent<Bitboard>().bitboard;
+    }
+
 }
