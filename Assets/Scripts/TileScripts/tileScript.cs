@@ -33,7 +33,7 @@ public class tileScript : MonoBehaviour
         if (Isoccupied == 0)
         {
             Debug.Log("Clicked on " + selectedTile);
-
+            GameObject.Find("The-Board").GetComponent<Bitboard>().bitboardUpdate(selectedTile);
             int playerturn = GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn;
             placePlayer(playerturn);
         }
@@ -43,18 +43,22 @@ public class tileScript : MonoBehaviour
 
     void placePlayer (int x)
     {
+        //If black turn
         if (x == 1)
         {
             Instantiate(spawnDarkPlayer, spawnPos.position, spawnPos.rotation);
             Isoccupied++;
             GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn += 1;
+            Debug.Log("DEBUG");
         }
 
+        //If white turn
         else if (x == 2)
         {
             Instantiate(spawnWhitePlayer, spawnPos.position, spawnPos.rotation);
             Isoccupied++;
             GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn -= 1;
+            Debug.Log("DEBUG");
         }
     }
 }
