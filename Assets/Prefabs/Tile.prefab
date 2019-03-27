@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   x: 0
+  Isoccupied: 0
   spawnPos: {fileID: 5835466012462273887}
   spawnWhitePlayer: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
     type: 3}

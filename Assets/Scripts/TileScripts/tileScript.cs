@@ -5,55 +5,59 @@ using UnityEngine.EventSystems;
 
 public class tileScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    public int x = 0;
     public int Isoccupied = 0;
 
     public Transform spawnPos;
     public GameObject spawnWhitePlayer;
     public GameObject spawnDarkPlayer;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (x == 0)
-                x++;
-            else if (x == 1)
-                x--;
-        }
+
     }
 
     // What to do when clicking on a tile on the board
     void OnMouseUp()
     {
+
+        string selectedTile = gameObject.ToString();
+
         if (Isoccupied == 0)
         {
-            placePlayer(x);
+            Debug.Log("Clicked on " + selectedTile);
+
+            int playerturn = GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn;
+            placePlayer(playerturn);
+
+            GameObject.Find("The-Board").GetComponent<Bitboard>().bitboardUpdate(selectedTile);
+
         }
         else
-            Debug.Log("Tile " + gameObject.ToString() + " occupied!");
+            Debug.Log("Tile " + selectedTile + " occupied!");
     }
 
     void placePlayer (int x)
     {
-        Debug.Log("Clicked on " + gameObject.ToString());
-        if (x == 0)
-        {
-            Instantiate(spawnWhitePlayer, spawnPos.position, spawnPos.rotation);
-            Isoccupied++;
-        }
-
-        else if (x == 1)
+        if (x == 1)
         {
             Instantiate(spawnDarkPlayer, spawnPos.position, spawnPos.rotation);
             Isoccupied++;
+            GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn += 1;
+        }
+
+        else if (x == 2)
+        {
+            Instantiate(spawnWhitePlayer, spawnPos.position, spawnPos.rotation);
+            Isoccupied++;
+            GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn -= 1;
         }
     }
 }
