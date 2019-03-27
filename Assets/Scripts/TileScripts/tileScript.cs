@@ -36,9 +36,6 @@ public class tileScript : MonoBehaviour
 
             int playerturn = GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn;
             placePlayer(playerturn);
-
-            GameObject.Find("The-Board").GetComponent<Bitboard>().bitboardUpdate(selectedTile);
-
         }
         else
             Debug.Log("Tile " + selectedTile + " occupied!");
