@@ -12,7 +12,6 @@ public class Bitboard : MonoBehaviour
 
     
     // Start is called before the first frame update
-    void Start()
     void Start() 
     {
         GameObject.Find("BitboardDisplay").GetComponent<Text>().text = "     AB CD EF GH";
