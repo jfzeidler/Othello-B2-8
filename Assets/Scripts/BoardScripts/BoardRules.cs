@@ -16,9 +16,19 @@ public class BoardRules : MonoBehaviour
 
     }
 
-    void captureRule()
+    public void captureRule(int Tilex, int Tiley)
     {
-        int[,] TempBitboard = GameObject.Find("The-Board").GetComponent<Bitboard>().bitboard;
-    }
 
+        int[,] Tempbitboard = GameObject.Find("The-Board").GetComponent<Bitboard>().bitboard;
+
+        if (GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn == 1)
+        {
+
+        }
+
+        else if (GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn == 2)
+        {
+
+        }
+    }
 }

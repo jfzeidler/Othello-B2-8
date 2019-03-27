@@ -9,9 +9,9 @@ public class Bitboard : MonoBehaviour
     public int playerturn = 1;
 
     public int[,] bitboard = new int[8, 8];
-    
+
     // Start is called before the first frame update
-    void Start() 
+    void Start()
     {
         GameObject.Find("BitboardDisplay").GetComponent<Text>().text = "     AB CD EF GH";
         for (int i = 0; i < 8; i++)
