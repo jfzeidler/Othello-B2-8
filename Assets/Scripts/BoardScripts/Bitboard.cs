@@ -69,6 +69,7 @@ public class Bitboard : MonoBehaviour
         int bitboardY = Tile[1] - '0';
         bitboard[bitboardY - 1, bitboardX] = playerturn;
         bitboardDisplayUpdate();
+        pieceCounter(bitboard);
     }
 
     void bitboardDisplayUpdate()
@@ -83,5 +84,30 @@ public class Bitboard : MonoBehaviour
             }
             GameObject.Find("BitboardDisplay").GetComponent<Text>().text += "]";
         }
+    }
+
+    public void pieceCounter(int[,] bitboard)
+    {
+        int Blackpieces = 0, Whitepieces = 0;
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                if (bitboard[i, j] == 1)
+                {
+                    Blackpieces++;
+                }
+                else if (bitboard[i, j] == 2)
+                {
+                    Whitepieces++;
+                }
+            }
+        }
+        pieceCounterUpdate(Blackpieces, Whitepieces);
+    }
+
+    void pieceCounterUpdate(int Blackpieces, int Whitepieces)
+    {
+        GameObject.Find("PieceCounter").GetComponent<Text>().text = "Black = " + Blackpieces + "White = " + Whitepieces;
     }
 }
