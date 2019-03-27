@@ -49,7 +49,6 @@ public class tileScript : MonoBehaviour
             Instantiate(spawnDarkPlayer, spawnPos.position, spawnPos.rotation);
             Isoccupied++;
             GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn += 1;
-            Debug.Log("DEBUG");
         }
 
         //If white turn
@@ -58,7 +57,6 @@ public class tileScript : MonoBehaviour
             Instantiate(spawnWhitePlayer, spawnPos.position, spawnPos.rotation);
             Isoccupied++;
             GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn -= 1;
-            Debug.Log("DEBUG");
         }
     }
 }

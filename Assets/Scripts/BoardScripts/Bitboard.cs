@@ -69,6 +69,7 @@ public class Bitboard : MonoBehaviour
         int bitboardY = Tile[1] - '0';
         bitboard[bitboardY - 1, bitboardX] = playerturn;
         bitboardDisplayUpdate();
+        GameObject.Find("The-Board").GetComponent<BoardRules>().captureRule((bitboardY - 1), bitboardX);
     }
 
     void bitboardDisplayUpdate()
