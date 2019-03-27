@@ -24,7 +24,8 @@ public class Bitboard : MonoBehaviour
             }
             GameObject.Find("BitboardDisplay").GetComponent<Text>().text += "]";
         }
-        bitboard[4, 5] = 1; bitboard[5, 4] = 1;
+        bitboard[3, 4] = 1; bitboard[4, 3] = 1; bitboard[3, 3] = 2; bitboard[4, 4] = 2;
+        bitboardDisplayUpdate();
     }
 
     // Update is called once per frame
@@ -35,8 +36,6 @@ public class Bitboard : MonoBehaviour
 
     public void bitboardUpdate(string Tile)
     {
-        Debug.Log(Tile[0]);
-        Debug.Log(Tile[1]);
         var Char = Tile[0];
         int bitboardX = 0;
         switch (Char)
