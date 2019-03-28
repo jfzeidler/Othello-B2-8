@@ -9,7 +9,6 @@ public class Bitboard : MonoBehaviour
     public int playerturn = 1;
 
     public int[,] bitboard = new int[8, 8];
-
     
     // Start is called before the first frame update
     void Start() 
