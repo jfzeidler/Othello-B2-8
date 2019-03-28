@@ -99,7 +99,7 @@ MeshRenderer:
   m_GameObject: {fileID: 4726861907208510224}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -191,7 +191,7 @@ MeshRenderer:
   m_GameObject: {fileID: 5513756194065552254}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
