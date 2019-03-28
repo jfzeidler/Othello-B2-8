@@ -7,8 +7,6 @@ public class tileScript : MonoBehaviour
 {
 
     public int Isoccupied = 0;
-    public int Islegal = 0;
-
 
     public Transform spawnPos;
     public GameObject spawnWhitePlayer;
@@ -34,7 +32,6 @@ public class tileScript : MonoBehaviour
 
         if (Isoccupied == 0)
         {
-            Encapsulate(int[,] bitboard, int Islegal);
             Debug.Log("Clicked on " + selectedTile);
             GameObject.Find("The-Board").GetComponent<Bitboard>().bitboardUpdate(selectedTile);
             int playerturn = GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn;
@@ -62,12 +59,4 @@ public class tileScript : MonoBehaviour
             GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn -= 1;
         }
     }
-
-
-    public int Encapsulate(int[,] bitboard, int Islegal)
-    {
-
-
-    }
-
 }
