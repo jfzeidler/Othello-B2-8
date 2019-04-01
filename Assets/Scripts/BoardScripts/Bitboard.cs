@@ -26,6 +26,7 @@ public class Bitboard : MonoBehaviour
         }
         bitboard[3, 4] = 1; bitboard[4, 3] = 1; bitboard[3, 3] = 2; bitboard[4, 4] = 2;
         bitboardDisplayUpdate();
+        pieceCounter(bitboard);
     }
 
     // Update is called once per frame
