@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+namespace HelloWorld
+{
     public class Bitboard : MonoBehaviour
     {
         public GameObject BitboardDisplay;
@@ -118,4 +119,4 @@ using UnityEngine.UI;
             Whitecountertext.GetComponent<Text>().text = $"{Whitepieces}";
         }
     }
-
+}
