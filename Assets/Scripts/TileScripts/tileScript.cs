@@ -3,60 +3,62 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class tileScript : MonoBehaviour
+namespace HelloWorld
 {
-
-    public int Isoccupied = 0;
-
-    public Transform spawnPos;
-    public GameObject spawnWhitePlayer;
-    public GameObject spawnDarkPlayer;
-
-    // Start is called before the first frame update
-    void Start()
+    public class tileScript : Bitboard
     {
-        
-    }
+        public int Isoccupied = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
+        public Transform spawnPos;
+        public GameObject spawnWhitePlayer;
+        public GameObject spawnDarkPlayer;
 
-    }
-
-    // What to do when clicking on a tile on the board
-    void OnMouseUp()
-    {
-
-        string selectedTile = gameObject.ToString();
-
-        if (Isoccupied == 0)
+        // Start is called before the first frame update
+        void Start()
         {
-            Debug.Log("Clicked on " + selectedTile);
-            GameObject.Find("The-Board").GetComponent<Bitboard>().bitboardUpdate(selectedTile);
-            int playerturn = GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn;
-            placePlayer(playerturn);
-        }
-        else
-            Debug.Log("Tile " + selectedTile + " occupied!");
-    }
 
-    void placePlayer (int x)
-    {
-        //If black turn
-        if (x == 1)
-        {
-            Instantiate(spawnDarkPlayer, spawnPos.position, spawnPos.rotation);
-            Isoccupied++;
-            GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn += 1;
         }
 
-        //If white turn
-        else if (x == 2)
+        // Update is called once per frame
+        void Update()
         {
-            Instantiate(spawnWhitePlayer, spawnPos.position, spawnPos.rotation);
-            Isoccupied++;
-            GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn -= 1;
+
+        }
+
+        // What to do when clicking on a tile on the board
+        void OnMouseUp()
+        {
+
+            string selectedTile = gameObject.ToString();
+
+            if (Isoccupied == 0)
+            {
+                Debug.Log("Debug: " + playerturn);
+                Debug.Log("Clicked on " + selectedTile);
+                placePlayer(playerturn);
+                Debug.Log("Debug: " + playerturn);
+            }
+            else
+                Debug.Log("Tile " + selectedTile + " occupied!");
+        }
+
+        void placePlayer(int x)
+        {
+            //If black turn
+            if (x == 1)
+            {
+                Instantiate(spawnDarkPlayer, spawnPos.position, spawnPos.rotation);
+                Isoccupied++;
+                playerturn++;
+            }
+
+            //If white turn
+            else if (x == 2)
+            {
+                Instantiate(spawnWhitePlayer, spawnPos.position, spawnPos.rotation);
+                Isoccupied++;
+                playerturn--;
+            }
         }
     }
 }

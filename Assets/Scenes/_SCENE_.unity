@@ -4119,6 +4119,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5625620863625654292, guid: 412a88c06cd461b4194585af00cee5f0,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625620863625654292, guid: 412a88c06cd461b4194585af00cee5f0,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625620863625654292, guid: 412a88c06cd461b4194585af00cee5f0,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034889531503046175, guid: 412a88c06cd461b4194585af00cee5f0,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 412a88c06cd461b4194585af00cee5f0, type: 3}
 --- !u!4 &808242238 stripped
@@ -5426,6 +5446,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5dbfad451e53c46ab22337ff72917c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BitboardDisplay: {fileID: 1086227241}
+  Blackcountertext: {fileID: 1327759480}
+  Whitecountertext: {fileID: 241607149}
   playerturn: 1
 --- !u!1001 &1073071325
 PrefabInstance:
@@ -9879,6 +9902,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bbae53771e99dd140ab38eeeae11c90b, type: 2}
+    - target: {fileID: 5625620863625654292, guid: 412a88c06cd461b4194585af00cee5f0,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 412a88c06cd461b4194585af00cee5f0, type: 3}
 --- !u!4 &2125395464 stripped
