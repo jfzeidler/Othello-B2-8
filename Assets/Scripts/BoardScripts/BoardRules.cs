@@ -4,11 +4,14 @@ using UnityEngine;
 
 namespace HelloWorld
 {
-    public class BoardRules : Bitboard
+    public class BoardRules
     {
+
+        public Bitboard bitboard = new Bitboard();    
+
         enum Player { blank = 0, black = 1, white = 2 };
 
-    Vector2[] vectors = new Vector2[]
+        Vector2[] vectors = new Vector2[]
         {
         new Vector2(0, 1),
         new Vector2(1, 0),
@@ -19,9 +22,6 @@ namespace HelloWorld
         new Vector2(-1, 1),
         new Vector2(1, -1)
         };
-
-
-
 
         // Start is called before the first frame update
         void Start()
@@ -37,15 +37,15 @@ namespace HelloWorld
 
         public void ValidMove()
         {
-            int[,] Tempbitboard = bitboard;
+            int[,] Tempbitboard = bitboard.bitboard;
 
-            if (playerturn == (int)Player.black)
+            if (bitboard.playerturn == (int)Player.black)
             {
                 for (int i = 0; i < 8; i++)
                 {
                     for (int j = 0; j < 8; j++)
                     {
-                        if (Tempbitboard[i, j] == (int)Player.white && CheckForAdjacent(Tempbitboard, i, j, playerturn))
+                        if (Tempbitboard[i, j] == (int)Player.white && CheckForAdjacent(Tempbitboard, i, j, bitboard.playerturn))
                         {
 
                         }
@@ -53,13 +53,13 @@ namespace HelloWorld
                 }
             }
 
-            else if (playerturn == (int)Player.white)
+            else if (bitboard.playerturn == (int)Player.white)
             {
                 for (int i = 0; i < 8; i++)
                 {
                     for (int j = 0; j < 8; j++)
                     {
-                        if (Tempbitboard[i, j] == (int)Player.black && CheckForAdjacent(Tempbitboard, i, j, playerturn))
+                        if (Tempbitboard[i, j] == (int)Player.black && CheckForAdjacent(Tempbitboard, i, j, bitboard.playerturn))
                         {
 
                         }

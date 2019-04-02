@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-namespace HelloWorld
-{
+
+
     public class Bitboard : MonoBehaviour
     {
         public GameObject BitboardDisplay;
@@ -31,7 +31,7 @@ namespace HelloWorld
             pieceCounter(bitboard);
             // GameObject.Find("The-Board").GetComponent<BoardRules>().ValidMove();
             // MIDLERTIDLIGT NAVNT, DETTE SKAL ÆNDRES
-            // Bitboard bitbread = new Bitboard();
+             
 
         }
 
@@ -119,4 +119,3 @@ namespace HelloWorld
             Whitecountertext.GetComponent<Text>().text = $"{Whitepieces}";
         }
     }
-}
