@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class BoardRules
 {
-    //public Bitboard boardState = new Bitboard();
-    public int[,] bitboard = new int[8, 8];
-    public int playerturn = 1;
+    public Bitboard boardState = new Bitboard();
 
     enum Player { blank = 0, black = 1, white = 2 };
 
@@ -36,15 +34,13 @@ public class BoardRules
 
     public void ValidMove()
     {
-        int[,] Tempbitboard = bitboard;
-
-        if (playerturn == (int)Player.black)
+        if (boardState.playerturn == (int)Player.black)
         {
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (Tempbitboard[i, j] == (int)Player.white && CheckForAdjacent(Tempbitboard, i, j, playerturn))
+                    if (boardState.bitboard[i, j] == (int)Player.white && CheckForAdjacent(boardState.bitboard, i, j, boardState.playerturn))
                     {
 
                     }
@@ -52,13 +48,13 @@ public class BoardRules
             }
         }
 
-        else if (playerturn == (int)Player.white)
+        else if (boardState.playerturn == (int)Player.white)
         {
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (Tempbitboard[i, j] == (int)Player.black && CheckForAdjacent(Tempbitboard, i, j, playerturn))
+                    if (boardState.bitboard[i, j] == (int)Player.black && CheckForAdjacent(boardState.bitboard, i, j, boardState.playerturn))
                     {
 
                     }
@@ -67,7 +63,7 @@ public class BoardRules
         }
     }
 
-    bool CheckForAdjacent(int[,] Tempbitboard, int i, int j, int playerturn)
+    bool CheckForAdjacent(int[,] bitboard, int i, int j, int playerturn)
     {
         if (playerturn == (int)Player.white)
         {
@@ -76,7 +72,7 @@ public class BoardRules
                 int getValueX = (int)vectors[k].x;
                 int getValueY = (int)vectors[k].y;
                 Vector2 vector = vectors[k];
-                if (Tempbitboard[i + getValueX, j + getValueY] == (int)Player.black)
+                if (bitboard[i + getValueX, j + getValueY] == (int)Player.black)
                 {
                     //smid over i liste
                     Debug.Log("TRUE");
