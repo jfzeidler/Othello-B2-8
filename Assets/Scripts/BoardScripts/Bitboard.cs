@@ -47,6 +47,7 @@ public class Bitboard : MonoBehaviour
         var bitboardX = char.ToUpper(Char) - 65;
         var bitboardY = Tile[1] - '1';
         bitboard[bitboardY, bitboardX] = playerturn;
+        BoardState.captureEnemyPlayer(bitboard, bitboardX, bitboardY, playerturn);
         bitboardResetTurn(bitboard);
         pieceCounter(bitboard);
         bitboard = BoardState.ValidMove(bitboard, playerturn);
@@ -106,5 +107,4 @@ public class Bitboard : MonoBehaviour
             }
         }
     }
-
 }

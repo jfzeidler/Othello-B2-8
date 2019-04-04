@@ -113,7 +113,6 @@ public class BoardRules
                                 {
                                     bitboard[i - getValueX * l, j - getValueY * l] = 9;
                                     l = 8;
-
                                 }
                             }
                         }
@@ -122,5 +121,10 @@ public class BoardRules
             }
         }
         return false;
+    }
+
+    public void captureEnemyPlayer(byte[,] bitboard, int i, int j, byte playerturn)
+    {
+
     }
 }
