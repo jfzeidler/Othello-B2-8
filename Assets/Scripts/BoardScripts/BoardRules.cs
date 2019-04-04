@@ -41,9 +41,9 @@ public class BoardRules
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (bitboard[i, j] == (int)Player.white && CheckForAdjacent(bitboard, i, j, playerturn))
+                    if (bitboard[i, j] == (int)Player.white)
                     {
-
+                        CheckForAdjacent(bitboard, i, j, playerturn);
                     }
                 }
             }
@@ -55,9 +55,9 @@ public class BoardRules
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (bitboard[i, j] == (int)Player.black && CheckForAdjacent(bitboard, i, j, playerturn))
+                    if (bitboard[i, j] == (int)Player.black)
                     {
-                        
+                        CheckForAdjacent(bitboard, i, j, playerturn);
                     }
                 }
             }
