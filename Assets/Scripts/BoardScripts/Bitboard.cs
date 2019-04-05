@@ -30,7 +30,7 @@ public class Bitboard : MonoBehaviour
             BitboardDisplay.GetComponent<Text>().text += "]";
         }
         bitboard[3, 4] = 1; bitboard[4, 3] = 1; bitboard[3, 3] = 2; bitboard[4, 4] = 2;
-        bitboard = BoardState.ValidMove(bitboard, playerturn);
+        BoardState.ValidMove(bitboard, playerturn);
         bitboardDisplayUpdate();
         pieceCounter(bitboard);
     }
@@ -49,7 +49,7 @@ public class Bitboard : MonoBehaviour
         BoardState.captureEnemyPlayer(bitboard, bitboardX, bitboardY, playerturn);
         bitboardResetTurn(bitboard);
         pieceCounter(bitboard);
-        bitboard = BoardState.ValidMove(bitboard, playerturn);
+        BoardState.ValidMove(bitboard, playerturn);
         bitboardDisplayUpdate();
     }
 

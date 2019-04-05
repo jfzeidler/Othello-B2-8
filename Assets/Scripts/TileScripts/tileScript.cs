@@ -32,9 +32,9 @@ public class tileScript : MonoBehaviour
         var Char = selectedTile[0];
         var bitboardX = char.ToUpper(Char) - 65;
         var bitboardY = selectedTile[1] - '1';
-        Debug.Log("Clicked on " + selectedTile);
+        DEBUG(The_Board.GetComponent<Bitboard>().bitboard);
 
-        if (The_Board.GetComponent<Bitboard>().bitboard[bitboardX, bitboardY] == 9 && isoccupied == 0)
+        if (The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9 && isoccupied == 0)
         {
             Debug.Log("Clicked on " + selectedTile);
             byte playerturn = The_Board.GetComponent<Bitboard>().playerturn;
@@ -61,6 +61,13 @@ public class tileScript : MonoBehaviour
             var newObject = Instantiate(spawnWhitePlayer, spawnPos.position, spawnPos.rotation);
             newObject.name = "Player-" + selectedTile;
             The_Board.GetComponent<Bitboard>().playerturn -= 1;
+        }
+    }
+    void DEBUG(byte[,] bitboard)
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            Debug.Log(bitboard[i, 0] + " " + bitboard[i, 1] + " " + bitboard[i, 2] + " " + bitboard[i, 3] + " " + bitboard[i, 4] + " " + bitboard[i, 5] + " " + bitboard[i, 6] + " " + bitboard[i, 7]);
         }
     }
 }

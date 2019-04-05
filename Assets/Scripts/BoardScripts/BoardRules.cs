@@ -33,7 +33,7 @@ public class BoardRules
 
     }
 
-    public byte[,] ValidMove(byte[,] bitboard, byte playerturn)
+    public void ValidMove(byte[,] bitboard, byte playerturn)
     {
         if (playerturn == (int)Player.black)
         {
@@ -62,7 +62,6 @@ public class BoardRules
                 }
             }
         }
-        return bitboard;
     }
 
     bool CheckForAdjacent(byte[,] bitboard, int i, int j, byte playerturn)
