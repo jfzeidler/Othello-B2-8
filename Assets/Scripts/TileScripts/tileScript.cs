@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class tileScript : MonoBehaviour
 {
+    byte DEBUG = 0;
 
     public Transform spawnPos;
     public GameObject The_Board;
@@ -28,18 +29,22 @@ public class tileScript : MonoBehaviour
     // What to do when clicking on a tile on the board
     void OnMouseUp()
     {
+        if (DEBUG == 1)
+        {
+            DEBUGLOG(The_Board.GetComponent<Bitboard>().bitboard);
+        }
+
         string selectedTile = gameObject.ToString();
         var Char = selectedTile[0];
         var bitboardX = char.ToUpper(Char) - 65;
         var bitboardY = selectedTile[1] - '1';
-        DEBUG(The_Board.GetComponent<Bitboard>().bitboard);
 
         if (The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9 && isoccupied == 0)
         {
             Debug.Log("Clicked on " + selectedTile);
             byte playerturn = The_Board.GetComponent<Bitboard>().playerturn;
-            The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] = playerturn;
             placePlayer(playerturn, selectedTile);
+            The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] = playerturn;
             The_Board.GetComponent<Bitboard>().bitboardUpdate(selectedTile);
             isoccupied++;
         }
@@ -63,7 +68,7 @@ public class tileScript : MonoBehaviour
             The_Board.GetComponent<Bitboard>().playerturn -= 1;
         }
     }
-    void DEBUG(byte[,] bitboard)
+    void DEBUGLOG(byte[,] bitboard)
     {
         for (int i = 0; i < 8; i++)
         {

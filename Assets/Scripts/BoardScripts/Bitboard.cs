@@ -46,8 +46,8 @@ public class Bitboard : MonoBehaviour
         var Char = Tile[0];
         var bitboardX = char.ToUpper(Char) - 65;
         var bitboardY = Tile[1] - '1';
-        BoardState.captureEnemyPlayer(bitboard, bitboardX, bitboardY, playerturn);
-        bitboardResetTurn(bitboard);
+        BoardState.captureEnemyPlayer(bitboard, bitboardY, bitboardX, playerturn);
+        bitboardResetTurn(playerturn);
         pieceCounter(bitboard);
         BoardState.ValidMove(bitboard, playerturn);
         bitboardDisplayUpdate();
@@ -93,7 +93,7 @@ public class Bitboard : MonoBehaviour
         Whitecountertext.GetComponent<Text>().text = $"{Whitepieces}";
     }
 
-    void bitboardResetTurn(byte[,] bitboard)
+    public void bitboardResetTurn(byte playerturn)
     {
         for (int i = 0; i < 8; i++)
         {
@@ -102,6 +102,19 @@ public class Bitboard : MonoBehaviour
                 if (bitboard[i, j] == 9)
                 {
                     bitboard[i, j] = 0;
+                }
+
+                else if (bitboard[i, j] == 5)
+                {
+                    if (playerturn == 1)
+                    {
+                        bitboard[i, j] = 2;
+                    }
+                    
+                    else if (playerturn == 2)
+                    {
+                        bitboard[i, j] = 1;
+                    }
                 }
             }
         }
