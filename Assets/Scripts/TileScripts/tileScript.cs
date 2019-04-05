@@ -32,13 +32,15 @@ public class tileScript : MonoBehaviour
         var Char = selectedTile[0];
         var bitboardX = char.ToUpper(Char) - 65;
         var bitboardY = selectedTile[1] - '1';
+        Debug.Log("Clicked on " + selectedTile);
 
         if (The_Board.GetComponent<Bitboard>().bitboard[bitboardX, bitboardY] == 9 && isoccupied == 0)
         {
             Debug.Log("Clicked on " + selectedTile);
-            The_Board.GetComponent<Bitboard>().bitboardUpdate(selectedTile);
-            int playerturn = The_Board.GetComponent<Bitboard>().playerturn;
+            byte playerturn = The_Board.GetComponent<Bitboard>().playerturn;
+            The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] = playerturn;
             placePlayer(playerturn, selectedTile);
+            The_Board.GetComponent<Bitboard>().bitboardUpdate(selectedTile);
             isoccupied++;
         }
     }

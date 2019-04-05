@@ -82,7 +82,12 @@ public class BoardRules
                         {
                             if (i - getValueX * l >= 0 && i - getValueX * l <= 7 && j - getValueY * l >= 0 && j - getValueY * l <= 7)
                             {
-                                if (bitboard[i - getValueX * l, j - getValueY * l] == 0)
+                                if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.white)
+                                {
+                                    l = 8;
+                                }
+
+                                else if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
                                 {
                                     bitboard[i - getValueX * l, j - getValueY * l] = 9;
                                     l = 8;
@@ -109,7 +114,12 @@ public class BoardRules
                         {
                             if (i - getValueX * l >= 0 && i - getValueX * l <= 7 && j - getValueY * l >= 0 && j - getValueY * l <= 7)
                             {
-                                if (bitboard[i - getValueX * l, j - getValueY * l] == 0)
+                                if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.black)
+                                {
+                                    l = 8;
+                                }
+
+                                else if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
                                 {
                                     bitboard[i - getValueX * l, j - getValueY * l] = 9;
                                     l = 8;
@@ -125,6 +135,7 @@ public class BoardRules
 
     public void captureEnemyPlayer(byte[,] bitboard, int i, int j, byte playerturn)
     {
+        
 
     }
 }
