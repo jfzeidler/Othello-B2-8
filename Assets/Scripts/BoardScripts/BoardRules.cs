@@ -133,45 +133,6 @@ public class BoardRules
 
     public void captureEnemyPlayer(byte[,] bitboard, int i, int j, byte playerturn)
     {
-        if (playerturn == (int)Player.white)
-        {
-            for (int k = 0; k < 8; k++)
-            {
-                int getValueX = (int)vectors[k].X;
-                int getValueY = (int)vectors[k].Y;
-                Vector2 vector = vectors[k];
-                if (getValueX + i >= 0 && getValueX + i <= 7 && getValueY + j >= 0 && getValueY + j <= 7)
-                {
-                    if (bitboard[i + getValueX, j + getValueY] == (int)Player.black)
-                    {
-                        for (int l = 1; l < 8; l++)
-                        {
-                            if (i - getValueX * l >= 0 && i - getValueX * l <= 7 && j - getValueY * l >= 0 && j - getValueY * l <= 7)
-                            {
-                                if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.white)
-                                {
-                                    for (; 8 > l && l >= 0; l--)
-                                    {
-                                        bitboard[i + getValueX * l, j + getValueY * l] = 5;
-                                    }
-                                }
-
-                                else if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.black)
-                                {
-
-                                }
-
-                                else if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
-                                {
-                                    l = 8;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
         if (playerturn == (int)Player.black)
         {
             for (int k = 0; k < 8; k++)
@@ -181,32 +142,53 @@ public class BoardRules
                 Vector2 vector = vectors[k];
                 if (getValueX + i >= 0 && getValueX + i <= 7 && getValueY + j >= 0 && getValueY + j <= 7)
                 {
-                    if (bitboard[i + getValueX, j + getValueY] == (int)Player.white)
-                    {
                         for (int l = 1; l < 8; l++)
                         {
-                            if (i - getValueX * l >= 0 && i - getValueX * l <= 7 && j - getValueY * l >= 0 && j - getValueY * l <= 7)
+                            if (i + getValueX * l >= 0 && i + getValueX * l <= 7 && j + getValueY * l >= 0 && j + getValueY * l <= 7)
                             {
-                                if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.black)
+                                if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.black)
                                 {
-                                    for (; 8 > l && l >= 0; l--)
+                                    for (; l >= 1; l--)
                                     {
                                         bitboard[i + getValueX * l, j + getValueY * l] = 5;
                                     }
-                                }
-
-                                else if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.white)
-                                {
-
-                                }
-
-                                else if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
-                                {
                                     l = 8;
                                 }
                             }
                         }
-                    }
+                }
+            }
+        }
+
+        if (playerturn == (int)Player.white)
+        {
+            for (int k = 0; k < 8; k++)
+            {
+                int getValueX = (int)vectors[k].X;
+                int getValueY = (int)vectors[k].Y;
+                Vector2 vector = vectors[k];
+                if (getValueX + i >= 0 && getValueX + i <= 7 && getValueY + j >= 0 && getValueY + j <= 7)
+                {
+                        for (int l = 1; l < 8; l++)
+                        {
+                            if (i + getValueX * l >= 0 && i + getValueX * l <= 7 && j + getValueY * l >= 0 && j + getValueY * l <= 7)
+                            {
+
+                                if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
+                                {
+                                    l = 8;
+                                }
+
+                                else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.white)
+                                {
+                                    for (; l >= 1; l--)
+                                    {
+                                        bitboard[i + getValueX * l, j + getValueY * l] = 5;
+                                    }
+                                    l = 8;
+                                }
+                            }
+                        }
                 }
             }
         }
