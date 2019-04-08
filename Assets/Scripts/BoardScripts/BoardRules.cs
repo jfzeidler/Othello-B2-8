@@ -61,6 +61,7 @@ public class BoardRules
                 int getValueX = (int)vectors[k].X;
                 int getValueY = (int)vectors[k].Y;
                 Vector2 vector = vectors[k];
+
                 if (InRange(getValueX + i, getValueY + j))
                 {
                     if (bitboard[i + getValueX, j + getValueY] == (int)Player.white)
@@ -93,6 +94,7 @@ public class BoardRules
                 int getValueX = (int)vectors[k].X;
                 int getValueY = (int)vectors[k].Y;
                 Vector2 vector = vectors[k];
+
                 if (InRange(getValueX + i, getValueY + j))
                 {
                     if (bitboard[i + getValueX, j + getValueY] == (int)Player.black)
@@ -128,6 +130,7 @@ public class BoardRules
                 int getValueX = (int)vectors[k].X;
                 int getValueY = (int)vectors[k].Y;
                 Vector2 vector = vectors[k];
+
                 if (InRange(getValueX + i, getValueY + j))
                 {
                     for (int l = 1; l < 8; l++)
@@ -139,7 +142,7 @@ public class BoardRules
                                 l = 10;
                             }
 
-                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || bitboard[i + getValueX * l, j + getValueY * l] == 5)
+                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.capture)
                             {
                                 l = 10;
                             }
@@ -166,6 +169,7 @@ public class BoardRules
                 int getValueX = (int)vectors[k].X;
                 int getValueY = (int)vectors[k].Y;
                 Vector2 vector = vectors[k];
+
                 if (InRange(getValueX + i, getValueY + j))
                 {
                     for (int l = 1; l < 8; l++)
@@ -177,7 +181,7 @@ public class BoardRules
                                 l = 10;
                             }
 
-                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || bitboard[i + getValueX * l, j + getValueY * l] == 5)
+                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.capture)
                             {
                                 l = 10;
                             }

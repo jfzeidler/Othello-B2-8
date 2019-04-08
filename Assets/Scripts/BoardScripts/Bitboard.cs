@@ -76,7 +76,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    public void PieceCounter(byte[,] bitboard)
+    void PieceCounter(byte[,] bitboard)
     {
         int Blackpieces = 0, Whitepieces = 0;
         for (int i = 0; i < 8; i++)
@@ -102,7 +102,7 @@ public class Bitboard : MonoBehaviour
         Whitecountertext.GetComponent<Text>().text = $"{Whitepieces}";
     }
 
-    public void BitboardResetTurn()
+    void BitboardResetTurn()
     {
         for (int i = 0; i < 8; i++)
         {
@@ -122,7 +122,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    public void FlipIt(int i, int j)
+    void FlipIt(int i, int j)
     {
         string playerToFlip = "Player-" + j + i;
         Debug.Log(playerToFlip);
