@@ -35,8 +35,8 @@ public class Bitboard : MonoBehaviour
         }
         bitboard[3, 4] = 1; bitboard[4, 3] = 1; bitboard[3, 3] = 2; bitboard[4, 4] = 2;
         BoardState.ValidMove(bitboard, playerturn);
-        bitboardDisplayUpdate();
-        pieceCounter(bitboard);
+        BitboardDisplayUpdate();
+        PieceCounter(bitboard);
     }
 
     // Update is called once per frame
@@ -50,19 +50,19 @@ public class Bitboard : MonoBehaviour
         var Char = Tile[0];
         var bitboardX = char.ToUpper(Char) - 65;
         var bitboardY = Tile[1] - '1';
-        BoardState.captureEnemyPlayer(bitboard, bitboardY, bitboardX, playerturn);
-        bitboardResetTurn();
+        BoardState.CaptureEnemyPlayer(bitboard, bitboardY, bitboardX, playerturn);
+        BitboardResetTurn();
     }
 
     public void bitboardUpdate()
     {
-        pieceCounter(bitboard);
+        PieceCounter(bitboard);
         BoardState.ValidMove(bitboard, playerturn);
-        bitboardDisplayUpdate();
+        BitboardDisplayUpdate();
         Debug.Log(playerturn);
     }
 
-    void bitboardDisplayUpdate()
+    void BitboardDisplayUpdate()
     {
         BitboardDisplay.GetComponent<Text>().text = "     AB CD EF GH";
         for (int i = 0; i < 8; i++)
@@ -76,7 +76,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    public void pieceCounter(byte[,] bitboard)
+    public void PieceCounter(byte[,] bitboard)
     {
         int Blackpieces = 0, Whitepieces = 0;
         for (int i = 0; i < 8; i++)
@@ -93,16 +93,16 @@ public class Bitboard : MonoBehaviour
                 }
             }
         }
-        pieceCounterUpdate(Blackpieces, Whitepieces);
+        PieceCounterUpdate(Blackpieces, Whitepieces);
     }
 
-    void pieceCounterUpdate(int Blackpieces, int Whitepieces)
+    void PieceCounterUpdate(int Blackpieces, int Whitepieces)
     {
         Blackcountertext.GetComponent<Text>().text = $"{Blackpieces}";
         Whitecountertext.GetComponent<Text>().text = $"{Whitepieces}";
     }
 
-    public void bitboardResetTurn()
+    public void BitboardResetTurn()
     {
         for (int i = 0; i < 8; i++)
         {
@@ -115,14 +115,14 @@ public class Bitboard : MonoBehaviour
 
                 else if (bitboard[i, j] == 5)
                 {
-                    flipIt(i, j);
+                    FlipIt(i, j);
                     bitboard[i, j] = playerturn;
                 }
             }
         }
     }
 
-    public void flipIt(int i, int j)
+    public void FlipIt(int i, int j)
     {
         string playerToFlip = "Player-" + j + i;
         Debug.Log(playerToFlip);

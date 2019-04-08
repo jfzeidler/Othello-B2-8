@@ -5,7 +5,7 @@ using System.Numerics;
 public class BoardRules
 {
     private byte[,] bitboard;
-    enum Player { blank = 0, black = 1, white = 2 };
+    enum Player { blank = 0, black = 1, white = 2, capture = 5, validMove = 9};
 
     Vector2[] vectors = new Vector2[]
         {
@@ -20,18 +20,6 @@ public class BoardRules
         };
 
     public byte[,] Bitboard { get => bitboard; set => bitboard = value; }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void ValidMove(byte[,] bitboard, byte playerturn)
     {
@@ -73,22 +61,22 @@ public class BoardRules
                 int getValueX = (int)vectors[k].X;
                 int getValueY = (int)vectors[k].Y;
                 Vector2 vector = vectors[k];
-                if (getValueX + i >= 0 && getValueX + i <= 7 && getValueY + j >= 0 && getValueY + j <= 7)
+                if (InRange(getValueX + i, getValueY + j))
                 {
                     if (bitboard[i + getValueX, j + getValueY] == (int)Player.white)
                     {
                         for (int l = 1; l < 8; l++)
                         {
-                            if (i - getValueX * l >= 0 && i - getValueX * l <= 7 && j - getValueY * l >= 0 && j - getValueY * l <= 7)
+                            if (InRange(i - getValueX * l, j - getValueY * l))
                             {
-                                if (bitboard[i - getValueX * l, j - getValueY * l] == 9 || bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.white)
+                                if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.validMove || bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.white)
                                 {
                                     l = 8;
                                 }
 
                                 else if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
                                 {
-                                    bitboard[i - getValueX * l, j - getValueY * l] = 9;
+                                    bitboard[i - getValueX * l, j - getValueY * l] = (int)Player.validMove;
                                     l = 8;
                                 }
                             }
@@ -105,22 +93,22 @@ public class BoardRules
                 int getValueX = (int)vectors[k].X;
                 int getValueY = (int)vectors[k].Y;
                 Vector2 vector = vectors[k];
-                if (getValueX + i >= 0 && getValueX + i <= 7 && getValueY + j >= 0 && getValueY + j <= 7)
+                if (InRange(getValueX + i, getValueY + j))
                 {
                     if (bitboard[i + getValueX, j + getValueY] == (int)Player.black)
                     {
                         for (int l = 1; l < 8; l++)
                         {
-                            if (i - getValueX * l >= 0 && i - getValueX * l <= 7 && j - getValueY * l >= 0 && j - getValueY * l <= 7)
+                            if (InRange(i - getValueX * l, j - getValueY * l))
                             {
-                                if (bitboard[i - getValueX * l, j - getValueY * l] == 9 || bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.black)
+                                if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.validMove || bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.black)
                                 {
                                     l = 8;
                                 }
 
                                 else if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
                                 {
-                                    bitboard[i - getValueX * l, j - getValueY * l] = 9;
+                                    bitboard[i - getValueX * l, j - getValueY * l] = (int)Player.validMove;
                                     l = 8;
                                 }
                             }
@@ -131,7 +119,7 @@ public class BoardRules
         }
     }
 
-    public void captureEnemyPlayer(byte[,] bitboard, int i, int j, byte playerturn)
+    public void CaptureEnemyPlayer(byte[,] bitboard, int i, int j, byte playerturn)
     {
         if (playerturn == (int)Player.black)
         {
@@ -140,18 +128,18 @@ public class BoardRules
                 int getValueX = (int)vectors[k].X;
                 int getValueY = (int)vectors[k].Y;
                 Vector2 vector = vectors[k];
-                if (getValueX + i >= 0 && getValueX + i <= 7 && getValueY + j >= 0 && getValueY + j <= 7)
+                if (InRange(getValueX + i, getValueY + j))
                 {
                     for (int l = 1; l < 8; l++)
                     {
-                        if (i + getValueX * l >= 0 && i + getValueX * l <= 7 && j + getValueY * l >= 0 && j + getValueY * l <= 7)
+                        if (InRange(i + getValueX * l, j + getValueY * l))
                         {
                             if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
                             {
                                 l = 10;
                             }
 
-                            else if (bitboard[i + getValueX * l, j + getValueY * l] == 9 || bitboard[i + getValueX * l, j + getValueY * l] == 5)
+                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || bitboard[i + getValueX * l, j + getValueY * l] == 5)
                             {
                                 l = 10;
                             }
@@ -161,7 +149,7 @@ public class BoardRules
                                 l--;
                                 for (; l >= 1; l--)
                                 {
-                                    bitboard[i + getValueX * l, j + getValueY * l] = 5;
+                                    bitboard[i + getValueX * l, j + getValueY * l] = (int)Player.capture;
                                 }
                                 l = 10;
                             }
@@ -178,18 +166,18 @@ public class BoardRules
                 int getValueX = (int)vectors[k].X;
                 int getValueY = (int)vectors[k].Y;
                 Vector2 vector = vectors[k];
-                if (getValueX + i >= 0 && getValueX + i <= 7 && getValueY + j >= 0 && getValueY + j <= 7)
+                if (InRange(getValueX + i, getValueY + j))
                 {
                     for (int l = 1; l < 8; l++)
                     {
-                        if (i + getValueX * l >= 0 && i + getValueX * l <= 7 && j + getValueY * l >= 0 && j + getValueY * l <= 7)
+                        if (InRange(i + getValueX * l, j + getValueY * l))
                         {
                             if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
                             {
                                 l = 10;
                             }
 
-                            else if (bitboard[i + getValueX * l, j + getValueY * l] == 9 || bitboard[i + getValueX * l, j + getValueY * l] == 5)
+                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || bitboard[i + getValueX * l, j + getValueY * l] == 5)
                             {
                                 l = 10;
                             }
@@ -199,7 +187,7 @@ public class BoardRules
                                 l--;
                                 for (; l >= 1; l--)
                                 {
-                                    bitboard[i + getValueX * l, j + getValueY * l] = 5;
+                                    bitboard[i + getValueX * l, j + getValueY * l] = (int)Player.capture;
                                 }
                                 l = 10;
                             }
@@ -208,5 +196,13 @@ public class BoardRules
                 }
             }
         }
+    }
+
+    bool InRange (int x, int y)
+    {
+        if (x >= 0 && x <= 7 && y >= 0 && y <= 7)
+            return true;
+        else
+            return false;
     }
 }
