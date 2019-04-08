@@ -5564,6 +5564,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerturn: 1
+  spawnWhitePlayer: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+    type: 3}
+  spawnDarkPlayer: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+    type: 3}
+  gameObjectToFlip: {fileID: 0}
   BitboardDisplay: {fileID: 1086227241}
   Blackcountertext: {fileID: 1327759480}
   Whitecountertext: {fileID: 241607149}
