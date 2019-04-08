@@ -6,25 +6,35 @@ using UnityEngine.UI;
 public class Bitboard : MonoBehaviour
 {
 
-    public int playerturn = 1;
+    public BoardRules BoardState = new BoardRules();
 
-    public int[,] bitboard = new int[8, 8];
-    
+    public byte playerturn = 1;
+    public byte[,] bitboard = new byte[8, 8];
+
+    public GameObject spawnWhitePlayer;
+    public GameObject spawnDarkPlayer;
+    public GameObject gameObjectToFlip;
+    public GameObject BitboardDisplay;
+    public GameObject Blackcountertext;
+    public GameObject Whitecountertext;
+
+
     // Start is called before the first frame update
     void Start() 
     {
-        GameObject.Find("BitboardDisplay").GetComponent<Text>().text = "     AB CD EF GH";
+        BitboardDisplay.GetComponent<Text>().text = "     AB CD EF GH";
         for (int i = 0; i < 8; i++)
         {
-            GameObject.Find("BitboardDisplay").GetComponent<Text>().text += "\n " + (i + 1) + " [";
+            BitboardDisplay.GetComponent<Text>().text += "\n " + (i + 1) + " [";
             for (int j = 0; j < 8; j++)
             {
                 bitboard[i, j] = 0;
-                GameObject.Find("BitboardDisplay").GetComponent<Text>().text += bitboard[i, j] + " ";
+                BitboardDisplay.GetComponent<Text>().text += bitboard[i, j] + " ";
             }
-            GameObject.Find("BitboardDisplay").GetComponent<Text>().text += "]";
+            BitboardDisplay.GetComponent<Text>().text += "]";
         }
         bitboard[3, 4] = 1; bitboard[4, 3] = 1; bitboard[3, 3] = 2; bitboard[4, 4] = 2;
+        BoardState.ValidMove(bitboard, playerturn);
         bitboardDisplayUpdate();
         pieceCounter(bitboard);
     }
@@ -35,59 +45,38 @@ public class Bitboard : MonoBehaviour
 
     }
 
-    public void bitboardUpdate(string Tile)
+    public void boardRules(string Tile)
     {
         var Char = Tile[0];
-        int bitboardX = 0;
-        switch (Char)
-        {
-            case 'A':
-                bitboardX = 0;
-                break;
-            case 'B':
-                bitboardX = 1;
-                break;
-            case 'C':
-                bitboardX = 2;
-                break;
-            case 'D':
-                bitboardX = 3;
-                break;
-            case 'E':
-                bitboardX = 4;
-                break;
-            case 'F':
-                bitboardX = 5;
-                break;
-            case 'G':
-                bitboardX = 6;
-                break;
-            case 'H':
-                bitboardX = 7;
-                break;
+        var bitboardX = char.ToUpper(Char) - 65;
+        var bitboardY = Tile[1] - '1';
+        BoardState.captureEnemyPlayer(bitboard, bitboardY, bitboardX, playerturn);
+        bitboardResetTurn();
+    }
 
-        }
-        int bitboardY = Tile[1] - '0';
-        bitboard[bitboardY - 1, bitboardX] = playerturn;
-        bitboardDisplayUpdate();
+    public void bitboardUpdate()
+    {
         pieceCounter(bitboard);
+        BoardState.ValidMove(bitboard, playerturn);
+        bitboardDisplayUpdate();
+        Debug.Log(playerturn);
     }
 
     void bitboardDisplayUpdate()
     {
-        GameObject.Find("BitboardDisplay").GetComponent<Text>().text = "     AB CD EF GH";
+        BitboardDisplay.GetComponent<Text>().text = "     AB CD EF GH";
         for (int i = 0; i < 8; i++)
         {
-            GameObject.Find("BitboardDisplay").GetComponent<Text>().text +="\n " + (i+1) + " [";
+            BitboardDisplay.GetComponent<Text>().text +="\n " + (i+1) + " [";
             for (int j = 0; j < 8; j++)
             {
-                GameObject.Find("BitboardDisplay").GetComponent<Text>().text += bitboard[i, j] + " ";
+                BitboardDisplay.GetComponent<Text>().text += bitboard[i, j] + " ";
             }
-            GameObject.Find("BitboardDisplay").GetComponent<Text>().text += "]";
+            BitboardDisplay.GetComponent<Text>().text += "]";
         }
     }
 
-    public void pieceCounter(int[,] bitboard)
+    public void pieceCounter(byte[,] bitboard)
     {
         int Blackpieces = 0, Whitepieces = 0;
         for (int i = 0; i < 8; i++)
@@ -109,7 +98,49 @@ public class Bitboard : MonoBehaviour
 
     void pieceCounterUpdate(int Blackpieces, int Whitepieces)
     {
-        GameObject.Find("Blackcountertext").GetComponent<Text>().text = $"{Blackpieces}";
-        GameObject.Find("Whitecountertext").GetComponent<Text>().text = $"{Whitepieces}";
+        Blackcountertext.GetComponent<Text>().text = $"{Blackpieces}";
+        Whitecountertext.GetComponent<Text>().text = $"{Whitepieces}";
+    }
+
+    public void bitboardResetTurn()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                if (bitboard[i, j] == 9)
+                {
+                    bitboard[i, j] = 0;
+                }
+
+                else if (bitboard[i, j] == 5)
+                {
+                    flipIt(i, j);
+                    bitboard[i, j] = playerturn;
+                }
+            }
+        }
+    }
+
+    public void flipIt(int i, int j)
+    {
+        string playerToFlip = "Player-" + j + i;
+        Debug.Log(playerToFlip);
+        Vector3 vectorPos = new Vector3(i, -0.85f, j);
+        gameObjectToFlip = GameObject.Find(playerToFlip);
+        Destroy(gameObjectToFlip);
+  
+        if (playerturn == 2)
+        {
+            var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity);
+            newObject.name = "Player-" + j + i;
+        }
+
+        if (playerturn == 1)
+        {
+            var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity);
+            newObject.name = "Player-" + j + i;
+        }
     }
 }
+
