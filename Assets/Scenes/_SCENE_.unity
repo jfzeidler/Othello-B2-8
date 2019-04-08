@@ -3967,11 +3967,7 @@ PrefabInstance:
     - target: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Player-43
-=======
-      value: Player-E4
->>>>>>> EMIL
       objectReference: {fileID: 0}
     - target: {fileID: 1803308744343299259, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
@@ -5385,11 +5381,7 @@ PrefabInstance:
     - target: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Player-33
-=======
-      value: Player-D4
->>>>>>> EMIL
       objectReference: {fileID: 0}
     - target: {fileID: 7057638396695703813, guid: feab44380df934448af41528b45243ec,
         type: 3}
@@ -7379,11 +7371,7 @@ PrefabInstance:
     - target: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Player-34
-=======
-      value: Player-D5
->>>>>>> EMIL
       objectReference: {fileID: 0}
     - target: {fileID: 1803308744343299259, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
@@ -8766,11 +8754,7 @@ PrefabInstance:
     - target: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
         type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
       value: Player-44
-=======
-      value: Player-E5
->>>>>>> EMIL
       objectReference: {fileID: 0}
     - target: {fileID: 7057638396695703813, guid: feab44380df934448af41528b45243ec,
         type: 3}
