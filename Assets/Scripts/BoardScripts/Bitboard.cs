@@ -126,46 +126,21 @@ public class Bitboard : MonoBehaviour
     {
         string playerToFlip = "Player-" + j + i;
         Debug.Log(playerToFlip);
-        Vector3 vectorRot = new Vector3(0.0f, 0.0f, 180f);
-        Vector3 vectorPos = new Vector3(i, 1.05f, j);
+        Vector3 vectorPos = new Vector3(i, -0.85f, j);
         gameObjectToFlip = GameObject.Find(playerToFlip);
-        byte [,] bitboard = new byte [8, 8];
-
-       
+        Destroy(gameObjectToFlip);
+  
         if (playerturn == 2)
         {
-            gameObjectToFlip.transform.Rotate(0, 0, 180, Space.Self);
-            if(bitboard[i, j] == 0)
-            {
-            gameObjectToFlip.transform.position = new Vector3(i, 1.05f, j);
-            bitboard[i, j] = 1;
-            }
-
+            var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity);
+            newObject.name = "Player-" + j + i;
         }
 
         if (playerturn == 1)
         {
-            gameObjectToFlip.transform.Rotate(0, 0, 180, Space.Self);
-            if(bitboard[i, j] == 0)
-            {
-            gameObjectToFlip.transform.position = new Vector3(i, 1.05f, j);
-            bitboard[i, j] = 1;
-            }
-            
-
+            var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity);
+            newObject.name = "Player-" + j + i;
         }
-         /*     
-        if (playerturn == 2)
-        {
-            Destroy(gameObjectToFlip);
-            Instantiate(spawnWhitePlayer, vectorPos, vectorRot);
-        }
-
-        if (playerturn == 1)
-        {
-            Destroy(gameObjectToFlip);
-            Instantiate(spawnWhitePlayer, vectorPos, vectorRot);
-        }*/
     }
 }
 
