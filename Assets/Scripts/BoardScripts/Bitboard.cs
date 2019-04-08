@@ -11,9 +11,13 @@ public class Bitboard : MonoBehaviour
     public byte playerturn = 1;
     public byte[,] bitboard = new byte[8, 8];
 
+    public GameObject spawnWhitePlayer;
+    public GameObject spawnDarkPlayer;
+    public GameObject gameObjectToFlip;
     public GameObject BitboardDisplay;
     public GameObject Blackcountertext;
     public GameObject Whitecountertext;
+
 
     // Start is called before the first frame update
     void Start() 
@@ -41,16 +45,21 @@ public class Bitboard : MonoBehaviour
 
     }
 
-    public void bitboardUpdate(string Tile)
+    public void boardRules(string Tile)
     {
         var Char = Tile[0];
         var bitboardX = char.ToUpper(Char) - 65;
         var bitboardY = Tile[1] - '1';
         BoardState.captureEnemyPlayer(bitboard, bitboardY, bitboardX, playerturn);
-        bitboardResetTurn(playerturn);
+        bitboardResetTurn();
+    }
+
+    public void bitboardUpdate()
+    {
         pieceCounter(bitboard);
         BoardState.ValidMove(bitboard, playerturn);
         bitboardDisplayUpdate();
+        Debug.Log(playerturn);
     }
 
     void bitboardDisplayUpdate()
@@ -93,7 +102,7 @@ public class Bitboard : MonoBehaviour
         Whitecountertext.GetComponent<Text>().text = $"{Whitepieces}";
     }
 
-    public void bitboardResetTurn(byte playerturn)
+    public void bitboardResetTurn()
     {
         for (int i = 0; i < 8; i++)
         {
@@ -106,17 +115,57 @@ public class Bitboard : MonoBehaviour
 
                 else if (bitboard[i, j] == 5)
                 {
-                    if (playerturn == 1)
-                    {
-                        bitboard[i, j] = 2;
-                    }
-                    
-                    else if (playerturn == 2)
-                    {
-                        bitboard[i, j] = 1;
-                    }
+                    flipIt(i, j);
+                    bitboard[i, j] = playerturn;
                 }
             }
         }
     }
+
+    public void flipIt(int i, int j)
+    {
+        string playerToFlip = "Player-" + j + i;
+        Debug.Log(playerToFlip);
+        Vector3 vectorRot = new Vector3(0.0f, 0.0f, 180f);
+        Vector3 vectorPos = new Vector3(i, 1.05f, j);
+        gameObjectToFlip = GameObject.Find(playerToFlip);
+        byte [,] bitboard = new byte [8, 8];
+
+       
+        if (playerturn == 2)
+        {
+            gameObjectToFlip.transform.Rotate(0, 0, 180, Space.Self);
+            if(bitboard[i, j] == 0)
+            {
+            gameObjectToFlip.transform.position = new Vector3(i, 1.05f, j);
+            bitboard[i, j] = 1;
+            }
+
+        }
+
+        if (playerturn == 1)
+        {
+            gameObjectToFlip.transform.Rotate(0, 0, 180, Space.Self);
+            if(bitboard[i, j] == 0)
+            {
+            gameObjectToFlip.transform.position = new Vector3(i, 1.05f, j);
+            bitboard[i, j] = 1;
+            }
+            
+
+        }
+         /*     
+        if (playerturn == 2)
+        {
+            Destroy(gameObjectToFlip);
+            Instantiate(spawnWhitePlayer, vectorPos, vectorRot);
+        }
+
+        if (playerturn == 1)
+        {
+            Destroy(gameObjectToFlip);
+            Instantiate(spawnWhitePlayer, vectorPos, vectorRot);
+        }*/
+    }
 }
+

@@ -81,7 +81,7 @@ public class BoardRules
                         {
                             if (i - getValueX * l >= 0 && i - getValueX * l <= 7 && j - getValueY * l >= 0 && j - getValueY * l <= 7)
                             {
-                                if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.white)
+                                if (bitboard[i - getValueX * l, j - getValueY * l] == 9)
                                 {
                                     l = 8;
                                 }
@@ -113,7 +113,7 @@ public class BoardRules
                         {
                             if (i - getValueX * l >= 0 && i - getValueX * l <= 7 && j - getValueY * l >= 0 && j - getValueY * l <= 7)
                             {
-                                if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.black)
+                                if (bitboard[i - getValueX * l, j - getValueY * l] == 9)
                                 {
                                     l = 8;
                                 }
@@ -146,13 +146,19 @@ public class BoardRules
                         {
                             if (i + getValueX * l >= 0 && i + getValueX * l <= 7 && j + getValueY * l >= 0 && j + getValueY * l <= 7)
                             {
-                                if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.black)
+                                if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
                                 {
+                                    l = 10;
+                                }
+
+                                else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.black)
+                                {
+                                l--;
                                     for (; l >= 1; l--)
                                     {
                                         bitboard[i + getValueX * l, j + getValueY * l] = 5;
                                     }
-                                    l = 8;
+                                    l = 10;
                                 }
                             }
                         }
@@ -173,19 +179,19 @@ public class BoardRules
                         {
                             if (i + getValueX * l >= 0 && i + getValueX * l <= 7 && j + getValueY * l >= 0 && j + getValueY * l <= 7)
                             {
-
                                 if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
                                 {
-                                    l = 8;
+                                    l = 10;
                                 }
 
                                 else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.white)
                                 {
+                                    l--;
                                     for (; l >= 1; l--)
                                     {
                                         bitboard[i + getValueX * l, j + getValueY * l] = 5;
                                     }
-                                    l = 8;
+                                    l = 10;
                                 }
                             }
                         }
