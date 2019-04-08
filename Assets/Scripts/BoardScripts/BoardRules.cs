@@ -81,7 +81,7 @@ public class BoardRules
                         {
                             if (i - getValueX * l >= 0 && i - getValueX * l <= 7 && j - getValueY * l >= 0 && j - getValueY * l <= 7)
                             {
-                                if (bitboard[i - getValueX * l, j - getValueY * l] == 9)
+                                if (bitboard[i - getValueX * l, j - getValueY * l] == 9 || bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.white)
                                 {
                                     l = 8;
                                 }
@@ -113,7 +113,7 @@ public class BoardRules
                         {
                             if (i - getValueX * l >= 0 && i - getValueX * l <= 7 && j - getValueY * l >= 0 && j - getValueY * l <= 7)
                             {
-                                if (bitboard[i - getValueX * l, j - getValueY * l] == 9)
+                                if (bitboard[i - getValueX * l, j - getValueY * l] == 9 || bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.black)
                                 {
                                     l = 8;
                                 }
@@ -142,26 +142,31 @@ public class BoardRules
                 Vector2 vector = vectors[k];
                 if (getValueX + i >= 0 && getValueX + i <= 7 && getValueY + j >= 0 && getValueY + j <= 7)
                 {
-                        for (int l = 1; l < 8; l++)
+                    for (int l = 1; l < 8; l++)
+                    {
+                        if (i + getValueX * l >= 0 && i + getValueX * l <= 7 && j + getValueY * l >= 0 && j + getValueY * l <= 7)
                         {
-                            if (i + getValueX * l >= 0 && i + getValueX * l <= 7 && j + getValueY * l >= 0 && j + getValueY * l <= 7)
+                            if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
                             {
-                                if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
-                                {
-                                    l = 10;
-                                }
+                                l = 10;
+                            }
 
-                                else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.black)
-                                {
+                            else if (bitboard[i + getValueX * l, j + getValueY * l] == 9 || bitboard[i + getValueX * l, j + getValueY * l] == 5)
+                            {
+                                l = 10;
+                            }
+
+                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.black)
+                            {
                                 l--;
-                                    for (; l >= 1; l--)
-                                    {
-                                        bitboard[i + getValueX * l, j + getValueY * l] = 5;
-                                    }
-                                    l = 10;
+                                for (; l >= 1; l--)
+                                {
+                                    bitboard[i + getValueX * l, j + getValueY * l] = 5;
                                 }
+                                l = 10;
                             }
                         }
+                    }
                 }
             }
         }
@@ -175,26 +180,31 @@ public class BoardRules
                 Vector2 vector = vectors[k];
                 if (getValueX + i >= 0 && getValueX + i <= 7 && getValueY + j >= 0 && getValueY + j <= 7)
                 {
-                        for (int l = 1; l < 8; l++)
+                    for (int l = 1; l < 8; l++)
+                    {
+                        if (i + getValueX * l >= 0 && i + getValueX * l <= 7 && j + getValueY * l >= 0 && j + getValueY * l <= 7)
                         {
-                            if (i + getValueX * l >= 0 && i + getValueX * l <= 7 && j + getValueY * l >= 0 && j + getValueY * l <= 7)
+                            if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
                             {
-                                if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
-                                {
-                                    l = 10;
-                                }
+                                l = 10;
+                            }
 
-                                else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.white)
+                            else if (bitboard[i + getValueX * l, j + getValueY * l] == 9 || bitboard[i + getValueX * l, j + getValueY * l] == 5)
+                            {
+                                l = 10;
+                            }
+
+                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.white)
+                            {
+                                l--;
+                                for (; l >= 1; l--)
                                 {
-                                    l--;
-                                    for (; l >= 1; l--)
-                                    {
-                                        bitboard[i + getValueX * l, j + getValueY * l] = 5;
-                                    }
-                                    l = 10;
+                                    bitboard[i + getValueX * l, j + getValueY * l] = 5;
                                 }
+                                l = 10;
                             }
                         }
+                    }
                 }
             }
         }
