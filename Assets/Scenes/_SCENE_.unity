@@ -5572,6 +5572,7 @@ MonoBehaviour:
   BitboardDisplay: {fileID: 1086227241}
   Blackcountertext: {fileID: 1327759480}
   Whitecountertext: {fileID: 241607149}
+  ScorePanelTurnText: {fileID: 1156882665}
 --- !u!1001 &1073071325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5972,7 +5973,7 @@ GameObject:
   - component: {fileID: 1156882668}
   - component: {fileID: 1156882667}
   m_Layer: 5
-  m_Name: ScoreText
+  m_Name: ScorePanelTurnText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6030,7 +6031,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Score
+  m_Text: 
 --- !u!222 &1156882668
 CanvasRenderer:
   m_ObjectHideFlags: 0
