@@ -209,4 +209,19 @@ public class BoardRules
         else
             return false;
     }
+    public bool CheckForNine(byte[,] bitboard)
+    {
+        bool returnValue = true;
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                if (bitboard[i, j] == 9)
+                {
+                    returnValue = false;
+                }
+            }
+        }
+        return returnValue;
+    }
 }

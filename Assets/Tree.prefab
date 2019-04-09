@@ -96,7 +96,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Optimized Leaf Material
   m_Shader: {fileID: 10605, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
+  m_ShaderKeywords:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -142,7 +142,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Optimized Bark Material
   m_Shader: {fileID: 10604, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
+  m_ShaderKeywords:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -197,7 +197,7 @@ Mesh:
     channels: []
     fullWeights: []
   m_BindPose: []
-  m_BoneNameHashes: 
+  m_BoneNameHashes:
   m_RootBoneNameHash: 0
   m_MeshCompression: 0
   m_IsReadable: 1
@@ -272,66 +272,66 @@ Mesh:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_UV:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_Normals:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_Tangents:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_Weights:
       m_NumItems: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_NormalSigns:
       m_NumItems: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_TangentSigns:
       m_NumItems: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_FloatColors:
       m_NumItems: 0
       m_Range: 0
       m_Start: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_BoneIndices:
       m_NumItems: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_Triangles:
       m_NumItems: 0
-      m_Data: 
+      m_Data:
       m_BitSize: 0
     m_UVInfo: 0
   m_LocalAABB:
     m_Center: {x: -0.07036564, y: 7.371292, z: -0.30755773}
     m_Extent: {x: 0.57326114, y: 7.371292, z: 0.99303865}
   m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
+  m_BakedConvexCollisionMesh:
+  m_BakedTriangleCollisionMesh:
   m_MeshMetrics[0]: 1
   m_MeshMetrics[1]: 1
   m_MeshOptimized: 0
   m_StreamData:
     offset: 0
     size: 0
-    path: 
+    path:
 --- !u!114 &114409649592953416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,14 +343,14 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 12106, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Tree Data
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   _uniqueID: 5
   materialHash: 31d6cfe0d16ae931b73c59d7e0c089c0-583008256
   root:
     _uniqueID: 1
     seed: 1234
     _internalSeed: 2727
-    m_Hash: 
+    m_Hash:
     distributionFrequency: 1
     distributionMode: 0
     distributionCurve:
@@ -467,7 +467,7 @@ MonoBehaviour:
   - _uniqueID: 3
     seed: 1234
     _internalSeed: 2727
-    m_Hash: 
+    m_Hash:
     distributionFrequency: 1
     distributionMode: 0
     distributionCurve:
@@ -554,7 +554,7 @@ MonoBehaviour:
     lockFlags: 0
     nodeIDs: 04000000
     parentGroupID: 1
-    childGroupIDs: 
+    childGroupIDs:
     lodQualityMultiplier: 1
     geometryMode: 0
     materialBranch: {fileID: 0}
