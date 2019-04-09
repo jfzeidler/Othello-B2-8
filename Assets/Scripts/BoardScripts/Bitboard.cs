@@ -150,18 +150,13 @@ public class Bitboard : MonoBehaviour
     //CRAWLING IN MY SKIIN, THESE WOUNDS THEY WILL NOT HEAL
     void ShowPlayerTurn()
     {
-       
-        if (ScorePanelTurnText == null)
-        {
-            Debug.Log("WHY IS SCOREPANELTURNTEXT NULL?!");
-        }
         if (playerturn == (int)Player.black)
         {
             GameObject.Find("ScorePanelTurnText").GetComponent<Text>().text = "Black Players turn";
         }
         else if (playerturn == (int)Player.white)
         {
-            //ScorePanelTurnText.text = "White players turn";
+            GameObject.Find("ScorePanelTurnText").GetComponent<Text>().text = "White Players turn";
         }
     }
 }
