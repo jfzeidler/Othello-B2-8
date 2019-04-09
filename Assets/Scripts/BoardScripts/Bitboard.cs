@@ -17,6 +17,7 @@ public class Bitboard : MonoBehaviour
     public GameObject BitboardDisplay;
     public GameObject Blackcountertext;
     public GameObject Whitecountertext;
+    public GameObject MainMenu;
 
 
     // Start is called before the first frame update
@@ -141,6 +142,16 @@ public class Bitboard : MonoBehaviour
             var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity);
             newObject.name = "Player-" + j + i;
         }
+    }
+
+    public void QuitGame ()
+    {
+        Application.Quit();
+    }
+
+    public void StartGame ()
+    {
+        MainMenu.SetActive(false);
     }
 }
 
