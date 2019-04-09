@@ -36,16 +36,13 @@ public class Bitboard : MonoBehaviour
         }
         bitboard[3, 4] = 1; bitboard[4, 3] = 1; bitboard[3, 3] = 2; bitboard[4, 4] = 2;
         BoardState.ValidMove(bitboard, playerturn);
-<<<<<<< HEAD
         bitboardDisplayUpdate();
         pieceCounter(bitboard);
         ShowValidMoves();
-=======
-        BitboardDisplayUpdate();
-        PieceCounter(bitboard);
+        bitboardDisplayUpdate();
+        pieceCounter(bitboard);
         
         ShowPlayerTurn();
->>>>>>> DANIEL
     }
 
     // Update is called once per frame
@@ -64,12 +61,8 @@ public class Bitboard : MonoBehaviour
 
     public void bitboardUpdate()
     {
-<<<<<<< HEAD
-        pieceCounter(bitboard);
-=======
-        PieceCounter(bitboard);
         ShowPlayerTurn();
->>>>>>> DANIEL
+        pieceCounter(bitboard);
         BoardState.ValidMove(bitboard, playerturn);
         bitboardDisplayUpdate();
         ShowValidMoves();
@@ -160,8 +153,7 @@ public class Bitboard : MonoBehaviour
             newObject.name = "Player-" + j + i;
         }
     }
-<<<<<<< HEAD
-=======
+
     void ShowPlayerTurn()
     {
         if (playerturn == (int)Player.black)
@@ -170,12 +162,9 @@ public class Bitboard : MonoBehaviour
         }
         else if (playerturn == (int)Player.white)
         {
-            GameObject.Find("ScorePanelTurnText").GetComponent<Text>().text = "White Players turn";
             ScorePanelTurnText.GetComponent<Text>().text = "White Players turn";
         }
     }
-}
->>>>>>> DANIEL
 
     void ShowValidMoves()
     {
