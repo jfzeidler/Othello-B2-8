@@ -58,13 +58,8 @@ public class Bitboard : MonoBehaviour
     {
         pieceCounter(bitboard);
         BoardState.ValidMove(bitboard, playerturn);
-<<<<<<< HEAD
-        PassCounter(bitboard, playerturn);
-        BitboardDisplayUpdate();
-=======
         bitboardDisplayUpdate();
         ShowValidMoves();
->>>>>>> NIKOLAJ
         Debug.Log(playerturn);
     }
 
@@ -152,25 +147,6 @@ public class Bitboard : MonoBehaviour
             newObject.name = "Player-" + j + i;
         }
     }
-<<<<<<< HEAD
-    void PassCounter(byte[,] bitboard, byte playerturn)
-    {
-        if (BoardState.CheckForNine(bitboard) == true)
-        {
-            if(playerturn == 1)
-            {
-                playerturn = 2;
-            }
-            else if(playerturn == 2)
-            {
-                playerturn = 1;
-            }
-            Debug.Log("Made it here");
-        }
-    }
-}
-=======
->>>>>>> NIKOLAJ
 
     void ShowValidMoves()
     {
