@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7256558920619730743}
   - component: {fileID: 7256558920619730742}
   - component: {fileID: 7256558920619730729}
+  - component: {fileID: 8938494353646218028}
   m_Layer: 0
   m_Name: TileVisual
   m_TagString: Untagged
@@ -91,6 +92,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8938494353646218028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7256558920619730731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 878e1e04162c23244aaed84de894a04b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textures:
+  - {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+  - {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+  currentTextures: 0
+  tile: {fileID: 7256558920619730731}
 --- !u!1 &7256558921621419634
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,13 +171,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b20017f4afc30c646be6e9e1e8aa5ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  Isoccupied: 0
   spawnPos: {fileID: 5835466012462273887}
+  The_Board: {fileID: 0}
   spawnWhitePlayer: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
     type: 3}
   spawnDarkPlayer: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
     type: 3}
+  isoccupied: 0
 --- !u!1 &7265496487154127660
 GameObject:
   m_ObjectHideFlags: 0
