@@ -1,107 +1,210 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Numerics;
 
-public class BoardRules : MonoBehaviour
+public class BoardRules
 {
-    public Vector2 up = new Vector2(0, 1);
-    public Vector2 right = new Vector2(1, 0);
-    public Vector2 left = new Vector2(-1, 0);
-    public Vector2 down = new Vector2(0, -1);
-    public Vector2 upright = new Vector2(1, 1);
-    public Vector2 downleft = new Vector2(-1, -1);
-    public Vector2 upleft = new Vector2(-1, 1);
-    public Vector2 downright = new Vector2(1, -1);
+    private byte[,] bitboard;
+    enum Player { blank = 0, black = 1, white = 2, capture = 5, validMove = 9};
 
-    // Start is called before the first frame update
-    void Start()
+    Vector2[] vectors = new Vector2[]
+        {
+        new Vector2(0, 1),
+        new Vector2(1, 0),
+        new Vector2(-1, 0),
+        new Vector2(0, -1),
+        new Vector2(1, 1),
+        new Vector2(-1, -1),
+        new Vector2(-1, 1),
+        new Vector2(1, -1)
+        };
+
+    public byte[,] Bitboard { get => bitboard; set => bitboard = value; }
+
+    public void ValidMove(byte[,] bitboard, byte playerturn)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    void ValidMove()
-    {
-        int[,] Tempbitboard = GameObject.Find("The-Board").GetComponent<Bitboard>().bitboard;
-        int playerturn = GameObject.Find("The-Board").GetComponent<Bitboard>().playerturn;
-
-        if (playerturn == 1)
+        if (playerturn == (int)Player.black)
         {
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
                 {
-
-                }
-            }
-        }
-        else if (playerturn == 2)
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                for (int j = 0; j < 8; j++)
-                {
-                    if (Tempbitboard[i,j] == 2 && CheckForAdjacent(Tempbitboard, i, j, playerturn))
+                    if (bitboard[i, j] == (int)Player.white)
                     {
-
+                        CheckForAdjacent(bitboard, i, j, playerturn);
                     }
                 }
             }
         }
-        
 
-    }
-
-    public void captureRule(int Tilex, int Tiley)
-    {
-
-    }
-    
-    bool CheckForAdjacent(int[,] Tempbitboard, int i, int j, int playerturn)
-    {
-        int upHDir = (int)up.x; int upVDir = (int)up.y;
-        int downHDir = (int)down.x; int downVDir = (int)down.y;
-        int leftHDir = (int)left.x; int leftVDir = (int)left.y;
-        int rightHDir = (int)right.x; int rightVDir = (int)right.y;
-        int uprightHDir = (int)upright.x; int uprightVDir = (int)upright.y;
-        int upleftHDir = (int)upleft.x; int upleftVDir = (int)upleft.y;
-        int downrightHDir = (int)downright.x; int downrightVDir = (int)downright.y;
-        int downleftHDir = (int)downleft.x; int downleftVDir = (int)downleft.y;
-
-        
-        int result1 = Tempbitboard[upHDir + i, upVDir + j];
-        int result2 = Tempbitboard[downHDir + i, downVDir + j];
-        int result3 = Tempbitboard[leftHDir + i, leftVDir + j];
-        int result4 = Tempbitboard[rightHDir + i, rightVDir + j];
-        int result5 = Tempbitboard[uprightHDir + i, uprightVDir + j];
-        int result6 = Tempbitboard[upleftHDir + i, upleftVDir + j];
-        int result7 = Tempbitboard[downrightHDir + i, downrightHDir + j];
-        int result8 = Tempbitboard[downleftHDir + i, downleftHDir + j];
-
-        if (playerturn == 2)
+        else if (playerturn == (int)Player.white)
         {
-            if (result1 == 1 || result2 == 1 || result3 == 1 || result4 == 1 || result5 == 1 || result6 == 1 || result7 == 1 || result8 == 1)
+            for (int i = 0; i < 8; i++)
             {
-                return true;
+                for (int j = 0; j < 8; j++)
+                {
+                    if (bitboard[i, j] == (int)Player.black)
+                    {
+                        CheckForAdjacent(bitboard, i, j, playerturn);
+                    }
+                }
             }
         }
-        else if (playerturn == 1)
+    }
+
+    void CheckForAdjacent(byte[,] bitboard, int i, int j, byte playerturn)
+    {
+        if (playerturn == (int)Player.white)
         {
-            if (result1 == 2 || result2 == 2 || result3 == 2 || result4 == 2 || result5 == 2 || result6 == 2 || result7 == 2 || result8 == 2)
+            for (int k = 0; k < 8; k++)
             {
-                return true;
+                int getValueX = (int)vectors[k].X;
+                int getValueY = (int)vectors[k].Y;
+                Vector2 vector = vectors[k];
+
+                if (InRange(getValueX + i, getValueY + j))
+                {
+                    if (bitboard[i + getValueX, j + getValueY] == (int)Player.white)
+                    {
+                        for (int l = 1; l < 8; l++)
+                        {
+                            if (InRange(i - getValueX * l, j - getValueY * l))
+                            {
+                                if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.validMove || bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.white)
+                                {
+                                    l = 8;
+                                }
+
+                                else if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
+                                {
+                                    bitboard[i - getValueX * l, j - getValueY * l] = (int)Player.validMove;
+                                    l = 8;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 
+        if (playerturn == (int)Player.black)
+        {
+            for (int k = 0; k < 8; k++)
+            {
+                int getValueX = (int)vectors[k].X;
+                int getValueY = (int)vectors[k].Y;
+                Vector2 vector = vectors[k];
 
+                if (InRange(getValueX + i, getValueY + j))
+                {
+                    if (bitboard[i + getValueX, j + getValueY] == (int)Player.black)
+                    {
+                        for (int l = 1; l < 8; l++)
+                        {
+                            if (InRange(i - getValueX * l, j - getValueY * l))
+                            {
+                                if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.validMove || bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.black)
+                                {
+                                    l = 8;
+                                }
 
+                                else if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
+                                {
+                                    bitboard[i - getValueX * l, j - getValueY * l] = (int)Player.validMove;
+                                    l = 8;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-            if (result1 != 0)
+    public void CaptureEnemyPlayer(byte[,] bitboard, int i, int j, byte playerturn)
+    {
+        if (playerturn == (int)Player.black)
+        {
+            for (int k = 0; k < 8; k++)
+            {
+                int getValueX = (int)vectors[k].X;
+                int getValueY = (int)vectors[k].Y;
+                Vector2 vector = vectors[k];
+
+                if (InRange(getValueX + i, getValueY + j))
+                {
+                    for (int l = 1; l < 8; l++)
+                    {
+                        if (InRange(i + getValueX * l, j + getValueY * l))
+                        {
+                            if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
+                            {
+                                l = 10;
+                            }
+
+                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.capture)
+                            {
+                                l = 10;
+                            }
+
+                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.black)
+                            {
+                                l--;
+                                for (; l >= 1; l--)
+                                {
+                                    bitboard[i + getValueX * l, j + getValueY * l] = (int)Player.capture;
+                                }
+                                l = 10;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if (playerturn == (int)Player.white)
+        {
+            for (int k = 0; k < 8; k++)
+            {
+                int getValueX = (int)vectors[k].X;
+                int getValueY = (int)vectors[k].Y;
+                Vector2 vector = vectors[k];
+
+                if (InRange(getValueX + i, getValueY + j))
+                {
+                    for (int l = 1; l < 8; l++)
+                    {
+                        if (InRange(i + getValueX * l, j + getValueY * l))
+                        {
+                            if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
+                            {
+                                l = 10;
+                            }
+
+                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.capture)
+                            {
+                                l = 10;
+                            }
+
+                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.white)
+                            {
+                                l--;
+                                for (; l >= 1; l--)
+                                {
+                                    bitboard[i + getValueX * l, j + getValueY * l] = (int)Player.capture;
+                                }
+                                l = 10;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    bool InRange (int x, int y)
+    {
+        if (x >= 0 && x <= 7 && y >= 0 && y <= 7)
             return true;
         else
             return false;
