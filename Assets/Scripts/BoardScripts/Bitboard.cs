@@ -11,9 +11,13 @@ public class Bitboard : MonoBehaviour
     public byte playerturn = 1;
     public byte[,] bitboard = new byte[8, 8];
 
+    public GameObject spawnWhitePlayer;
+    public GameObject spawnDarkPlayer;
+    public GameObject gameObjectToFlip;
     public GameObject BitboardDisplay;
     public GameObject Blackcountertext;
     public GameObject Whitecountertext;
+
 
     // Start is called before the first frame update
     void Start() 
@@ -31,8 +35,8 @@ public class Bitboard : MonoBehaviour
         }
         bitboard[3, 4] = 1; bitboard[4, 3] = 1; bitboard[3, 3] = 2; bitboard[4, 4] = 2;
         BoardState.ValidMove(bitboard, playerturn);
-        bitboardDisplayUpdate();
-        pieceCounter(bitboard);
+        BitboardDisplayUpdate();
+        PieceCounter(bitboard);
     }
 
     // Update is called once per frame
@@ -41,19 +45,24 @@ public class Bitboard : MonoBehaviour
 
     }
 
-    public void bitboardUpdate(string Tile)
+    public void boardRules(string Tile)
     {
         var Char = Tile[0];
         var bitboardX = char.ToUpper(Char) - 65;
         var bitboardY = Tile[1] - '1';
-        BoardState.captureEnemyPlayer(bitboard, bitboardY, bitboardX, playerturn);
-        bitboardResetTurn(playerturn);
-        pieceCounter(bitboard);
-        BoardState.ValidMove(bitboard, playerturn);
-        bitboardDisplayUpdate();
+        BoardState.CaptureEnemyPlayer(bitboard, bitboardY, bitboardX, playerturn);
+        BitboardResetTurn();
     }
 
-    void bitboardDisplayUpdate()
+    public void bitboardUpdate()
+    {
+        PieceCounter(bitboard);
+        BoardState.ValidMove(bitboard, playerturn);
+        BitboardDisplayUpdate();
+        Debug.Log(playerturn);
+    }
+
+    void BitboardDisplayUpdate()
     {
         BitboardDisplay.GetComponent<Text>().text = "     AB CD EF GH";
         for (int i = 0; i < 8; i++)
@@ -67,7 +76,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    public void pieceCounter(byte[,] bitboard)
+    void PieceCounter(byte[,] bitboard)
     {
         int Blackpieces = 0, Whitepieces = 0;
         for (int i = 0; i < 8; i++)
@@ -84,16 +93,16 @@ public class Bitboard : MonoBehaviour
                 }
             }
         }
-        pieceCounterUpdate(Blackpieces, Whitepieces);
+        PieceCounterUpdate(Blackpieces, Whitepieces);
     }
 
-    void pieceCounterUpdate(int Blackpieces, int Whitepieces)
+    void PieceCounterUpdate(int Blackpieces, int Whitepieces)
     {
         Blackcountertext.GetComponent<Text>().text = $"{Blackpieces}";
         Whitecountertext.GetComponent<Text>().text = $"{Whitepieces}";
     }
 
-    public void bitboardResetTurn(byte playerturn)
+    void BitboardResetTurn()
     {
         for (int i = 0; i < 8; i++)
         {
@@ -106,17 +115,32 @@ public class Bitboard : MonoBehaviour
 
                 else if (bitboard[i, j] == 5)
                 {
-                    if (playerturn == 1)
-                    {
-                        bitboard[i, j] = 2;
-                    }
-                    
-                    else if (playerturn == 2)
-                    {
-                        bitboard[i, j] = 1;
-                    }
+                    FlipIt(i, j);
+                    bitboard[i, j] = playerturn;
                 }
             }
         }
     }
+
+    void FlipIt(int i, int j)
+    {
+        string playerToFlip = "Player-" + j + i;
+        Debug.Log(playerToFlip);
+        Vector3 vectorPos = new Vector3(i, -0.85f, j);
+        gameObjectToFlip = GameObject.Find(playerToFlip);
+        Destroy(gameObjectToFlip);
+  
+        if (playerturn == 2)
+        {
+            var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity);
+            newObject.name = "Player-" + j + i;
+        }
+
+        if (playerturn == 1)
+        {
+            var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity);
+            newObject.name = "Player-" + j + i;
+        }
+    }
 }
+

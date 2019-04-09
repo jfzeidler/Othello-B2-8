@@ -43,20 +43,21 @@ public class tileScript : MonoBehaviour
         {
             Debug.Log("Clicked on " + selectedTile);
             byte playerturn = The_Board.GetComponent<Bitboard>().playerturn;
-            placePlayer(playerturn, selectedTile);
+            The_Board.GetComponent<Bitboard>().boardRules(selectedTile);
+            placePlayer(playerturn, bitboardX, bitboardY);
             The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] = playerturn;
-            The_Board.GetComponent<Bitboard>().bitboardUpdate(selectedTile);
+            The_Board.GetComponent<Bitboard>().bitboardUpdate();
             isoccupied++;
         }
     }
 
-    void placePlayer(int x, string selectedTile)
+    void placePlayer(int x, int y, int z)
     {
         //If black turn
         if (x == 1)
         {
             var newObject = Instantiate(spawnDarkPlayer, spawnPos.position, spawnPos.rotation);
-            newObject.name = "Player-" + selectedTile;
+            newObject.name = "Player-" + y + z;
             The_Board.GetComponent<Bitboard>().playerturn += 1;
         }
 
@@ -64,7 +65,7 @@ public class tileScript : MonoBehaviour
         else if (x == 2)
         {
             var newObject = Instantiate(spawnWhitePlayer, spawnPos.position, spawnPos.rotation);
-            newObject.name = "Player-" + selectedTile;
+            newObject.name = "Player-" + y + z;
             The_Board.GetComponent<Bitboard>().playerturn -= 1;
         }
     }
