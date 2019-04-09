@@ -42,7 +42,6 @@ public class Bitboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void boardRules(string Tile)
@@ -58,6 +57,7 @@ public class Bitboard : MonoBehaviour
     {
         PieceCounter(bitboard);
         BoardState.ValidMove(bitboard, playerturn);
+        PassCounter(bitboard, playerturn);
         BitboardDisplayUpdate();
         Debug.Log(playerturn);
     }
@@ -140,6 +140,21 @@ public class Bitboard : MonoBehaviour
         {
             var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity);
             newObject.name = "Player-" + j + i;
+        }
+    }
+    void PassCounter(byte[,] bitboard, byte playerturn)
+    {
+        if (BoardState.CheckForNine(bitboard) == true)
+        {
+            if(playerturn == 1)
+            {
+                playerturn = 2;
+            }
+            else if(playerturn == 2)
+            {
+                playerturn = 1;
+            }
+            Debug.Log("Made it here");
         }
     }
 }
