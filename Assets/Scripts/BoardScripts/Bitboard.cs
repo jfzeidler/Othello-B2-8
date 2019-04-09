@@ -143,15 +143,5 @@ public class Bitboard : MonoBehaviour
             newObject.name = "Player-" + j + i;
         }
     }
-
-    public void QuitGame ()
-    {
-        Application.Quit();
-    }
-
-    public void StartGame ()
-    {
-        MainMenu.SetActive(false);
-    }
 }
 
