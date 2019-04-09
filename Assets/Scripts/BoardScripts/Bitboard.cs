@@ -157,11 +157,11 @@ public class Bitboard : MonoBehaviour
         }
         if (playerturn == (int)Player.black)
         {
-            GameObject.Find("ScorePanelTurnText").GetComponent<Text>().text = "Black Players turn";
+            ScorePanelTurnText.GetComponent<Text>().text = "Black Players turn";
         }
         else if (playerturn == (int)Player.white)
         {
-            //ScorePanelTurnText.text = "White players turn";
+            ScorePanelTurnText.GetComponent<Text>().text = "White Players turn";
         }
     }
 }
