@@ -146,17 +146,16 @@ public class Bitboard : MonoBehaviour
             newObject.name = "Player-" + j + i;
         }
     }
-    // Den virker ikke.... HVORFOR VIRKER DEN IKKE??!?!?!?!?
-    //CRAWLING IN MY SKIIN, THESE WOUNDS THEY WILL NOT HEAL
     void ShowPlayerTurn()
     {
         if (playerturn == (int)Player.black)
         {
-            GameObject.Find("ScorePanelTurnText").GetComponent<Text>().text = "Black Players turn";
+            ScorePanelTurnText.GetComponent<Text>().text = "Black Players turn";
         }
         else if (playerturn == (int)Player.white)
         {
             GameObject.Find("ScorePanelTurnText").GetComponent<Text>().text = "White Players turn";
+            ScorePanelTurnText.GetComponent<Text>().text = "White Players turn";
         }
     }
 }
