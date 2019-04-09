@@ -20,7 +20,7 @@ public class Bitboard : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start() 
+    void Start()
     {
         BitboardDisplay.GetComponent<Text>().text = "     AB CD EF GH";
         for (int i = 0; i < 8; i++)
@@ -35,8 +35,9 @@ public class Bitboard : MonoBehaviour
         }
         bitboard[3, 4] = 1; bitboard[4, 3] = 1; bitboard[3, 3] = 2; bitboard[4, 4] = 2;
         BoardState.ValidMove(bitboard, playerturn);
-        BitboardDisplayUpdate();
-        PieceCounter(bitboard);
+        bitboardDisplayUpdate();
+        pieceCounter(bitboard);
+        ShowValidMoves();
     }
 
     // Update is called once per frame
@@ -51,23 +52,24 @@ public class Bitboard : MonoBehaviour
         var bitboardX = char.ToUpper(Char) - 65;
         var bitboardY = Tile[1] - '1';
         BoardState.CaptureEnemyPlayer(bitboard, bitboardY, bitboardX, playerturn);
-        BitboardResetTurn();
+        bitboardResetTurn();
     }
 
     public void bitboardUpdate()
     {
-        PieceCounter(bitboard);
+        pieceCounter(bitboard);
         BoardState.ValidMove(bitboard, playerturn);
-        BitboardDisplayUpdate();
+        bitboardDisplayUpdate();
+        ShowValidMoves();
         Debug.Log(playerturn);
     }
 
-    void BitboardDisplayUpdate()
+    void bitboardDisplayUpdate()
     {
         BitboardDisplay.GetComponent<Text>().text = "     AB CD EF GH";
         for (int i = 0; i < 8; i++)
         {
-            BitboardDisplay.GetComponent<Text>().text +="\n " + (i+1) + " [";
+            BitboardDisplay.GetComponent<Text>().text += "\n " + (i + 1) + " [";
             for (int j = 0; j < 8; j++)
             {
                 BitboardDisplay.GetComponent<Text>().text += bitboard[i, j] + " ";
@@ -76,7 +78,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    void PieceCounter(byte[,] bitboard)
+    void pieceCounter(byte[,] bitboard)
     {
         int Blackpieces = 0, Whitepieces = 0;
         for (int i = 0; i < 8; i++)
@@ -93,16 +95,16 @@ public class Bitboard : MonoBehaviour
                 }
             }
         }
-        PieceCounterUpdate(Blackpieces, Whitepieces);
+        pieceCounterUpdate(Blackpieces, Whitepieces);
     }
 
-    void PieceCounterUpdate(int Blackpieces, int Whitepieces)
+    void pieceCounterUpdate(int Blackpieces, int Whitepieces)
     {
         Blackcountertext.GetComponent<Text>().text = $"{Blackpieces}";
         Whitecountertext.GetComponent<Text>().text = $"{Whitepieces}";
     }
 
-    void BitboardResetTurn()
+    void bitboardResetTurn()
     {
         for (int i = 0; i < 8; i++)
         {
@@ -110,26 +112,30 @@ public class Bitboard : MonoBehaviour
             {
                 if (bitboard[i, j] == 9)
                 {
+                    int temp = j + 65;
+                    char c = (char)temp;
+                    string s = c + System.Convert.ToString(i + 1 + "/TileVisual");
+
+                    GameObject.Find(s).GetComponent<SwapTextures>().TextureSwap();
                     bitboard[i, j] = 0;
                 }
 
                 else if (bitboard[i, j] == 5)
                 {
-                    FlipIt(i, j);
+                    flipIt(i, j);
                     bitboard[i, j] = playerturn;
                 }
             }
         }
     }
 
-    void FlipIt(int i, int j)
+    void flipIt(int i, int j)
     {
         string playerToFlip = "Player-" + j + i;
-        Debug.Log(playerToFlip);
         Vector3 vectorPos = new Vector3(i, -0.85f, j);
         gameObjectToFlip = GameObject.Find(playerToFlip);
         Destroy(gameObjectToFlip);
-  
+
         if (playerturn == 2)
         {
             var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity);
@@ -142,5 +148,21 @@ public class Bitboard : MonoBehaviour
             newObject.name = "Player-" + j + i;
         }
     }
-}
 
+    void ShowValidMoves()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                if (bitboard[i, j] == 9)
+                {
+                    int temp = j + 65;
+                    char c = (char)temp;
+                    string s = c + System.Convert.ToString(i + 1 + "/TileVisual");
+                    GameObject.Find(s).GetComponent<SwapTextures>().TextureSwap();
+                }
+            }
+        }
+    }
+}
