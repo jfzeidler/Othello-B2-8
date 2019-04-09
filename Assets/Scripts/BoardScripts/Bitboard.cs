@@ -7,7 +7,7 @@ public class Bitboard : MonoBehaviour
 {
 
     public BoardRules BoardState = new BoardRules();
-
+    public enum Player { blank = 0, black = 1, white = 2};
     public byte playerturn = 1;
     public byte[,] bitboard = new byte[8, 8];
 
@@ -17,6 +17,7 @@ public class Bitboard : MonoBehaviour
     public GameObject BitboardDisplay;
     public GameObject Blackcountertext;
     public GameObject Whitecountertext;
+    public GameObject ScorePanelTurnText;
 
 
     // Start is called before the first frame update
@@ -37,6 +38,8 @@ public class Bitboard : MonoBehaviour
         BoardState.ValidMove(bitboard, playerturn);
         BitboardDisplayUpdate();
         PieceCounter(bitboard);
+        
+        ShowPlayerTurn();
     }
 
     // Update is called once per frame
@@ -57,6 +60,7 @@ public class Bitboard : MonoBehaviour
     public void bitboardUpdate()
     {
         PieceCounter(bitboard);
+        ShowPlayerTurn();
         BoardState.ValidMove(bitboard, playerturn);
         BitboardDisplayUpdate();
         Debug.Log(playerturn);
@@ -140,6 +144,24 @@ public class Bitboard : MonoBehaviour
         {
             var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity);
             newObject.name = "Player-" + j + i;
+        }
+    }
+    // Den virker ikke.... HVORFOR VIRKER DEN IKKE??!?!?!?!?
+    //CRAWLING IN MY SKIIN, THESE WOUNDS THEY WILL NOT HEAL
+    void ShowPlayerTurn()
+    {
+       
+        if (ScorePanelTurnText == null)
+        {
+            Debug.Log("WHY IS SCOREPANELTURNTEXT NULL?!");
+        }
+        if (playerturn == (int)Player.black)
+        {
+            GameObject.Find("ScorePanelTurnText").GetComponent<Text>().text = "Black Players turn";
+        }
+        else if (playerturn == (int)Player.white)
+        {
+            //ScorePanelTurnText.text = "White players turn";
         }
     }
 }
