@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class tileScript : MonoBehaviour
 {
+    byte DEBUG = 0;
 
     public Transform spawnPos;
     public GameObject The_Board;
@@ -28,35 +29,51 @@ public class tileScript : MonoBehaviour
     // What to do when clicking on a tile on the board
     void OnMouseUp()
     {
+        if (DEBUG == 1)
+        {
+            DEBUGLOG(The_Board.GetComponent<Bitboard>().bitboard);
+        }
+
         string selectedTile = gameObject.ToString();
         var Char = selectedTile[0];
         var bitboardX = char.ToUpper(Char) - 65;
         var bitboardY = selectedTile[1] - '1';
 
-        if (The_Board.GetComponent<Bitboard>().bitboard[bitboardX, bitboardY] == 9 && isoccupied == 0)
+        if (The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9 && isoccupied == 0)
         {
             Debug.Log("Clicked on " + selectedTile);
-            The_Board.GetComponent<Bitboard>().bitboardUpdate(selectedTile);
-            int playerturn = The_Board.GetComponent<Bitboard>().playerturn;
-            placePlayer(playerturn);
+            byte playerturn = The_Board.GetComponent<Bitboard>().playerturn;
+            The_Board.GetComponent<Bitboard>().boardRules(selectedTile);
+            placePlayer(playerturn, bitboardX, bitboardY);
+            The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] = playerturn;
+            The_Board.GetComponent<Bitboard>().bitboardUpdate();
             isoccupied++;
         }
     }
 
-    void placePlayer(int x)
+    void placePlayer(int x, int y, int z)
     {
         //If black turn
         if (x == 1)
         {
-            Instantiate(spawnDarkPlayer, spawnPos.position, spawnPos.rotation);
+            var newObject = Instantiate(spawnDarkPlayer, spawnPos.position, spawnPos.rotation);
+            newObject.name = "Player-" + y + z;
             The_Board.GetComponent<Bitboard>().playerturn += 1;
         }
 
         //If white turn
         else if (x == 2)
         {
-            Instantiate(spawnWhitePlayer, spawnPos.position, spawnPos.rotation);
+            var newObject = Instantiate(spawnWhitePlayer, spawnPos.position, spawnPos.rotation);
+            newObject.name = "Player-" + y + z;
             The_Board.GetComponent<Bitboard>().playerturn -= 1;
+        }
+    }
+    void DEBUGLOG(byte[,] bitboard)
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            Debug.Log(bitboard[i, 0] + " " + bitboard[i, 1] + " " + bitboard[i, 2] + " " + bitboard[i, 3] + " " + bitboard[i, 4] + " " + bitboard[i, 5] + " " + bitboard[i, 6] + " " + bitboard[i, 7]);
         }
     }
 }
