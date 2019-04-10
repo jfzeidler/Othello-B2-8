@@ -65,13 +65,13 @@ public class Bitboard : MonoBehaviour
 
     public void bitboardUpdate()
     {
-        ShowPlayerTurn();
         PieceCounter(bitboard, Whitepieces, Blackpieces);
         BoardState.ValidMove(bitboard, playerturn);
-        PassCounter(bitboard, playerturn);
+        playerturn = PassCounter(bitboard, playerturn);
         bitboardDisplayUpdate();
         ShowValidMoves();
-        // IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
+        ShowPlayerTurn();
+        IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
         Debug.Log(playerturn);
     }
 
@@ -211,12 +211,12 @@ public class Bitboard : MonoBehaviour
             if (playerturn == 1)
             {
                 playerturn = 2;
-                Debug.Log("From black to white");
+                Debug.Log("No valid moves for black player");
             }
             else if (playerturn == 2)
             {
                 playerturn = 1;
-                Debug.Log("From white to black");
+                Debug.Log("No valid moves for white player");
             }
             Debug.Log("Made it here");
             BoardState.ValidMove(bitboard, playerturn);
