@@ -13,6 +13,8 @@ public class Bitboard : MonoBehaviour
     public byte playerturn = 1;
     public byte[,] bitboard = new byte[8, 8];
 
+    public GameObject AndTheWinnerIs;
+    public GameObject GameOverCanvas;
     public GameObject spawnWhitePlayer;
     public GameObject spawnDarkPlayer;
     public GameObject gameObjectToFlip;
@@ -163,11 +165,11 @@ public class Bitboard : MonoBehaviour
     {
         if (playerturn == (int)Player.black)
         {
-            ScorePanelTurnText.GetComponent<Text>().text = "Black Players turn";
+            ScorePanelTurnText.GetComponent<TMPro>().text = "Black Players turn";
         }
         else if (playerturn == (int)Player.white)
         {
-            ScorePanelTurnText.GetComponent<Text>().text = "White Players turn";
+            ScorePanelTurnText.GetComponent<TMPro>().text = "White Players turn";
         }
     }
 
@@ -193,14 +195,15 @@ public class Bitboard : MonoBehaviour
         if (BoardState.CheckForNine(bitboard) == true)
         {
             Debug.Log("Game over");
+            GameOverCanvas.SetActive(true);
         }
         if(Blackpieces > Whitepieces)
         {
-            Debug.Log("Black player wins");
+            AndTheWinnerIs.GetComponent<Text>().text = "Player Black Won";
         }
         else if(Whitepieces > Blackpieces)
         {
-            Debug.Log("White player wins");
+            AndTheWinnerIs.GetComponent<Text>().text = "Player White Won";
         }
     }
 
