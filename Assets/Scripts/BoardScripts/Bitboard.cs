@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Bitboard : MonoBehaviour
 {
@@ -112,8 +113,8 @@ public class Bitboard : MonoBehaviour
 
     void pieceCounterUpdate(int Blackpieces, int Whitepieces)
     {
-        Blackcountertext.GetComponent<Text>().text = $"{Blackpieces}";
-        Whitecountertext.GetComponent<Text>().text = $"{Whitepieces}";
+        Blackcountertext.GetComponent<TextMeshProUGUI>().text = $"{Blackpieces}";
+        Whitecountertext.GetComponent<TextMeshProUGUI>().text = $"{Whitepieces}";
     }
 
     void bitboardResetTurn()
@@ -165,11 +166,11 @@ public class Bitboard : MonoBehaviour
     {
         if (playerturn == (int)Player.black)
         {
-            ScorePanelTurnText.GetComponent<TMPro>().text = "Black Players turn";
+            ScorePanelTurnText.GetComponent<TextMeshProUGUI>().text = "Black";
         }
         else if (playerturn == (int)Player.white)
         {
-            ScorePanelTurnText.GetComponent<TMPro>().text = "White Players turn";
+            ScorePanelTurnText.GetComponent<TextMeshProUGUI>().text = "White";
         }
     }
 
@@ -199,11 +200,11 @@ public class Bitboard : MonoBehaviour
         }
         if(Blackpieces > Whitepieces)
         {
-            AndTheWinnerIs.GetComponent<Text>().text = "Player Black Won";
+            AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player Black Won";
         }
         else if(Whitepieces > Blackpieces)
         {
-            AndTheWinnerIs.GetComponent<Text>().text = "Player White Won";
+            AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player White Won";
         }
     }
 
