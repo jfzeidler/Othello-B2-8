@@ -9,7 +9,6 @@ public class Bitboard : MonoBehaviour
 
     public BoardRules BoardState = new BoardRules();
     public enum Player { blank = 0, black = 1, white = 2};
-    public int Blackpieces = 0, Whitepieces = 0;
     public byte playerturn = 1;
     public byte[,] bitboard = new byte[8, 8];
 
@@ -39,9 +38,11 @@ public class Bitboard : MonoBehaviour
         bitboard[3, 4] = 1; bitboard[4, 3] = 1; bitboard[3, 3] = 2; bitboard[4, 4] = 2;
         BoardState.ValidMove(bitboard, playerturn);
         bitboardDisplayUpdate();
+        pieceCounter(bitboard);
         ShowValidMoves();
         bitboardDisplayUpdate();
-        PieceCounter(bitboard, Whitepieces, Blackpieces);
+        pieceCounter(bitboard);
+
         ShowPlayerTurn();
     }
 
@@ -66,12 +67,10 @@ public class Bitboard : MonoBehaviour
     public void bitboardUpdate()
     {
         ShowPlayerTurn();
-        PieceCounter(bitboard, Whitepieces, Blackpieces);
+        pieceCounter(bitboard);
         BoardState.ValidMove(bitboard, playerturn);
-        PassCounter(bitboard, playerturn);
         bitboardDisplayUpdate();
         ShowValidMoves();
-        // IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
         Debug.Log(playerturn);
     }
 
@@ -89,8 +88,9 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    public void PieceCounter(byte[,] bitboard, int Blackpieces, int Whitepieces)
+    void pieceCounter(byte[,] bitboard)
     {
+        int Blackpieces = 0, Whitepieces = 0;
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
@@ -186,41 +186,5 @@ public class Bitboard : MonoBehaviour
                 }
             }
         }
-    }
-
-    void IsGameOver(byte[,] bitboard, byte playerturn, int Blackpieces, int Whitepieces)
-    {
-        if (BoardState.CheckForNine(bitboard) == true)
-        {
-            Debug.Log("Game over");
-        }
-        if(Blackpieces > Whitepieces)
-        {
-            Debug.Log("Black player wins");
-        }
-        else if(Whitepieces > Blackpieces)
-        {
-            Debug.Log("White player wins");
-        }
-    }
-
-    public byte PassCounter(byte[,] bitboard, byte playerturn)
-    {
-        if (BoardState.CheckForNine(bitboard) == true)
-        {
-            if (playerturn == 1)
-            {
-                playerturn = 2;
-                Debug.Log("From black to white");
-            }
-            else if (playerturn == 2)
-            {
-                playerturn = 1;
-                Debug.Log("From white to black");
-            }
-            Debug.Log("Made it here");
-            BoardState.ValidMove(bitboard, playerturn);
-        }
-        return playerturn;
     }
 }
