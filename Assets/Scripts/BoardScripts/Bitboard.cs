@@ -38,11 +38,9 @@ public class Bitboard : MonoBehaviour
         bitboard[3, 4] = 1; bitboard[4, 3] = 1; bitboard[3, 3] = 2; bitboard[4, 4] = 2;
         BoardState.ValidMove(bitboard, playerturn);
         bitboardDisplayUpdate();
-        pieceCounter(bitboard);
         ShowValidMoves();
         bitboardDisplayUpdate();
         PieceCounter(bitboard, Whitepieces, Blackpieces);
-
         ShowPlayerTurn();
     }
 
@@ -160,7 +158,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    public byte PassCounter(byte[,] bitboard, byte playerturn)
+    void ShowPlayerTurn()
     {
         if (playerturn == (int)Player.black)
         {
@@ -186,21 +184,7 @@ public class Bitboard : MonoBehaviour
                     GameObject.Find(s).GetComponent<SwapTextures>().TextureSwap();
                 }
             }
-            if (playerturn == 1)
-            {
-                playerturn = 2;
-                Debug.Log("From black to white");
-            }
-            else if (playerturn == 2)
-            {
-                playerturn = 1;
-                Debug.Log("From white to black");
-            }
-            Debug.Log("Made it here");
-            BoardState.ValidMove(bitboard, playerturn);
         }
-        return playerturn;
-
     }
 
     void IsGameOver(byte[,] bitboard, byte playerturn, int Blackpieces, int Whitepieces)
@@ -217,5 +201,25 @@ public class Bitboard : MonoBehaviour
         {
             Debug.Log("White player wins");
         }
+    }
+
+    public byte PassCounter(byte[,] bitboard, byte playerturn)
+    {
+        if (BoardState.CheckForNine(bitboard) == true)
+        {
+            if (playerturn == 1)
+            {
+                playerturn = 2;
+                Debug.Log("From black to white");
+            }
+            else if (playerturn == 2)
+            {
+                playerturn = 1;
+                Debug.Log("From white to black");
+            }
+            Debug.Log("Made it here");
+            BoardState.ValidMove(bitboard, playerturn);
+        }
+        return playerturn;
     }
 }
