@@ -209,6 +209,7 @@ public class BoardRules
         else
             return false;
     }
+
     public bool CheckForNine(byte[,] bitboard)
     {
         bool returnValue = true;

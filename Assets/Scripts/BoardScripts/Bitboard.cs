@@ -8,6 +8,7 @@ public class Bitboard : MonoBehaviour
 
     public BoardRules BoardState = new BoardRules();
     public enum Player { blank = 0, black = 1, white = 2};
+    public int Blackpieces = 0, Whitepieces = 0;
     public byte playerturn = 1;
     public byte[,] bitboard = new byte[8, 8];
 
@@ -40,7 +41,7 @@ public class Bitboard : MonoBehaviour
         pieceCounter(bitboard);
         ShowValidMoves();
         bitboardDisplayUpdate();
-        pieceCounter(bitboard);
+        PieceCounter(bitboard, Whitepieces, Blackpieces);
 
         ShowPlayerTurn();
     }
@@ -66,10 +67,12 @@ public class Bitboard : MonoBehaviour
     public void bitboardUpdate()
     {
         ShowPlayerTurn();
-        pieceCounter(bitboard);
+        PieceCounter(bitboard, Whitepieces, Blackpieces);
         BoardState.ValidMove(bitboard, playerturn);
+        PassCounter(bitboard, playerturn);
         bitboardDisplayUpdate();
         ShowValidMoves();
+        // IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
         Debug.Log(playerturn);
     }
 
@@ -87,9 +90,8 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    void pieceCounter(byte[,] bitboard)
+    public void PieceCounter(byte[,] bitboard, int Blackpieces, int Whitepieces)
     {
-        int Blackpieces = 0, Whitepieces = 0;
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
@@ -158,7 +160,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    void ShowPlayerTurn()
+    public byte PassCounter(byte[,] bitboard, byte playerturn)
     {
         if (playerturn == (int)Player.black)
         {
@@ -184,6 +186,36 @@ public class Bitboard : MonoBehaviour
                     GameObject.Find(s).GetComponent<SwapTextures>().TextureSwap();
                 }
             }
+            if (playerturn == 1)
+            {
+                playerturn = 2;
+                Debug.Log("From black to white");
+            }
+            else if (playerturn == 2)
+            {
+                playerturn = 1;
+                Debug.Log("From white to black");
+            }
+            Debug.Log("Made it here");
+            BoardState.ValidMove(bitboard, playerturn);
+        }
+        return playerturn;
+
+    }
+
+    void IsGameOver(byte[,] bitboard, byte playerturn, int Blackpieces, int Whitepieces)
+    {
+        if (BoardState.CheckForNine(bitboard) == true)
+        {
+            Debug.Log("Game over");
+        }
+        if(Blackpieces > Whitepieces)
+        {
+            Debug.Log("Black player wins");
+        }
+        else if(Whitepieces > Blackpieces)
+        {
+            Debug.Log("White player wins");
         }
     }
 }

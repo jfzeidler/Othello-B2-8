@@ -46,6 +46,14 @@ public class tileScript : MonoBehaviour
             The_Board.GetComponent<Bitboard>().boardRules(selectedTile);
             placePlayer(playerturn, bitboardX, bitboardY);
             The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] = playerturn;
+            //byte[,] bitboard = The_Board.GetComponent<Bitboard>().bitboard;
+            //byte playerturn2 = The_Board.GetComponent<Bitboard>().PassCounter(bitboard, playerturn);
+
+            //if (playerturn != playerturn2)
+            //{
+            //    playerturn = playerturn2;
+            //}
+
             The_Board.GetComponent<Bitboard>().bitboardUpdate();
             isoccupied++;
         }
