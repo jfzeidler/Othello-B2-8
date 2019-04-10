@@ -44,7 +44,7 @@ public class Bitboard : MonoBehaviour
         bitboardDisplayUpdate();
         ShowValidMoves();
         bitboardDisplayUpdate();
-        PieceCounter(bitboard, Whitepieces, Blackpieces);
+        PieceCounter(bitboard);
         ShowPlayerTurn();
     }
 
@@ -68,7 +68,7 @@ public class Bitboard : MonoBehaviour
 
     public void bitboardUpdate()
     {
-        PieceCounter(bitboard, Whitepieces, Blackpieces);
+        PieceCounter(bitboard);
         BoardState.ValidMove(bitboard, playerturn);
         playerturn = PassCounter(bitboard, playerturn);
         bitboardDisplayUpdate();
@@ -92,8 +92,9 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    public void PieceCounter(byte[,] bitboard, int Blackpieces, int Whitepieces)
+    public void PieceCounter(byte[,] bitboard)
     {
+        Blackpieces = 0; Whitepieces = 0;
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
@@ -168,6 +169,7 @@ public class Bitboard : MonoBehaviour
         {
             ScorePanelTurnText.GetComponent<TextMeshProUGUI>().text = "Black";
         }
+
         else if (playerturn == (int)Player.white)
         {
             ScorePanelTurnText.GetComponent<TextMeshProUGUI>().text = "White";
@@ -191,20 +193,28 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    void IsGameOver(byte[,] bitboard, byte playerturn, int Blackpieces, int Whitepieces)
+    void IsGameOver(byte[,] bitboard, byte playerturn, int Whitepieces, int Blackpieces)
     {
+        Debug.Log("W:" + Whitepieces + "| B:" + Blackpieces);
+        if (Blackpieces > Whitepieces)
+        {
+            AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player Black Won";
+        }
+
+        else if(Whitepieces > Blackpieces)
+        {
+            AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player White Won";
+        }
+
+        else if (Whitepieces == Blackpieces)
+        {
+            AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Draw";
+        }
+
         if (BoardState.CheckForNine(bitboard) == true)
         {
             Debug.Log("Game over");
             GameOverCanvas.SetActive(true);
-        }
-        if(Blackpieces > Whitepieces)
-        {
-            AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player Black Won";
-        }
-        else if(Whitepieces > Blackpieces)
-        {
-            AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player White Won";
         }
     }
 
@@ -217,6 +227,7 @@ public class Bitboard : MonoBehaviour
                 playerturn = 2;
                 Debug.Log("No valid moves for black player");
             }
+
             else if (playerturn == 2)
             {
                 playerturn = 1;
