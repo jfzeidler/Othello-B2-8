@@ -7,8 +7,8 @@ using TMPro;
 
 public class Bitboard : MonoBehaviour
 {
-
     public BoardRules BoardState = new BoardRules();
+    public MiniMax MiniMax = new MiniMax();
     public enum Player { blank = 0, black = 1, white = 2};
     public int Blackpieces = 0, Whitepieces = 0;
     public byte playerturn = 1;
@@ -76,6 +76,8 @@ public class Bitboard : MonoBehaviour
         ShowPlayerTurn();
         IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
         Debug.Log(playerturn);
+        var test = MiniMax.ReturnRandomMove(bitboard, playerturn);
+        Debug.Log(test);
     }
 
     void bitboardDisplayUpdate()
