@@ -9,4 +9,9 @@ public class BoardButtons : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

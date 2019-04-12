@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Bitboard : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Bitboard : MonoBehaviour
     public byte playerturn = 1;
     public byte[,] bitboard = new byte[8, 8];
 
+    public GameObject AndTheWinnerIs;
+    public GameObject GameOverCanvas;
     public GameObject spawnWhitePlayer;
     public GameObject spawnDarkPlayer;
     public GameObject gameObjectToFlip;
@@ -41,8 +44,7 @@ public class Bitboard : MonoBehaviour
         pieceCounter(bitboard);
         ShowValidMoves();
         bitboardDisplayUpdate();
-        pieceCounter(bitboard);
-
+        PieceCounter(bitboard);
         ShowPlayerTurn();
     }
 
@@ -66,11 +68,13 @@ public class Bitboard : MonoBehaviour
 
     public void bitboardUpdate()
     {
-        ShowPlayerTurn();
-        pieceCounter(bitboard);
+        PieceCounter(bitboard);
         BoardState.ValidMove(bitboard, playerturn);
+        playerturn = PassCounter(bitboard, playerturn);
         bitboardDisplayUpdate();
         ShowValidMoves();
+        ShowPlayerTurn();
+        IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
         Debug.Log(playerturn);
     }
 
@@ -88,9 +92,9 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    void pieceCounter(byte[,] bitboard)
+    public void PieceCounter(byte[,] bitboard)
     {
-        int Blackpieces = 0, Whitepieces = 0;
+        Blackpieces = 0; Whitepieces = 0;
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
@@ -110,8 +114,8 @@ public class Bitboard : MonoBehaviour
 
     void pieceCounterUpdate(int Blackpieces, int Whitepieces)
     {
-        Blackcountertext.GetComponent<Text>().text = $"{Blackpieces}";
-        Whitecountertext.GetComponent<Text>().text = $"{Whitepieces}";
+        Blackcountertext.GetComponent<TextMeshProUGUI>().text = $"{Blackpieces}";
+        Whitecountertext.GetComponent<TextMeshProUGUI>().text = $"{Whitepieces}";
     }
 
     void bitboardResetTurn()
@@ -163,11 +167,12 @@ public class Bitboard : MonoBehaviour
     {
         if (playerturn == (int)Player.black)
         {
-            ScorePanelTurnText.GetComponent<Text>().text = "Black Players turn";
+            ScorePanelTurnText.GetComponent<TextMeshProUGUI>().text = "Black";
         }
+
         else if (playerturn == (int)Player.white)
         {
-            ScorePanelTurnText.GetComponent<Text>().text = "White Players turn";
+            ScorePanelTurnText.GetComponent<TextMeshProUGUI>().text = "White";
         }
     }
 
@@ -186,5 +191,51 @@ public class Bitboard : MonoBehaviour
                 }
             }
         }
+    }
+
+    void IsGameOver(byte[,] bitboard, byte playerturn, int Whitepieces, int Blackpieces)
+    {
+        Debug.Log("W:" + Whitepieces + "| B:" + Blackpieces);
+        if (Blackpieces > Whitepieces)
+        {
+            AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player Black Won";
+        }
+
+        else if(Whitepieces > Blackpieces)
+        {
+            AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player White Won";
+        }
+
+        else if (Whitepieces == Blackpieces)
+        {
+            AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Draw";
+        }
+
+        if (BoardState.CheckForNine(bitboard) == true)
+        {
+            Debug.Log("Game over");
+            GameOverCanvas.SetActive(true);
+        }
+    }
+
+    public byte PassCounter(byte[,] bitboard, byte playerturn)
+    {
+        if (BoardState.CheckForNine(bitboard) == true)
+        {
+            if (playerturn == 1)
+            {
+                playerturn = 2;
+                Debug.Log("No valid moves for black player");
+            }
+
+            else if (playerturn == 2)
+            {
+                playerturn = 1;
+                Debug.Log("No valid moves for white player");
+            }
+            Debug.Log("Made it here");
+            BoardState.ValidMove(bitboard, playerturn);
+        }
+        return playerturn;
     }
 }
