@@ -153,6 +153,7 @@ public class Bitboard : MonoBehaviour
         string playerToFlip = "Player-" + j + i;
         Vector3 vectorPos = new Vector3(i, -0.85f, j);
         gameObjectToFlip = GameObject.Find(playerToFlip);
+        Debug.Log(playerToFlip);
         Destroy(gameObjectToFlip);
 
         if (playerturn == 2)
