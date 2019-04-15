@@ -228,50 +228,6 @@ public class BoardRules
 
 }
 
-//Dette Skal over og så i sin egen .cs fil
-public class MiniMax : BoardRules
-{
-
-    public int[,] Evaluation = {
-        {10000, -3000,  1000,    800,    800, 1000, -3000, 10000},
-        {-3000, -5000,  -450,   -500,   -500, -450, -5000, -3000},
-        { 1000,  -450,    30,     10,     10,   30,  -450,  1000},
-        {  800,  -500,    10,     50,     50,   10,  -500,   800},
-        {  800,  -500,    10,     50,     50,   10,  -500,   800},
-        { 1000,  -450,    30,     10,     10,   30,  -450,  1000},
-        {-3000, -5000,  -450,   -500,   -500, -450, -5000, -3000},
-        {10000, -3000,  1000,    800,    800, 1000, -3000, 10000}
-    };
-    
-    void UpdateMinimaxBoard(byte[,] Bitboard)
-    {
-        _minimaxBitboard = Bitboard;
-    }
-
-    // Dette skal ikke være void, hvis den skal retunere et felt, hvor en brik skal placeres
-    public byte[] ReturnRandomMove(byte[,] bitboard, int playerturn)
-    {
-        _minimaxBitboard = bitboard;
-        byte[] CPUBestMove = new byte[2];
-        CPUBestMove[0] = 90; CPUBestMove[1] = 90;
-        //Sætter en brik det første sted der opstår en 9'er (dvs første validmove)
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                if (_minimaxBitboard[i,j] == 9)
-                    {
-                    CPUBestMove[0] = (byte)i; CPUBestMove[1] = (byte)j;
-                    return CPUBestMove;
-                    }
-            }
-        }
-        return CPUBestMove;
-        // if [i,j] == 9, sæt en brik
-    }
-
-}
-
 /*
 
 // C++ program to find the next optimal move for 

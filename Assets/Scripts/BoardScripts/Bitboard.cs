@@ -146,7 +146,7 @@ public class Bitboard : MonoBehaviour
         string playerToFlip = "Player_" + j + i;
         Vector3 vectorPos = new Vector3(i, -0.85f, j);
         DestroyImmediate(GameObject.Find(playerToFlip));
-        Debug.Log(playerToFlip);
+        //Debug.Log(playerToFlip);
 
         if (playerturn == 2)
         {
@@ -231,7 +231,6 @@ public class Bitboard : MonoBehaviour
                 playerturn = 1;
                 Debug.Log("No valid moves for white player");
             }
-            Debug.Log("Made it here");
             BoardState.ValidMove(bitboard, playerturn);
         }
         return playerturn;
@@ -243,7 +242,7 @@ public class Bitboard : MonoBehaviour
         {
             int temp = CPUBestMove[1] + 65;
             char c = (char)temp;
-            Debug.Log("CPU: " + (CPUBestMove[0] + 1) + " " + c);
+            Debug.Log("CPU: " + c + (CPUBestMove[0] + 1));
             Tiles.GetComponent<tileScript>().MakeMove(CPUBestMove[1], CPUBestMove[0], playerturn);
         }
     }
