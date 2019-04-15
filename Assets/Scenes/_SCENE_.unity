@@ -5205,6 +5205,7 @@ MonoBehaviour:
   Blackpieces: 0
   Whitepieces: 0
   playerturn: 1
+  Tiles: {fileID: 1219122927}
   AndTheWinnerIs: {fileID: 2118630178}
   GameOverCanvas: {fileID: 1616836163}
   spawnWhitePlayer: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
@@ -6127,6 +6128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1219122928}
+  - component: {fileID: 1219122929}
   m_Layer: 0
   m_Name: Tiles
   m_TagString: Untagged
@@ -6212,6 +6214,23 @@ Transform:
   m_Father: {fileID: 1051862552}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1219122929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219122927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20017f4afc30c646be6e9e1e8aa5ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  The_Board: {fileID: 1051862551}
+  spawnWhitePlayer: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+    type: 3}
+  spawnDarkPlayer: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+    type: 3}
 --- !u!1 &1223005698
 GameObject:
   m_ObjectHideFlags: 0
