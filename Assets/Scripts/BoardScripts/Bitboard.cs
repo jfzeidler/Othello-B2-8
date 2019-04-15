@@ -7,13 +7,14 @@ using TMPro;
 
 public class Bitboard : MonoBehaviour
 {
-
     public BoardRules BoardState = new BoardRules();
+    public MiniMax MiniMax = new MiniMax();
     public enum Player { blank = 0, black = 1, white = 2};
     public int Blackpieces = 0, Whitepieces = 0;
     public byte playerturn = 1;
     public byte[,] bitboard = new byte[8, 8];
 
+    public GameObject Tiles;
     public GameObject AndTheWinnerIs;
     public GameObject GameOverCanvas;
     public GameObject spawnWhitePlayer;
@@ -57,11 +58,8 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    public void boardRules(string Tile)
+    public void boardRules(int bitboardX, int bitboardY)
     {
-        var Char = Tile[0];
-        var bitboardX = char.ToUpper(Char) - 65;
-        var bitboardY = Tile[1] - '1';
         BoardState.CaptureEnemyPlayer(bitboard, bitboardY, bitboardX, playerturn);
         bitboardResetTurn();
     }
@@ -75,7 +73,14 @@ public class Bitboard : MonoBehaviour
         ShowValidMoves();
         ShowPlayerTurn();
         IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
-        Debug.Log(playerturn);
+        
+        if (playerturn == (int)Player.white)
+        {
+            byte[] CPUBestMove = new byte[2];
+            CPUBestMove = MiniMax.ReturnRandomMove(bitboard, playerturn);
+            CPUTurn(CPUBestMove);
+        }
+        
     }
 
     void bitboardDisplayUpdate()
@@ -195,7 +200,7 @@ public class Bitboard : MonoBehaviour
 
     void IsGameOver(byte[,] bitboard, byte playerturn, int Whitepieces, int Blackpieces)
     {
-        Debug.Log("W:" + Whitepieces + "| B:" + Blackpieces);
+        //Debug.Log("W:" + Whitepieces + "| B:" + Blackpieces);
         if (Blackpieces > Whitepieces)
         {
             AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player Black Won";
@@ -237,5 +242,16 @@ public class Bitboard : MonoBehaviour
             BoardState.ValidMove(bitboard, playerturn);
         }
         return playerturn;
+    }
+    
+    void CPUTurn(byte[] CPUBestMove)
+    {
+        if (CPUBestMove[0] < 8 && CPUBestMove[1] < 8)
+        {
+            int temp = CPUBestMove[1] + 65;
+            char c = (char)temp;
+            Debug.Log("CPU: " + (CPUBestMove[0] + 1) + " " + c);
+            Tiles.GetComponent<tileScript>().MakeMove(CPUBestMove[1], CPUBestMove[0], playerturn);
+        }
     }
 }
