@@ -5538,8 +5538,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5dbfad451e53c46ab22337ff72917c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Blackpieces: 0
-  Whitepieces: 0
+  Blackpieces: 2
+  Whitepieces: 2
   playerturn: 1
   Tiles: {fileID: 1219122927}
   AndTheWinnerIs: {fileID: 2118630178}
