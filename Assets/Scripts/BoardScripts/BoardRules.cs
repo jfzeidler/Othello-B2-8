@@ -265,7 +265,6 @@ public class MiniMax : BoardRules
             }
         }
         return (50, 50);
-        // if [i,j] == 9, sæt en brik
     }
 
 }

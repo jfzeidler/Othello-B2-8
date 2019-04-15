@@ -68,15 +68,19 @@ public class Bitboard : MonoBehaviour
 
     public void bitboardUpdate()
     {
-        PieceCounter(bitboard);
-        BoardState.ValidMove(bitboard, playerturn);
-        playerturn = PassCounter(bitboard, playerturn);
+        PieceCounter(bitboard); //Tælder antal brikker
+        BoardState.ValidMove(bitboard, playerturn); //tjekker og retunere antallet er mulige træk
+        playerturn = PassCounter(bitboard, playerturn); //Passcounter = har spiller/bot mulige træk? Hvis ikke, send tur vider
         bitboardDisplayUpdate();
         ShowValidMoves();
         ShowPlayerTurn();
         IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
         Debug.Log(playerturn);
         var test = MiniMax.ReturnRandomMove(bitboard, playerturn);
+        //Sådan her tilgås de enkelte elementer i en touple!!
+        //Eksempel: bitboard[test.Item1, test.Item2] = 5;
+
+
         Debug.Log(test);
     }
 
