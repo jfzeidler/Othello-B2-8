@@ -602,7 +602,7 @@ PlayerSettings:
     Collab: 0
     ErrorHub: 0
     Hub: 0
-    UNet: 0
+    UNet: 1
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -622,10 +622,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 22ce54ed-7a7c-48fc-9c05-1495feb74ef1
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Othello (3)
+  organizationId: fragneborn
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
