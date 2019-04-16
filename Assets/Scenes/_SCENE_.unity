@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -184,6 +184,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &26977810 stripped
@@ -798,6 +810,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &163958042
@@ -872,6 +896,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &170076733
@@ -1021,6 +1057,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &196402323 stripped
@@ -1101,6 +1149,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &214138667
@@ -1388,6 +1448,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &260008425 stripped
@@ -1468,6 +1540,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &285594955
@@ -1542,6 +1626,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &292050805 stripped
@@ -1622,6 +1718,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &327132680
@@ -1696,6 +1804,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &327942357
@@ -1770,6 +1890,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &332142224
@@ -1936,6 +2068,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &381705871
@@ -2010,6 +2154,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &386293776
@@ -2464,6 +2620,18 @@ PrefabInstance:
       propertyPath: isoccupied
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &521866543
@@ -2538,6 +2706,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &528974469 stripped
@@ -2931,6 +3111,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &612616892
@@ -3005,6 +3197,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &613095691
@@ -3079,6 +3283,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &635238736
@@ -3187,6 +3403,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &671707830 stripped
@@ -3279,6 +3507,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &695661540
@@ -3723,7 +3963,7 @@ PrefabInstance:
     - target: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
       propertyPath: m_Name
-      value: Player-43
+      value: Player_43
       objectReference: {fileID: 0}
     - target: {fileID: 1803308744343299259, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
@@ -3854,6 +4094,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &821590710
@@ -4095,6 +4347,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &857637735
@@ -4169,6 +4433,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &878678546 stripped
@@ -4255,6 +4531,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &918460649
@@ -4329,6 +4617,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &924256967 stripped
@@ -4628,6 +4928,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &995703121 stripped
@@ -4708,6 +5020,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1002858780
@@ -5056,6 +5380,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1035496335
@@ -5068,7 +5404,7 @@ PrefabInstance:
     - target: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
         type: 3}
       propertyPath: m_Name
-      value: Player-33
+      value: Player_33
       objectReference: {fileID: 0}
     - target: {fileID: 7057638396695703813, guid: feab44380df934448af41528b45243ec,
         type: 3}
@@ -5212,7 +5548,6 @@ MonoBehaviour:
     type: 3}
   spawnDarkPlayer: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
     type: 3}
-  gameObjectToFlip: {fileID: 0}
   BitboardDisplay: {fileID: 1086227241}
   Blackcountertext: {fileID: 1751374260}
   Whitecountertext: {fileID: 1821975511}
@@ -5289,6 +5624,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1084259196
@@ -5363,6 +5710,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1085717750 stripped
@@ -5729,6 +6088,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1137392200 stripped
@@ -5809,6 +6180,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &1180064307
@@ -6510,6 +6893,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1233408039
@@ -6584,6 +6979,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &1290992683
@@ -6819,6 +7226,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1311589608 stripped
@@ -7293,6 +7712,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &1415570412
@@ -7574,6 +8005,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1423860450
@@ -7648,6 +8091,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1432627470
@@ -7732,6 +8187,18 @@ PrefabInstance:
       propertyPath: isoccupied
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1436614453 stripped
@@ -7957,7 +8424,7 @@ PrefabInstance:
     - target: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
       propertyPath: m_Name
-      value: Player-34
+      value: Player_34
       objectReference: {fileID: 0}
     - target: {fileID: 1803308744343299259, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
@@ -8514,6 +8981,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1546367506 stripped
@@ -8606,6 +9085,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1596631902 stripped
@@ -8798,6 +9289,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1640017461 stripped
@@ -8884,6 +9387,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1689816053
@@ -8958,6 +9473,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1695759187 stripped
@@ -9038,6 +9565,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &1704810698
@@ -9178,6 +9717,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1720229991 stripped
@@ -9268,6 +9819,18 @@ PrefabInstance:
       propertyPath: isoccupied
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1731938932
@@ -9342,6 +9905,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1737441092
@@ -9426,6 +10001,18 @@ PrefabInstance:
       propertyPath: isoccupied
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1746024700 stripped
@@ -9834,6 +10421,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &1788714939
@@ -10053,7 +10652,7 @@ PrefabInstance:
     - target: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
         type: 3}
       propertyPath: m_Name
-      value: Player-44
+      value: Player_44
       objectReference: {fileID: 0}
     - target: {fileID: 7057638396695703813, guid: feab44380df934448af41528b45243ec,
         type: 3}
@@ -10384,6 +10983,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &1846672664
@@ -10619,6 +11230,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1858367415
@@ -10693,6 +11316,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1866399117
@@ -10767,6 +11402,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1872277601 stripped
@@ -10917,6 +11564,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1950970461
@@ -10991,6 +11650,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1964212939
@@ -11065,6 +11736,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1982051081
@@ -11139,6 +11822,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &1994191187
@@ -11354,6 +12049,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &2017394848
@@ -11428,6 +12135,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &2032537533 stripped
@@ -11508,6 +12227,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &2082979254 stripped
@@ -11588,6 +12319,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &2118630178
@@ -11829,6 +12572,18 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &6858631199314584817
@@ -12041,5 +12796,17 @@ PrefabInstance:
       propertyPath: The_Board
       value: 
       objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: spawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
