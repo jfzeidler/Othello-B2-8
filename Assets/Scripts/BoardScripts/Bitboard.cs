@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Threading;
 
 public class Bitboard : MonoBehaviour
 {
@@ -19,7 +20,6 @@ public class Bitboard : MonoBehaviour
     public GameObject GameOverCanvas;
     public GameObject spawnWhitePlayer;
     public GameObject spawnDarkPlayer;
-    public GameObject gameObjectToFlip;
     public GameObject BitboardDisplay;
     public GameObject Blackcountertext;
     public GameObject Whitecountertext;
@@ -73,14 +73,7 @@ public class Bitboard : MonoBehaviour
         ShowValidMoves();
         ShowPlayerTurn();
         IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
-
-        if (playerturn == (int)Player.white)
-        {
-            byte[] CPUBestMove = new byte[2];
-            CPUBestMove = MiniMax.ReturnRandomMove(bitboard, playerturn);
-            CPUTurn(CPUBestMove);
-        }
-
+        PlayerToMakeMove(playerturn);
     }
 
     void bitboardDisplayUpdate()
@@ -150,22 +143,21 @@ public class Bitboard : MonoBehaviour
 
     void flipIt(int i, int j)
     {
-        string playerToFlip = "Player-" + j + i;
+        string playerToFlip = "Player_" + j + i;
         Vector3 vectorPos = new Vector3(i, -0.85f, j);
-        gameObjectToFlip = GameObject.Find(playerToFlip);
+        DestroyImmediate(GameObject.Find(playerToFlip));
         Debug.Log(playerToFlip);
-        Destroy(gameObjectToFlip);
 
         if (playerturn == 2)
         {
-            var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity);
-            newObject.name = "Player-" + j + i;
+            var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity) as GameObject;
+            newObject.name = "Player_" + j + i;
         }
 
         if (playerturn == 1)
         {
-            var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity);
-            newObject.name = "Player-" + j + i;
+            var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity)as GameObject;
+            newObject.name = "Player_" + j + i;
         }
     }
 
@@ -253,6 +245,16 @@ public class Bitboard : MonoBehaviour
             char c = (char)temp;
             Debug.Log("CPU: " + (CPUBestMove[0] + 1) + " " + c);
             Tiles.GetComponent<tileScript>().MakeMove(CPUBestMove[1], CPUBestMove[0], playerturn);
+        }
+    }
+
+    void PlayerToMakeMove(byte playerturn)
+    {
+        if (playerturn == (int)Player.white)
+        {
+            byte[] CPUBestMove = new byte[2];
+            CPUBestMove = MiniMax.ReturnRandomMove(bitboard, playerturn);
+            CPUTurn(CPUBestMove);
         }
     }
 }

@@ -5,16 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    void Awake()
+    {
+        
+    }
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }
-    }
-    public void PlayGame()
-    {
-        SceneManager.LoadScene(1);
+
     }
 
     public void ExitGame()

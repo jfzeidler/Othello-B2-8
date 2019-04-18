@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -50,16 +51,16 @@ public class tileScript : MonoBehaviour
         //If black turn
         if (x == 1)
         {
-            var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity);
-            newObject.name = "Player-" + y + z;
+            var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity) as GameObject;
+            newObject.name = "Player_" + y + z;
             The_Board.GetComponent<Bitboard>().playerturn += 1;
         }
 
         //If white turn
         else if (x == 2)
         {
-            var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity);
-            newObject.name = "Player-" + y + z;
+            var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity) as GameObject;
+            newObject.name = "Player_" + y + z;
             The_Board.GetComponent<Bitboard>().playerturn -= 1;
         }
     }
@@ -79,5 +80,4 @@ public class tileScript : MonoBehaviour
         The_Board.GetComponent<Bitboard>().bitboard[yPos, xPos] = playerturn;
         The_Board.GetComponent<Bitboard>().bitboardUpdate();
     }
-
 }
