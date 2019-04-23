@@ -299,12 +299,14 @@ public class Bitboard : MonoBehaviour
 
     void PlayerToMakeMove(byte playerturn)
     {
+        int maxDepth = 5;
+        int currentDepth = 1;
         // Active AI if the playerturn is White
         if (playerturn == (int)Player.white)
         {
             byte[] CPUBestMove = new byte[2];
             // Get the best move from ReturnRandomMove from MiniMax.cs
-            CPUBestMove = MiniMax.ReturnRandomMove(bitboard, playerturn);
+            CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth);
             // Perform the move
             CPUTurn(CPUBestMove);
         }
