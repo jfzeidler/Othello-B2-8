@@ -83,22 +83,16 @@ public class Bitboard : MonoBehaviour
 
     public void bitboardUpdate()
     {
-        // Update the scoreboard
-        PieceCounter(bitboard);
-        // Call ValidMove from BoardRules.cs
-        BoardState.ValidMove(bitboard, playerturn);
-        // Check if there are available moves for the current player
-        playerturn = PassCounter(bitboard, playerturn);
-        if (DEBUG == 1)
-            bitboardDisplayUpdate();
-        // Show valid moves on board
+        PieceCounter(bitboard); //Tælder antal brikker
+        BoardState.ValidMove(bitboard, playerturn); //tjekker og retunere antallet er mulige træk
+        playerturn = PassCounter(bitboard, playerturn); //Passcounter = har spiller/bot mulige træk? Hvis ikke, send tur vider
+        bitboardDisplayUpdate();
         ShowValidMoves();
         // Show current player
         ShowPlayerTurn();
         // Check if theres a Game Over Senario
         IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
-        // Give the current player the right to make a move
-        PlayerToMakeMove(playerturn);       
+        PlayerToMakeMove(playerturn);
     }
 
     void bitboardDisplayUpdate()
@@ -184,7 +178,7 @@ public class Bitboard : MonoBehaviour
 
         if (playerturn == 2)
         {
-            // Place a white piece on the board 
+            // Place a white piece on the board
             var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity) as GameObject;
             // Naming the piece for the capture rule
             newObject.name = "Player_" + j + i;
@@ -192,7 +186,7 @@ public class Bitboard : MonoBehaviour
 
         if (playerturn == 1)
         {
-            // Place a black piece on the board 
+            // Place a black piece on the board
             var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity)as GameObject;
             // Naming the piece for the capture rule
             newObject.name = "Player_" + j + i;
@@ -283,7 +277,7 @@ public class Bitboard : MonoBehaviour
         // return the new playerturn
         return playerturn;
     }
-    
+
     void CPUTurn(byte[] CPUBestMove)
     {
         // If the move is inside the bitboard

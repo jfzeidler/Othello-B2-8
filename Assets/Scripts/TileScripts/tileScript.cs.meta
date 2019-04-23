@@ -3,7 +3,11 @@ guid: b20017f4afc30c646be6e9e1e8aa5ebe
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - spawnPos: {instanceID: 0}
+  - The_Board: {instanceID: 0}
+  - spawnWhitePlayer: {instanceID: 0}
+  - spawnDarkPlayer: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
