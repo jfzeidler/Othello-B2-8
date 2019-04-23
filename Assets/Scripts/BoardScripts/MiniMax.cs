@@ -44,22 +44,22 @@ public class MiniMax : BoardRules
         {
             AIScore += Evaluation[(int)move.X, (int)move.Y];
         }
-        int result = 0;
 
-        if(playerturn == 1)
+        if (playerturn == 1)
         {
-            result = playerScore - AIScore;
+            return (playerScore - AIScore);
         }
-        else if(playerturn == 2)
+        else if (playerturn == 2)
         {
-            result = AIScore - playerScore;
+            return (AIScore - playerScore);
         }
-
-        return -1; //PLACEHOLDER
+        else
+            throw new NullReferenceException();
     }
+
     public List<Vector2> MoveList(byte[,] bitboard, byte playerturn)
     {
-        List<Vector2> moveList = new List<Vector2>();
+        List<Vector2> list = new List<Vector2>();
         if (playerturn == 1)
         {
             for (int i = 0; i < 8; i++)
@@ -68,7 +68,7 @@ public class MiniMax : BoardRules
                 {
                     if(bitboard[i,j] == 9)
                     {
-                        moveList.Add(new Vector2(i, j));
+                        list.Add(new Vector2(i, j));
                     }
                 }
             }
@@ -81,63 +81,46 @@ public class MiniMax : BoardRules
                 {
                     if (bitboard[i, j] == 9)
                     {
-                        moveList.Add(new Vector2(i, j));
+                        list.Add(new Vector2(i, j));
                     }
                 }
             }
         }
-        return moveList;
+        return list;
     }
+
     public MoveStatus MiniMaxAlgorithm(byte[,] bitboard, byte playerturn, int maxDepth, int currentDepth)
     {
-        if(currentDepth == maxDepth)
+        if (currentDepth == maxDepth )
         {
             return new MoveStatus(-1, -1, EvaluateBoard(bitboard, playerturn));
         }
-        else
-            return new MoveStatus(-1, -1, EvaluateBoard(bitboard, playerturn)); //PLACEHOLDER
 
+        MoveStatus ms = new MoveStatus(-1, -1, 0);
+        
+        if(playerturn == 2)
+        {
+            ms.score = int.MinValue;
+        }
+        else if (playerturn == 1)
+        {
+            ms.score = int.MaxValue;
+        }
+        List<Vector2> allMoves;
+
+        if(playerturn == 2)
+        {
+            allMoves = MoveList(bitboard, 2);
+            foreach(Vector2 move in allMoves)
+            {
+                byte[,] newBoard = GetNextBoardState(bitboard, playerturn, (int)move.X, (int)move.Y);
+            }
+        }
     }
 
     void UpdateMinimaxBoard(byte[,] Bitboard)
     {
         _minimaxBitboard = Bitboard;
-    }
-
-    public byte[] ReturnRandomMove(byte[,] bitboard, int playerturn)
-    {
-        List<byte[]> PossibleMoves = new List<byte[]>();
-
-        _minimaxBitboard = bitboard;
-        byte[] CPUBestMove = new byte[2];
-        CPUBestMove[0] = 90; CPUBestMove[1] = 90;
-        
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 8; j++)
-            {
-                if (_minimaxBitboard[i, j] == 9)
-                {
-                    byte[] CPUPossibleMove = new byte[2];
-                    CPUPossibleMove[0] = (byte)i; CPUPossibleMove[1] = (byte)j;
-                    PossibleMoves.Add(CPUPossibleMove);
-                }
-            }
-        }
-
-        int tempCPUBestMove = 0;
-
-        foreach (byte[] possibleMove in PossibleMoves)
-        {
-            if (Evaluation[possibleMove[0], possibleMove[1]] > tempCPUBestMove || tempCPUBestMove == 0)
-            {
-                tempCPUBestMove = Evaluation[possibleMove[0], possibleMove[1]];
-                CPUBestMove = possibleMove;
-            }
-        }
-
-        return CPUBestMove;
-        // if [i,j] == 9, sæt en brik
     }
 }
 
@@ -235,3 +218,38 @@ public class AIReversi {
 		return ms;
 	}
 }*/
+/*   public byte[] ReturnRandomMove(byte[,] bitboard, int playerturn)
+    {
+        List<byte[]> PossibleMoves = new List<byte[]>();
+
+        _minimaxBitboard = bitboard;
+        byte[] CPUBestMove = new byte[2];
+        CPUBestMove[0] = 90; CPUBestMove[1] = 90;
+        
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                if (_minimaxBitboard[i, j] == 9)
+                {
+                    byte[] CPUPossibleMove = new byte[2];
+                    CPUPossibleMove[0] = (byte)i; CPUPossibleMove[1] = (byte)j;
+                    PossibleMoves.Add(CPUPossibleMove);
+                }
+            }
+        }
+
+        int tempCPUBestMove = 0;
+
+        foreach (byte[] possibleMove in PossibleMoves)
+        {
+            if (Evaluation[possibleMove[0], possibleMove[1]] > tempCPUBestMove || tempCPUBestMove == 0)
+            {
+                tempCPUBestMove = Evaluation[possibleMove[0], possibleMove[1]];
+                CPUBestMove = possibleMove;
+            }
+        }
+
+        return CPUBestMove;
+        // if [i,j] == 9, sæt en brik
+    }*/
