@@ -14,6 +14,19 @@ public class Bitboard : MonoBehaviour
     public int Blackpieces = 0, Whitepieces = 0;
     public byte playerturn = 1;
     byte DEBUG = 1;
+    int CPUPoints = 0;
+
+    public int[,] Evaluation = {
+        // A       B     C     D     E     F      G      H
+        {10000, -3000, 1000,  800,  800, 1000, -3000, 10000}, // 1
+        {-3000, -5000, -450, -500, -500, -450, -5000, -3000}, // 2
+        { 1000,  -450,   30,   10,   10,   30,  -450,  1000}, // 3
+        {  800,  -500,   10,   50,   50,   10,  -500,   800}, // 4
+        {  800,  -500,   10,   50,   50,   10,  -500,   800}, // 5
+        { 1000,  -450,   30,   10,   10,   30,  -450,  1000}, // 6
+        {-3000, -5000, -450, -500, -500, -450, -5000, -3000}, // 7
+        {10000, -3000, 1000,  800,  800, 1000, -3000, 10000}  // 8
+    };
 
     public byte[,] bitboard = {
       // A  B  C  D  E  F  G  H
@@ -90,13 +103,20 @@ public class Bitboard : MonoBehaviour
         // Check if there are available moves for the current player
         playerturn = PassCounter(bitboard, playerturn);
         if (DEBUG == 1)
+        {
             bitboardDisplayUpdate();
-        if (playerturn == 2)
+
+        }
+        if (playerturn == 1)
+        {
+            // Show valid moves on board
+            ShowValidMoves();
+        }
+
+        else if (playerturn == 2)
         {
             PlayerToMakeMove(playerturn);
         }
-        // Show valid moves on board
-        ShowValidMoves();
         // Show current player
         ShowPlayerTurn();
         // Check if theres a Game Over Senario
@@ -167,6 +187,7 @@ public class Bitboard : MonoBehaviour
                 // If theres a captured piece, change the piece
                 else if (bitboard[i, j] == 5)
                 {
+                    Debug.Log(i + " " + j);
                     // Change the pieces thats captured
                     flipIt(i, j);
                     // Change the bitboard value to the current player
@@ -297,6 +318,7 @@ public class Bitboard : MonoBehaviour
             Debug.Log("CPU: " + c + (CPUBestMove[0] + 1));
             // Call MakeMove from tileScript.cs
             Tiles.GetComponent<tileScript>().MakeMove(CPUBestMove[1], CPUBestMove[0], playerturn);
+
         }
     }
 
@@ -310,8 +332,35 @@ public class Bitboard : MonoBehaviour
             byte[] CPUBestMove = new byte[2];
             // Get the best move from ReturnRandomMove from MiniMax.cs
             CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MaxValue, int.MinValue);
+            // Remove the red tiles, since the AI doesn't need them
+            ShowValidMoves();
+            // Remove unintended 5's
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (bitboard[i, j] == 5)
+                    {
+                        bitboard[i, j] = 1;
+                    }
+                }
+            }
             // Perform the move
             CPUTurn(CPUBestMove);
+            ShowAIPoints(CPUBestMove);
+        }
+    }
+
+    void ShowAIPoints(byte[] CPUBestMove)
+    {
+        if (CPUBestMove[0] == null || CPUBestMove[1] == null)
+        {
+
+        } 
+        else 
+        {
+            CPUPoints += Evaluation[CPUBestMove[0], CPUBestMove[1]];
+            Debug.Log("CPU Points: " + CPUPoints);
         }
     }
 }

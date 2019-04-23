@@ -27,10 +27,6 @@ public class tileScript : MonoBehaviour
     // What to do when clicking on a tile on the board
     void OnMouseUp()
     {
-        if (DEBUG == 1)
-        {
-            DEBUGLOG(The_Board.GetComponent<Bitboard>().bitboard);
-        }
 
         // Get the name of hte currently sellected tile
         string selectedTile = gameObject.ToString();
@@ -87,6 +83,10 @@ public class tileScript : MonoBehaviour
 
     public void MakeMove (int xPos, int yPos, byte playerturn)
     {
+        if (DEBUG == 1)
+        {
+            DEBUGLOG(The_Board.GetComponent<Bitboard>().bitboard);
+        }
         // Call boardRules from Bitboard.cs
         The_Board.GetComponent<Bitboard>().boardRules(xPos, yPos);
         // Place a piece on the sellected tile
