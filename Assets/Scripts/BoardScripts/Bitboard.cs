@@ -11,7 +11,6 @@ public class Bitboard : MonoBehaviour
     public BoardRules BoardState = new BoardRules();
     public MiniMax MiniMax = new MiniMax();
     public enum Player { blank = 0, black = 1, white = 2};
-    public int Blackpieces = 0, Whitepieces = 0;
     public byte playerturn = 1;
     byte DEBUG = 1;
     int CPUPoints = 0;
@@ -69,7 +68,6 @@ public class Bitboard : MonoBehaviour
         }
         // Call ValidMove from BoardRules.cs
         BoardState.ValidMove(bitboard, playerturn);
-        // Show valid moves on board
         ShowValidMoves();
         // Show current player
         ShowPlayerTurn();
@@ -208,7 +206,7 @@ public class Bitboard : MonoBehaviour
 
         if (playerturn == 2)
         {
-            // Place a white piece on the board 
+            // Place a white piece on the board
             var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity) as GameObject;
             // Naming the piece for the capture rule
             newObject.name = "Player_" + j + i;
@@ -216,7 +214,7 @@ public class Bitboard : MonoBehaviour
 
         if (playerturn == 1)
         {
-            // Place a black piece on the board 
+            // Place a black piece on the board
             var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity)as GameObject;
             // Naming the piece for the capture rule
             newObject.name = "Player_" + j + i;
@@ -307,7 +305,7 @@ public class Bitboard : MonoBehaviour
         // return the new playerturn
         return playerturn;
     }
-    
+
     void CPUTurn(byte[] CPUBestMove)
     {
         // If the move is inside the bitboard
@@ -356,8 +354,8 @@ public class Bitboard : MonoBehaviour
         if (CPUBestMove[0] == null || CPUBestMove[1] == null)
         {
 
-        } 
-        else 
+        }
+        else
         {
             CPUPoints += Evaluation[CPUBestMove[0], CPUBestMove[1]];
             Debug.Log("CPU Points: " + CPUPoints);
