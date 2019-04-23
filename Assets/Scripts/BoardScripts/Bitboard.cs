@@ -14,6 +14,7 @@ public class Bitboard : MonoBehaviour
     public byte playerturn = 1;
     byte DEBUG = 1;
     int CPUPoints = 0;
+    int Blackpieces = 0; int Whitepieces = 0;
 
     public int[,] Evaluation = {
         // A       B     C     D     E     F      G      H
@@ -351,7 +352,7 @@ public class Bitboard : MonoBehaviour
 
     void ShowAIPoints(byte[] CPUBestMove)
     {
-        if (CPUBestMove[0] == null || CPUBestMove[1] == null)
+        if (CPUBestMove[0] == 0 || CPUBestMove[1] == 0)
         {
 
         }
