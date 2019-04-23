@@ -19,7 +19,7 @@ public class BoardRules
         new Vector2(1, -1)
         };
 
-    public byte[,] Bitboard { get => bitboard; set => bitboard = value; }
+    public byte[,] _minimaxBitboard { get => bitboard; set => bitboard = value; }
 
     public void ValidMove(byte[,] bitboard, byte playerturn)
     {
@@ -225,4 +225,35 @@ public class BoardRules
         }
         return returnValue;
     }
+
+    byte [,] bitboardOnlyResetTurn(byte[,] bitboard, byte playerturn)
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                // If theres an available move, change the texture of the current tile
+                if (bitboard[i, j] == 9)
+                {
+                    bitboard[i, j] = 0;
+                }
+
+                // If theres a captured piece, change the piece
+                else if (bitboard[i, j] == 5)
+                {
+                    // Change the bitboard value to the current player
+                    bitboard[i, j] = playerturn;
+                }
+            }
+        }
+        return bitboard;
+    }
+
+/*    byte[,] GetNextBoardState()
+    {
+        bitboardOnlyResetTurn(bitboard, playerturn);
+        CaptureEnemyPlayer(bitboard, bitboardY, bitboardX, playerturn);
+        ValidMove(bitboard, playerturn);
+    }*/
+
 }
