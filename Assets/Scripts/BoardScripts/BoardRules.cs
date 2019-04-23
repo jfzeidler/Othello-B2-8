@@ -256,5 +256,4 @@ public class BoardRules
         ValidMove(bitboard, playerturn);
         return bitboard;
     }
-
 }
