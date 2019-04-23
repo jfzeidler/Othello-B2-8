@@ -1,10 +1,22 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
 
+public class MoveStatus
+{
+    public int row, col, score;
+
+    public MoveStatus(int Row, int Col, int Score)
+    {
+        row = Row;
+        col = Col;
+        score = Score;
+    }
+}
 public class MiniMax : BoardRules
 {
-
     public int[,] Evaluation = {
         // A       B      C       D       E     F      G      H
         {10000, -3000,  1000,    800,    800, 1000, -3000, 10000}, // 1
@@ -16,7 +28,77 @@ public class MiniMax : BoardRules
         {-3000, -5000,  -450,   -500,   -500, -450, -5000, -3000}, // 7
         {10000, -3000,  1000,    800,    800, 1000, -3000, 10000}  // 8
     };
-    
+    public int EvaluateBoard(byte[,] bitboard, byte playerturn)
+    {
+        List<Vector2> playerMoves = MoveList(bitboard, playerturn);
+        List<Vector2> AIMoves = MoveList(bitboard, playerturn);
+
+        int playerScore = 0;
+        int AIScore = 0;
+
+        foreach(Vector2 move in playerMoves)
+        {
+            playerScore += Evaluation[(int)move.X, (int)move.Y];
+        }
+        foreach (Vector2 move in playerMoves)
+        {
+            AIScore += Evaluation[(int)move.X, (int)move.Y];
+        }
+        int result = 0;
+
+        if(playerturn == 1)
+        {
+            result = playerScore - AIScore;
+        }
+        else if(playerturn == 2)
+        {
+            result = AIScore - playerScore;
+        }
+
+        return -1; //PLACEHOLDER
+    }
+    public List<Vector2> MoveList(byte[,] bitboard, byte playerturn)
+    {
+        List<Vector2> moveList = new List<Vector2>();
+        if (playerturn == 1)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if(bitboard[i,j] == 9)
+                    {
+                        moveList.Add(new Vector2(i, j));
+                    }
+                }
+            }
+        }
+        else if(playerturn == 2)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (bitboard[i, j] == 9)
+                    {
+                        moveList.Add(new Vector2(i, j));
+                    }
+                }
+            }
+        }
+        return moveList;
+    }
+    public MoveStatus MiniMaxAlgorithm(byte[,] bitboard, byte playerturn, int maxDepth, int currentDepth)
+    {
+        if(currentDepth == maxDepth)
+        {
+            return new MoveStatus(-1, -1, EvaluateBoard(bitboard, playerturn));
+        }
+        else
+            return new MoveStatus(-1, -1, EvaluateBoard(bitboard, playerturn)); //PLACEHOLDER
+
+    }
+
     void UpdateMinimaxBoard(byte[,] Bitboard)
     {
         _minimaxBitboard = Bitboard;
@@ -59,159 +141,97 @@ public class MiniMax : BoardRules
     }
 }
 
+
 /*
+public class AIReversi {
 
-// C++ program to find the next optimal move for 
-// a player 
-#include<bits/stdc++.h> 
-using namespace std; 
-  
-struct Move 
-{ 
-    int row, col; 
-}; 
-  
-char player = 'x', opponent = 'o'; 
-  
-// This function returns true if there are moves 
-// remaining on the board. It returns false if 
-// there are no moves left to play. 
-bool isMovesLeft(char board[3][3]) 
-{ 
-    for (int i = 0; i<3; i++) 
-        for (int j = 0; j<3; j++) 
-            if (board[i][j]=='_') 
-                return true; 
-    return false; 
-}
-  
-// Driver code 
-int main() 
-{ 
-    char board[3][3] = 
-    { 
-        { 'x', 'o', 'x' }, 
-        { 'o', 'o', 'x' }, 
-        { '_', '_', '_' } 
-    }; 
-  
-    Move bestMove = findBestMove(board); 
-  
-    printf("The Optimal Move is :\n"); 
-    printf("ROW: %d COL: %d\n\n", bestMove.row, 
-                                  bestMove.col ); 
-    return 0; 
-} 
+	public GameController gameController = new GameController ();
 
-    // This will return the best possible move for the player 
-    return findBestMove(char board[8][8])
-    {
-        int bestVal = -1000;
-        bestMove;
-        bestMove.row = -1;
-        bestMove.col = -1;
+	public int[,] evalFun = {
+		{  30, -25, 10, 5, 5, 10, -25,  30 },
+		{ -25, -25,  1, 1, 1,  1, -25, -25 },
+		{  10,   1,  5, 2, 2,  5,   1,  10 },
+		{   5,   1,  2, 1, 1,  2,   1,   5 },
+		{   5,   1,  2, 1, 1,  2,   1,   5 },
+		{  10,   1,  5, 2, 2,  5,   1,  10 },
+		{ -25, -25,  1, 1, 1,  1, -25, -25 },
+		{  30, -25, 10, 5, 5, 10, -25,  30 }
+	};
 
-        // Traverse all cells, evaluate minimax function for 
-        // all empty cells. And return the cell with optimal 
-        // value. 
-        for (int i = 0; i < 3; i++)
-        {
-            for (int j = 0; j < 3; j++)
-            {
-                // Check if cell is empty 
-                if (board[i][j] == '_')
-                {
-                    // Make the move 
-                    board[i][j] = player;
+	// evaluate the board
+	public int EvaluateBoard(int[,] board, int color)
+	{
+		List<Vector2> playerMoves = gameController.MoveList (board, 1);
+		List<Vector2> AIMoves = gameController.MoveList (board, 2);
+		int playerScore = 0;
+		int AIScore = 0;
 
-                    // compute evaluation function for this 
-                    // move. 
-                    int moveVal = minimax(board, 0, false);
+		foreach (Vector2 move in playerMoves) {
+			playerScore += evalFun [(int)move.x, (int)move.y];
+		}
+		foreach (Vector2 move in AIMoves) {
+			AIScore += evalFun [(int)move.x, (int)move.y];
+		}
+		//int playerPieces = gameController.CountPieces (board, 1);
+		//int AIPieces = gameController.CountPieces (board, 2);
+		int result = 0;
 
-                    // Undo the move 
-                    board[i][j] = '_';
+		if (color == 1) {
+			result = playerScore - AIScore;
+		}
+		if (color == 2) {
+			result = AIScore - playerScore;
+		}
+		return result;
+	}
 
-                    // If the value of the current move is 
-                    // more than the best value, then update 
-                    // best/ 
-                    if (moveVal > bestVal)
-                    {
-                        bestMove.row = i;
-                        bestMove.col = j;
-                        bestVal = moveVal;
-                    }
-                }
-            }
-        }
 
-        printf("The value of the best Move is : %d\n\n",
-                bestVal);
+	// Minimax algorithm with alpha-beta pruning
+	public MoveStatus MiniMaxAlphaBeta(int[,] board, int color, int maxDepth, int currentDepth, int alpha, int beta)
+	{
+		if (gameController.IsGameOver () || currentDepth == maxDepth) {
+			return new MoveStatus (-1, -1, EvaluateBoard (board, color));
+		}
+		MoveStatus ms = new MoveStatus (-1, -1, 0);
+		if (color == 2) {
+			ms.score = int.MinValue;
+		} else
+			ms.score = int.MaxValue;
+		List<Vector2> allNextMoves;
+		// this is the AI turn right now
+		if (color == 2) {
+			allNextMoves = gameController.MoveList (board, 2);
+			foreach (Vector2 move in allNextMoves) {
+				int[,] newBoard = gameController.GetNextBoard (board, 2, (int)move.x, (int)move.y);
+				int score = MiniMaxAlphaBeta (newBoard, 1, maxDepth, currentDepth + 1, alpha, beta).score;
+				if (score > ms.score) {
+					ms.row = (int)move.x;
+					ms.col = (int)move.y;
+					ms.score = score;
+					if (ms.score > alpha)
+						alpha = ms.score;
+					if (alpha >= beta)
+						break;
 
-        return bestMove;
-    }
-
-    // This is the minimax function. It considers all 
-    // the possible ways the game can go and returns 
-    // the value of the board 
-    int minimax(char board[3][3], int depth, bool isMax)
-    {
-        // If this maximizer's move 
-        if (isMax)
-        {
-            int best = -1000;
-
-            // Traverse all cells 
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    // Check if cell is empty 
-                    if (board[i][j] == '_')
-                    {
-                        // Make the move 
-                        board[i][j] = player;
-
-                        // Call minimax recursively and choose 
-                        // the maximum value 
-                        best = max(best,
-                            minimax(board, depth + 1, !isMax));
-
-                        // Undo the move 
-                        board[i][j] = '_';
-                    }
-                }
-            }
-            return best;
-        }
-
-        // If this minimizer's move 
-        else
-        {
-            int best = 1000;
-
-            // Traverse all cells 
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    // Check if cell is empty 
-                    if (board[i][j] == '_')
-                    {
-                        // Make the move 
-                        board[i][j] = opponent;
-
-                        // Call minimax recursively and choose 
-                        // the minimum value 
-                        best = min(best,
-                               minimax(board, depth + 1, !isMax));
-
-                        // Undo the move 
-                        board[i][j] = '_';
-                    }
-                }
-            }
-            return best;
-        }
-    }
-
-    */
+				}
+			}
+			// this is the human turn right now
+		} else {
+			allNextMoves = gameController.MoveList (board, 1);
+			foreach (Vector2 move in allNextMoves) {
+				int[,] newBoard = gameController.GetNextBoard (board, 1, (int)move.x, (int)move.y);
+				int score = MiniMaxAlphaBeta (newBoard, 2, maxDepth, currentDepth + 1, alpha, beta).score;
+				if (score < ms.score) {
+					ms.row = (int)move.x;
+					ms.col = (int)move.y;
+					ms.score = score;
+					if (ms.score < beta)
+						beta = ms.score;
+					if (beta <= alpha)
+						break;
+				}
+			}
+		}
+		return ms;
+	}
+}*/
