@@ -106,6 +106,12 @@ public class Bitboard : MonoBehaviour
             bitboardDisplayUpdate();
 
         }
+
+        // Show current player
+        ShowPlayerTurn();
+        // Check if theres a Game Over Senario
+        IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
+        // Give the current player the right to make a move
         if (playerturn == 1)
         {
             // Show valid moves on board
@@ -116,11 +122,6 @@ public class Bitboard : MonoBehaviour
         {
             PlayerToMakeMove(playerturn);
         }
-        // Show current player
-        ShowPlayerTurn();
-        // Check if theres a Game Over Senario
-        IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
-        // Give the current player the right to make a move
     }
 
     void bitboardDisplayUpdate()
@@ -352,7 +353,7 @@ public class Bitboard : MonoBehaviour
 
     void ShowAIPoints(byte[] CPUBestMove)
     {
-        if (CPUBestMove[0] == 0 || CPUBestMove[1] == 0)
+        if (GameOverCanvas == true)
         {
 
         }
