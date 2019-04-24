@@ -1,12 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Threading;
-using System.Diagnostics;
 
 public class Bitboard : MonoBehaviour
 {
@@ -114,7 +112,16 @@ public class Bitboard : MonoBehaviour
         // Check if theres a Game Over Senario
         IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
         // Give the current player the right to make a move
-        PlayerToMakeMove(playerturn);
+        if (playerturn == 1)
+        {
+            // Show valid moves on board
+            ShowValidMoves();
+        }
+
+        else if (playerturn == 2)
+        {
+            PlayerToMakeMove(playerturn);
+        }
     }
 
     void bitboardDisplayUpdate()
@@ -180,7 +187,7 @@ public class Bitboard : MonoBehaviour
                 // If theres a captured piece, change the piece
                 else if (bitboard[i, j] == 5)
                 {
-                    UnityEngine.Debug.Log(i + " " + j);
+                    Debug.Log(i + " " + j);
                     // Change the pieces thats captured
                     flipIt(i, j);
                     // Change the bitboard value to the current player
@@ -270,7 +277,7 @@ public class Bitboard : MonoBehaviour
         // Call CheckForNine from BoardRules.cs
         if (BoardState.CheckForNine(bitboard) == true)
         {
-            UnityEngine.Debug.Log("Game over");
+            Debug.Log("Game over");
             // Show the Game Over canvas, to show who won
             GameOverCanvas.SetActive(true);
         }
@@ -285,14 +292,14 @@ public class Bitboard : MonoBehaviour
             {
                 // Give the turn to the opposite player
                 playerturn = 2;
-                UnityEngine.Debug.Log("No valid moves for black player");
+                Debug.Log("No valid moves for black player");
             }
 
             else if (playerturn == 2)
             {
                 // Give the turn to the opposite player
                 playerturn = 1;
-                UnityEngine.Debug.Log("No valid moves for white player");
+                Debug.Log("No valid moves for white player");
             }
             // Call ValidMove from BoardRules.cs
             BoardState.ValidMove(bitboard, playerturn);
@@ -308,7 +315,7 @@ public class Bitboard : MonoBehaviour
         {
             int temp = CPUBestMove[1] + 65;
             char c = (char)temp;
-            UnityEngine.Debug.Log("CPU: " + c + (CPUBestMove[0] + 1));
+            Debug.Log("CPU: " + c + (CPUBestMove[0] + 1));
             // Call MakeMove from tileScript.cs
             Tiles.GetComponent<tileScript>().MakeMove(CPUBestMove[1], CPUBestMove[0], playerturn);
 
@@ -317,25 +324,14 @@ public class Bitboard : MonoBehaviour
 
     void PlayerToMakeMove(byte playerturn)
     {
-        int maxDepth = 5;
+        int maxDepth = 10;
         int currentDepth = 1;
-
-        if (playerturn == (int)Player.black)
-        {
-            // Show valid moves on board
-            ShowValidMoves();
-        }
-
-        // Activate AI if the playerturn is White
+        // Active AI if the playerturn is White
         if (playerturn == (int)Player.white)
         {
-            Stopwatch stopWatch = new Stopwatch();
-            
             byte[] CPUBestMove = new byte[2];
             // Get the best move from ReturnRandomMove from MiniMax.cs
-            stopWatch.Start();
             CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MaxValue, int.MinValue);
-            stopWatch.Stop();
             // Remove the red tiles, since the AI doesn't need them
             ShowValidMoves();
             // Remove unintended 5's
@@ -352,14 +348,7 @@ public class Bitboard : MonoBehaviour
             // Perform the move
             CPUTurn(CPUBestMove);
             ShowAIPoints(CPUBestMove);
-            TimeSpan ts = stopWatch.Elapsed;
-            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                ts.Hours, ts.Minutes, ts.Seconds,
-                ts.Milliseconds / 10);
-
-            UnityEngine.Debug.Log(elapsedTime);
         }
-        // the code that you want to measure comes here
     }
 
     void ShowAIPoints(byte[] CPUBestMove)
@@ -371,7 +360,7 @@ public class Bitboard : MonoBehaviour
         else
         {
             CPUPoints += Evaluation[CPUBestMove[0], CPUBestMove[1]];
-            UnityEngine.Debug.Log("CPU Points: " + CPUPoints);
+            Debug.Log("CPU Points: " + CPUPoints);
         }
     }
 }
