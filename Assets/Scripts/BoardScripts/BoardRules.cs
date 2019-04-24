@@ -251,8 +251,8 @@ public class BoardRules
 
     public byte[,] GetNextBoardState(byte[,] bitboard, byte playerturn, int bitboardX, int bitboardY)
     {
-        bitboardOnlyResetTurn(bitboard, playerturn);
         CaptureEnemyPlayer(bitboard, bitboardY, bitboardX, playerturn);
+        bitboardOnlyResetTurn(bitboard, playerturn);
         ValidMove(bitboard, playerturn);
         return bitboard;
     }

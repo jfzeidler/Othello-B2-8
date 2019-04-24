@@ -12,7 +12,7 @@ public class Bitboard : MonoBehaviour
 {
     public BoardRules BoardState = new BoardRules();
     public MiniMax MiniMax = new MiniMax();
-    public enum Player { blank = 0, black = 1, white = 2};
+    public enum Player { blank = 0, black = 1, white = 2 };
     public byte playerturn = 1;
     byte DEBUG = 1;
     int CPUPoints = 0;
@@ -114,16 +114,8 @@ public class Bitboard : MonoBehaviour
         // Check if theres a Game Over Senario
         IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
         // Give the current player the right to make a move
-        if (playerturn == 1)
-        {
-            // Show valid moves on board
-            ShowValidMoves();
-        }
+        PlayerToMakeMove(playerturn);
 
-        else if (playerturn == 2)
-        {
-            PlayerToMakeMove(playerturn);
-        }
     }
 
     void bitboardDisplayUpdate()
@@ -218,7 +210,7 @@ public class Bitboard : MonoBehaviour
         if (playerturn == 1)
         {
             // Place a black piece on the board
-            var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity)as GameObject;
+            var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity) as GameObject;
             // Naming the piece for the capture rule
             newObject.name = "Player_" + j + i;
         }
@@ -325,31 +317,27 @@ public class Bitboard : MonoBehaviour
 
     void PlayerToMakeMove(byte playerturn)
     {
-        int maxDepth = 10;
-        int currentDepth = 1;
-        // Active AI if the playerturn is White
+        if (playerturn == (int)Player.black)
+        {
+            ShowValidMoves();
+        }
+
         if (playerturn == (int)Player.white)
         {
+            int maxDepth = 10;
+            int currentDepth = 1;
+            // Active AI if the playerturn is White
             Stopwatch stopWatch = new Stopwatch();
-
             byte[] CPUBestMove = new byte[2];
+            byte[,] replacemenentBitboard = bitboard;
             // Get the best move from ReturnRandomMove from MiniMax.cs
             stopWatch.Start();
             CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MaxValue, int.MinValue);
             stopWatch.Stop();
             // Remove the red tiles, since the AI doesn't need them
             ShowValidMoves();
-            // Remove unintended 5's
-            for (int i = 0; i < 8; i++)
-            {
-                for (int j = 0; j < 8; j++)
-                {
-                    if (bitboard[i, j] == 5)
-                    {
-                        bitboard[i, j] = 1;
-                    }
-                }
-            }
+            bitboard = replacemenentBitboard;
+            UnityEngine.Debug.Log(CPUBestMove[0] + " " + CPUBestMove[1]);
             // Perform the move
             CPUTurn(CPUBestMove);
             //ShowAIPoints(CPUBestMove);
