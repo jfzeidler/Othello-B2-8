@@ -40,7 +40,7 @@ public class MiniMax : BoardRules
         {
             playerScore += Evaluation[(int)move.X, (int)move.Y];
         }
-        foreach (Vector2 move in playerMoves)
+        foreach (Vector2 move in AIMoves)
         {
             AIScore += Evaluation[(int)move.X, (int)move.Y];
         }
@@ -73,6 +73,7 @@ public class MiniMax : BoardRules
                 }
             }
         }
+
         else if(playerturn == 2)
         {
             for (int i = 0; i < 8; i++)
@@ -254,8 +255,8 @@ public class AIReversi {
 		}
 		return ms;
 	}
-}*/
-/*   public byte[] ReturnRandomMove(byte[,] bitboard, int playerturn)
+}
+   public byte[] ReturnRandomMove(byte[,] bitboard, int playerturn)
     {
         List<byte[]> PossibleMoves = new List<byte[]>();
 
