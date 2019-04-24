@@ -114,16 +114,8 @@ public class Bitboard : MonoBehaviour
         // Check if theres a Game Over Senario
         IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
         // Give the current player the right to make a move
-        if (playerturn == 1)
-        {
-            // Show valid moves on board
-            ShowValidMoves();
-        }
+        PlayerToMakeMove(playerturn);
 
-        else if (playerturn == 2)
-        {
-            PlayerToMakeMove(playerturn);
-        }
     }
 
     void bitboardDisplayUpdate()
@@ -325,14 +317,19 @@ public class Bitboard : MonoBehaviour
 
     void PlayerToMakeMove(byte playerturn)
     {
-        int maxDepth = 10;
-        int currentDepth = 1;
-        // Active AI if the playerturn is White
+        if (playerturn == (int)Player.black)
+        {
+            ShowValidMoves();
+        }
+
         if (playerturn == (int)Player.white)
         {
+            int maxDepth = 15;
+            int currentDepth = 1;
+            // Active AI if the playerturn is White
             Stopwatch stopWatch = new Stopwatch();
-
             byte[] CPUBestMove = new byte[2];
+
             // Get the best move from ReturnRandomMove from MiniMax.cs
             stopWatch.Start();
             CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MaxValue, int.MinValue);
