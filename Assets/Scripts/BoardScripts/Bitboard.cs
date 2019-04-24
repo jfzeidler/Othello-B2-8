@@ -187,7 +187,6 @@ public class Bitboard : MonoBehaviour
                 // If theres a captured piece, change the piece
                 else if (bitboard[i, j] == 5)
                 {
-                    Debug.Log(i + " " + j);
                     // Change the pieces thats captured
                     flipIt(i, j);
                     // Change the bitboard value to the current player
