@@ -30,8 +30,8 @@ public class MiniMax : BoardRules
     };
     public int EvaluateBoard(byte[,] _minimaxbitboard, byte playerturn)
     {
-        List<Vector2> playerMoves = MoveList(_minimaxbitboard, playerturn);
-        List<Vector2> AIMoves = MoveList(_minimaxbitboard, playerturn);
+        List<Vector2> playerMoves = MoveList(_minimaxbitboard, 1);
+        List<Vector2> AIMoves = MoveList(_minimaxbitboard, 2);
 
         int playerScore = 0;
         int AIScore = 0;
@@ -40,7 +40,7 @@ public class MiniMax : BoardRules
         {
             playerScore += Evaluation[(int)move.X, (int)move.Y];
         }
-        foreach (Vector2 move in playerMoves)
+        foreach (Vector2 move in AIMoves)
         {
             AIScore += Evaluation[(int)move.X, (int)move.Y];
         }
@@ -73,6 +73,7 @@ public class MiniMax : BoardRules
                 }
             }
         }
+
         else if(playerturn == 2)
         {
             for (int i = 0; i < 8; i++)
@@ -114,7 +115,7 @@ public class MiniMax : BoardRules
             foreach(Vector2 move in allMoves)
             {
                 byte[,] newBoard = GetNextBoardState(_minimaxbitboard, playerturn, (int)move.X, (int)move.Y);
-                int score = MiniMaxAlgorithm(newBoard, 1, maxDepth, currentDepth + 1, alpha, beta).score;
+                int score = MiniMaxAlgorithm(newBoard, 1, maxDepth, (currentDepth + 1), alpha, beta).score;
                 if (score > ms.score)
                 {
                     ms.row = (int)move.X;
@@ -127,14 +128,14 @@ public class MiniMax : BoardRules
                 }
             }
         }
-        else
+        else if(playerturn == 1)
         {
             allMoves = MoveList(_minimaxbitboard, 1);
             foreach (Vector2 move in allMoves)
             {
                 byte[,] newBoard = GetNextBoardState(_minimaxbitboard, playerturn, (int)move.X, (int)move.Y);
-                int score = MiniMaxAlgorithm(newBoard, 2, maxDepth, currentDepth + 1, alpha, beta).score;
-                if (score > ms.score)
+                int score = MiniMaxAlgorithm(newBoard, 2, maxDepth, (currentDepth + 1), alpha, beta).score;
+                if (score < ms.score)
                 {
                     ms.row = (int)move.X;
                     ms.col = (int)move.Y;
@@ -160,7 +161,6 @@ public class MiniMax : BoardRules
         return result;
     }
 }
-
 
 /*
 public class AIReversi {
@@ -254,8 +254,8 @@ public class AIReversi {
 		}
 		return ms;
 	}
-}*/
-/*   public byte[] ReturnRandomMove(byte[,] bitboard, int playerturn)
+}
+   public byte[] ReturnRandomMove(byte[,] bitboard, int playerturn)
     {
         List<byte[]> PossibleMoves = new List<byte[]>();
 

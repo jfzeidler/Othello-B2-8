@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -203,7 +205,7 @@ public class Bitboard : MonoBehaviour
         Vector3 vectorPos = new Vector3(i, -0.85f, j);
         // Find the piece to capture, and destroy it
         DestroyImmediate(GameObject.Find(playerToFlip));
-        //Debug.Log(playerToFlip);
+        //UnityEngine.Debug.Log(playerToFlip);
 
         if (playerturn == 2)
         {
@@ -276,7 +278,7 @@ public class Bitboard : MonoBehaviour
         // Call CheckForNine from BoardRules.cs
         if (BoardState.CheckForNine(bitboard) == true)
         {
-            Debug.Log("Game over");
+            UnityEngine.Debug.Log("Game over");
             // Show the Game Over canvas, to show who won
             GameOverCanvas.SetActive(true);
         }
@@ -291,14 +293,14 @@ public class Bitboard : MonoBehaviour
             {
                 // Give the turn to the opposite player
                 playerturn = 2;
-                Debug.Log("No valid moves for black player");
+                UnityEngine.Debug.Log("No valid moves for black player");
             }
 
             else if (playerturn == 2)
             {
                 // Give the turn to the opposite player
                 playerturn = 1;
-                Debug.Log("No valid moves for white player");
+                UnityEngine.Debug.Log("No valid moves for white player");
             }
             // Call ValidMove from BoardRules.cs
             BoardState.ValidMove(bitboard, playerturn);
@@ -314,7 +316,7 @@ public class Bitboard : MonoBehaviour
         {
             int temp = CPUBestMove[1] + 65;
             char c = (char)temp;
-            Debug.Log("CPU: " + c + (CPUBestMove[0] + 1));
+            UnityEngine.Debug.Log("CPU: " + c + (CPUBestMove[0] + 1));
             // Call MakeMove from tileScript.cs
             Tiles.GetComponent<tileScript>().MakeMove(CPUBestMove[1], CPUBestMove[0], playerturn);
 
@@ -328,9 +330,13 @@ public class Bitboard : MonoBehaviour
         // Active AI if the playerturn is White
         if (playerturn == (int)Player.white)
         {
+            Stopwatch stopWatch = new Stopwatch();
+
             byte[] CPUBestMove = new byte[2];
             // Get the best move from ReturnRandomMove from MiniMax.cs
+            stopWatch.Start();
             CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MaxValue, int.MinValue);
+            stopWatch.Stop();
             // Remove the red tiles, since the AI doesn't need them
             ShowValidMoves();
             // Remove unintended 5's
@@ -346,20 +352,27 @@ public class Bitboard : MonoBehaviour
             }
             // Perform the move
             CPUTurn(CPUBestMove);
-            ShowAIPoints(CPUBestMove);
+            //ShowAIPoints(CPUBestMove);
+            TimeSpan ts = stopWatch.Elapsed;
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds,
+                ts.Milliseconds / 10);
+
+            UnityEngine.Debug.Log(elapsedTime);
+            //ShowAIPoints(CPUBestMove);
         }
     }
 
-    void ShowAIPoints(byte[] CPUBestMove)
+    /*void ShowAIPoints(byte[] CPUBestMove)
     {
-        if (GameOverCanvas == true)
+        if (GameOverCanvas.isActiveAndEnabled)
         {
 
         }
         else
         {
             CPUPoints += Evaluation[CPUBestMove[0], CPUBestMove[1]];
-            Debug.Log("CPU Points: " + CPUPoints);
+            UnityEngine.Debug.Log("CPU Points: " + CPUPoints);
         }
-    }
+    } */
 }
