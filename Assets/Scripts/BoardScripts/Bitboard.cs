@@ -193,7 +193,6 @@ public class Bitboard : MonoBehaviour
     void flipIt(int i, int j)
     {
         string playerToFlip = "Player_" + j + i;
-        UnityEngine.Debug.Log(playerToFlip);
         Vector3 vectorPos = new Vector3(i, -0.85f, j);
         // Find the piece to capture, and destroy it
         DestroyImmediate(GameObject.Find(playerToFlip));
@@ -329,15 +328,12 @@ public class Bitboard : MonoBehaviour
             // Active AI if the playerturn is White
             Stopwatch stopWatch = new Stopwatch();
             byte[] CPUBestMove = new byte[2];
-            byte[,] replacemenentBitboard = bitboard;
             // Get the best move from ReturnRandomMove from MiniMax.cs
             stopWatch.Start();
             CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MaxValue, int.MinValue);
             stopWatch.Stop();
             // Remove the red tiles, since the AI doesn't need them
             ShowValidMoves();
-            bitboard = replacemenentBitboard;
-            UnityEngine.Debug.Log(CPUBestMove[0] + " " + CPUBestMove[1]);
             // Perform the move
             CPUTurn(CPUBestMove);
             //ShowAIPoints(CPUBestMove);
