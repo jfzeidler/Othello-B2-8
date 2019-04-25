@@ -46,7 +46,7 @@ public class tileScript : MonoBehaviour
         }
     }
 
-    void placePlayer(byte playerturn, int y, int z)
+    void placePlayer(int playerturn, int y, int z)
     {
         // Make position vector for Instantiate
         Vector3 vectorPos = new Vector3(z, -0.85f, y);

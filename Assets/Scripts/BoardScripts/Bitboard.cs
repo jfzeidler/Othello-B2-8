@@ -327,7 +327,7 @@ public class Bitboard : MonoBehaviour
             int currentDepth = 0;
             // Active AI if the playerturn is White
             Stopwatch stopWatch = new Stopwatch();
-            byte[] CPUBestMove = new byte[2];
+            int[] CPUBestMove = new int[2];
             // Get the best move from ReturnRandomMove from MiniMax.cs
             stopWatch.Start();
             CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MaxValue, int.MinValue);
@@ -335,7 +335,6 @@ public class Bitboard : MonoBehaviour
             stopWatch.Stop();
             // Remove the red tiles, since the AI doesn't need them
             ShowValidMoves();
-            bitboard = replacemenentBitboard;
             UnityEngine.Debug.Log(CPUBestMove[0] + " " + CPUBestMove[1]);
             UnityEngine.Debug.Log(CPUBestMove[2]);
             // Perform the move
@@ -351,7 +350,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    void ShowAIPoints(byte[] CPUBestMove)
+    void ShowAIPoints(int[] CPUBestMove)
     {
         if (GameOverCanvas.activeSelf)
         {
