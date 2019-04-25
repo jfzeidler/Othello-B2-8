@@ -18,7 +18,7 @@ public class Bitboard : MonoBehaviour
     int CPUPoints = 0;
     int Blackpieces = 0; int Whitepieces = 0;
 
-    public int[,] Evaluation = {
+    readonly int[,] Evaluation = {
         // A       B     C     D     E     F      G      H
         {10000, -3000, 1000,  800,  800, 1000, -3000, 10000}, // 1
         {-3000, -5000, -450, -500, -500, -450, -5000, -3000}, // 2
@@ -344,13 +344,13 @@ public class Bitboard : MonoBehaviour
                 ts.Milliseconds / 10);
 
             UnityEngine.Debug.Log(elapsedTime);
-            //ShowAIPoints(CPUBestMove);
+            ShowAIPoints(CPUBestMove);
         }
     }
 
-    /*void ShowAIPoints(byte[] CPUBestMove)
+    void ShowAIPoints(byte[] CPUBestMove)
     {
-        if (GameOverCanvas.isActiveAndEnabled)
+        if (GameOverCanvas.activeSelf)
         {
 
         }
@@ -359,5 +359,5 @@ public class Bitboard : MonoBehaviour
             CPUPoints += Evaluation[CPUBestMove[0], CPUBestMove[1]];
             UnityEngine.Debug.Log("CPU Points: " + CPUPoints);
         }
-    } */
+    }
 }
