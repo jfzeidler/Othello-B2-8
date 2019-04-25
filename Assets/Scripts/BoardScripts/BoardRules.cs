@@ -252,6 +252,8 @@ public class BoardRules
     public int[,] GetNextBoardState(int[,] bitboard, int playerturn, int bitboardX, int bitboardY)
     {
         int[,] bitboardCopy = (int[,])bitboard.Clone();
+        bitboardCopy[bitboardX, bitboardY] = playerturn;
+        bitboardCopy = bitboardOnlyResetTurn(bitboardCopy, playerturn);
         CaptureEnemyPlayer(bitboardCopy, bitboardY, bitboardX, playerturn);
         ValidMove(bitboardCopy, playerturn);
         return bitboardCopy;

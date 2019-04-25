@@ -56,6 +56,7 @@ public class Bitboard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MiniMax.PrepareDebugForMinimax();
         if (DEBUG == 1)
         {
             BitboardDisplay.GetComponent<Text>().text = "     AB CD EF GH";
@@ -323,7 +324,7 @@ public class Bitboard : MonoBehaviour
 
         if (playerturn == (int)Player.white)
         {
-            int maxDepth = 10;
+            int maxDepth = 2;
             int currentDepth = 0;
             // Active AI if the playerturn is White
             Stopwatch stopWatch = new Stopwatch();
