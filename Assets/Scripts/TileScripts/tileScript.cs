@@ -41,7 +41,7 @@ public class tileScript : MonoBehaviour
         if (The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9)
         {
             // Get playerturn to tell which turn it is
-            byte playerturn = The_Board.GetComponent<Bitboard>().playerturn;
+            int playerturn = The_Board.GetComponent<Bitboard>().playerturn;
             MakeMove(bitboardX, bitboardY, playerturn);
         }
     }
@@ -74,7 +74,7 @@ public class tileScript : MonoBehaviour
         }
     }
 
-    void DEBUGLOG(byte[,] bitboard)
+    void DEBUGLOG(int[,] bitboard)
     {
         for (int i = 0; i < 8; i++)
         {
@@ -82,7 +82,7 @@ public class tileScript : MonoBehaviour
         }
     }
 
-    public void MakeMove (int xPos, int yPos, byte playerturn)
+    public void MakeMove (int xPos, int yPos, int playerturn)
     {
         if (DEBUG == 1)
         {
