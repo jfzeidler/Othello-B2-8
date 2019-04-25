@@ -4,7 +4,7 @@ using System.Numerics;
 
 public class BoardRules
 {
-    private byte[,] bitboard;
+    private int[,] bitboard;
     enum Player { blank = 0, black = 1, white = 2, capture = 5, validMove = 9};
 
     Vector2[] vectors = new Vector2[]
@@ -19,9 +19,9 @@ public class BoardRules
         new Vector2(1, -1)
         };
 
-    public byte[,] _minimaxBitboard { get => bitboard; set => bitboard = value; }
+    public int[,] _minimaxBitboard { get => bitboard; set => bitboard = value; }
 
-    public void ValidMove(byte[,] bitboard, byte playerturn)
+    public void ValidMove(int[,] bitboard, int playerturn)
     {
         if (playerturn == (int)Player.black)
         {
@@ -52,7 +52,7 @@ public class BoardRules
         }
     }
 
-    void CheckForAdjacent(byte[,] bitboard, int i, int j, byte playerturn)
+    void CheckForAdjacent(int[,] bitboard, int i, int j, int playerturn)
     {
         if (playerturn == (int)Player.white)
         {
@@ -121,7 +121,7 @@ public class BoardRules
         }
     }
 
-    public void CaptureEnemyPlayer(byte[,] bitboard, int i, int j, byte playerturn)
+    public void CaptureEnemyPlayer(int[,] bitboard, int i, int j, int playerturn)
     {
         if (playerturn == (int)Player.black)
         {
@@ -210,7 +210,7 @@ public class BoardRules
             return false;
     }
 
-    public bool CheckForNine(byte[,] bitboard)
+    public bool CheckForNine(int[,] bitboard)
     {
         bool returnValue = true;
         for (int i = 0; i < 8; i++)
@@ -226,7 +226,7 @@ public class BoardRules
         return returnValue;
     }
 
-    byte [,] bitboardOnlyResetTurn(byte[,] bitboard, byte playerturn)
+    int [,] bitboardOnlyResetTurn(int[,] bitboard, int playerturn)
     {
         for (int i = 0; i < 8; i++)
         {
@@ -249,11 +249,11 @@ public class BoardRules
         return bitboard;
     }
 
-    public byte[,] GetNextBoardState(byte[,] bitboard, byte playerturn, int bitboardX, int bitboardY)
+    public int[,] GetNextBoardState(int[,] bitboard, int playerturn, int bitboardX, int bitboardY)
     {
-        CaptureEnemyPlayer(bitboard, bitboardY, bitboardX, playerturn);
-        bitboardOnlyResetTurn(bitboard, playerturn);
-        ValidMove(bitboard, playerturn);
-        return bitboard;
+        int[,] bitboardCopy = (int[,])bitboard.Clone();
+        CaptureEnemyPlayer(bitboardCopy, bitboardY, bitboardX, playerturn);
+        ValidMove(bitboardCopy, playerturn);
+        return bitboardCopy;
     }
 }

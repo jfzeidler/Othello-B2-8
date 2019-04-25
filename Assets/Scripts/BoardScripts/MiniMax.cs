@@ -28,13 +28,14 @@ public class MiniMax : BoardRules
         {-3000, -5000, -450, -500, -500, -450, -5000, -3000}, // 7
         {10000, -3000, 1000,  800,  800, 1000, -3000, 10000}  // 8
     };
-    public int EvaluateBoard(byte[,] _minimaxbitboard, byte playerturn)
+    public int EvaluateBoard(int[,] bitboard, int playerturn)
     {
-        List<Vector2> playerMoves = MoveList(_minimaxbitboard, 1);
-        List<Vector2> AIMoves = MoveList(_minimaxbitboard, 2);
+        List<Vector2> playerMoves = MoveList(bitboard, 1);
+        List<Vector2> AIMoves = MoveList(bitboard, 2);
 
         int playerScore = 0;
         int AIScore = 0;
+        int result = 0;
 
         foreach(Vector2 move in playerMoves)
         {
@@ -47,17 +48,16 @@ public class MiniMax : BoardRules
 
         if (playerturn == 1)
         {
-            return (playerScore - AIScore);
+            result = (playerScore - AIScore);
         }
         else if (playerturn == 2)
         {
-            return (AIScore - playerScore);
+            result = (AIScore - playerScore);
         }
-        else
-            throw new NullReferenceException();
+        return result;
     }
 
-    public List<Vector2> MoveList(byte[,] _minimaxbitboard, byte playerturn)
+    public List<Vector2> MoveList(int[,] bitboard, int playerturn)
     {
         List<Vector2> list = new List<Vector2>();
         if (playerturn == 1)
@@ -66,7 +66,7 @@ public class MiniMax : BoardRules
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if(_minimaxbitboard[i,j] == 9)
+                    if(bitboard[i,j] == 9)
                     {
                         list.Add(new Vector2(i, j));
                     }
@@ -80,7 +80,7 @@ public class MiniMax : BoardRules
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (_minimaxbitboard[i, j] == 9)
+                    if (bitboard[i, j] == 9)
                     {
                         list.Add(new Vector2(i, j));
                     }
@@ -90,11 +90,11 @@ public class MiniMax : BoardRules
         return list;
     }
 
-    public MoveStatus MiniMaxAlgorithm(byte[,] _minimaxbitboard, byte playerturn, int maxDepth, int currentDepth, int alpha, int beta)
+    public MoveStatus MiniMaxAlgorithm(int[,] bitboard, int playerturn, int maxDepth, int currentDepth, int alpha, int beta)
     {
         if (currentDepth == maxDepth )
         {
-            return new MoveStatus(-1, -1, EvaluateBoard(_minimaxbitboard, playerturn));
+            return new MoveStatus(-1, -1, EvaluateBoard(bitboard, playerturn));
         }
 
         MoveStatus ms = new MoveStatus(-1, -1, 0);
@@ -111,10 +111,10 @@ public class MiniMax : BoardRules
 
         if(playerturn == 2)
         {
-            allMoves = MoveList(_minimaxbitboard, 2);
+            allMoves = MoveList(bitboard, 2);
             foreach(Vector2 move in allMoves)
             {
-                byte[,] newBoard = GetNextBoardState(_minimaxbitboard, playerturn, (int)move.X, (int)move.Y);
+                int[,] newBoard = GetNextBoardState(bitboard, playerturn, (int)move.X, (int)move.Y);
                 int score = MiniMaxAlgorithm(newBoard, 1, maxDepth, (currentDepth + 1), alpha, beta).score;
                 if (score > ms.score)
                 {
@@ -130,10 +130,10 @@ public class MiniMax : BoardRules
         }
         else if(playerturn == 1)
         {
-            allMoves = MoveList(_minimaxbitboard, 1);
+            allMoves = MoveList(bitboard, 1);
             foreach (Vector2 move in allMoves)
             {
-                byte[,] newBoard = GetNextBoardState(_minimaxbitboard, playerturn, (int)move.X, (int)move.Y);
+                int[,] newBoard = GetNextBoardState(bitboard, playerturn, (int)move.X, (int)move.Y);
                 int score = MiniMaxAlgorithm(newBoard, 2, maxDepth, (currentDepth + 1), alpha, beta).score;
                 if (score < ms.score)
                 {
@@ -150,14 +150,13 @@ public class MiniMax : BoardRules
         return ms;
     }
 
-    public byte[] CalculateAIMove(byte[,] bitboard, byte playerturn, int maxDepth, int currentDepth, int alpha, int beta)
+    public int[] CalculateAIMove(int[,] bitboard, int playerturn, int maxDepth, int currentDepth, int alpha, int beta)
     {
-        byte[] result = new byte[2];
-        byte[,] _minimaxbitboard = bitboard;
-        MoveStatus bestMove = MiniMaxAlgorithm(_minimaxbitboard, playerturn, maxDepth, currentDepth, alpha, beta);
-        result[0] = (byte)bestMove.row;
-        result[1] = (byte)bestMove.col;
-
+        int[] result = new int[3];
+        MoveStatus bestMove = MiniMaxAlgorithm(bitboard, playerturn, maxDepth, currentDepth, alpha, beta);
+        result[0] = (int)bestMove.row;
+        result[1] = (int)bestMove.col;
+        result[2] = bestMove.score;
         return result;
     }
 }
@@ -255,22 +254,22 @@ public class AIReversi {
 		return ms;
 	}
 }
-   public byte[] ReturnRandomMove(byte[,] bitboard, int playerturn)
+   public int[] ReturnRandomMove(int[,] bitboard, int playerturn)
     {
-        List<byte[]> PossibleMoves = new List<byte[]>();
+        List<int[]> PossibleMoves = new List<int[]>();
 
-        _minimaxBitboard = bitboard;
-        byte[] CPUBestMove = new byte[2];
+        bitboard = bitboard;
+        int[] CPUBestMove = new int[2];
         CPUBestMove[0] = 90; CPUBestMove[1] = 90;
         
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
             {
-                if (_minimaxBitboard[i, j] == 9)
+                if (bitboard[i, j] == 9)
                 {
-                    byte[] CPUPossibleMove = new byte[2];
-                    CPUPossibleMove[0] = (byte)i; CPUPossibleMove[1] = (byte)j;
+                    int[] CPUPossibleMove = new int[2];
+                    CPUPossibleMove[0] = (int)i; CPUPossibleMove[1] = (int)j;
                     PossibleMoves.Add(CPUPossibleMove);
                 }
             }
@@ -278,7 +277,7 @@ public class AIReversi {
 
         int tempCPUBestMove = 0;
 
-        foreach (byte[] possibleMove in PossibleMoves)
+        foreach (int[] possibleMove in PossibleMoves)
         {
             if (Evaluation[possibleMove[0], possibleMove[1]] > tempCPUBestMove || tempCPUBestMove == 0)
             {

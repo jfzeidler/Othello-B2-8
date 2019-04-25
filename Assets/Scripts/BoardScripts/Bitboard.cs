@@ -13,8 +13,8 @@ public class Bitboard : MonoBehaviour
     public BoardRules BoardState = new BoardRules();
     public MiniMax MiniMax = new MiniMax();
     public enum Player { blank = 0, black = 1, white = 2 };
-    public byte playerturn = 1;
-    byte DEBUG = 1;
+    public int playerturn = 1;
+    int DEBUG = 1;
     int CPUPoints = 0;
     int Blackpieces = 0; int Whitepieces = 0;
 
@@ -30,7 +30,7 @@ public class Bitboard : MonoBehaviour
         {10000, -3000, 1000,  800,  800, 1000, -3000, 10000}  // 8
     };
 
-    public byte[,] bitboard = {
+    public int[,] bitboard = {
       // A  B  C  D  E  F  G  H
         {0, 0, 0, 0, 0, 0, 0, 0}, // 1
         {0, 0, 0, 0, 0, 0, 0, 0}, // 2
@@ -132,7 +132,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    public void PieceCounter(byte[,] bitboard)
+    public void PieceCounter(int[,] bitboard)
     {
         Blackpieces = 0; Whitepieces = 0;
         for (int i = 0; i < 8; i++)
@@ -247,7 +247,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    void IsGameOver(byte[,] bitboard, byte playerturn, int Whitepieces, int Blackpieces)
+    void IsGameOver(int[,] bitboard, int playerturn, int Whitepieces, int Blackpieces)
     {
         // If black player has the most pieces, show "Player Black Won"
         if (Blackpieces > Whitepieces)
@@ -276,7 +276,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    public byte PassCounter(byte[,] bitboard, byte playerturn)
+    public int PassCounter(int[,] bitboard, int playerturn)
     {
         // Call CheckForNine from BoardRules.cs
         if (BoardState.CheckForNine(bitboard) == true)
@@ -301,7 +301,7 @@ public class Bitboard : MonoBehaviour
         return playerturn;
     }
 
-    void CPUTurn(byte[] CPUBestMove)
+    void CPUTurn(int[] CPUBestMove)
     {
         // If the move is inside the bitboard
         if (CPUBestMove[0] < 8 && CPUBestMove[1] < 8)
@@ -315,7 +315,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    void PlayerToMakeMove(byte playerturn)
+    void PlayerToMakeMove(int playerturn)
     {
         if (playerturn == (int)Player.black)
         {
@@ -325,11 +325,11 @@ public class Bitboard : MonoBehaviour
         if (playerturn == (int)Player.white)
         {
             int maxDepth = 10;
-            int currentDepth = 1;
+            int currentDepth = 0;
             // Active AI if the playerturn is White
             Stopwatch stopWatch = new Stopwatch();
-            byte[] CPUBestMove = new byte[2];
-            byte[,] replacemenentBitboard = bitboard;
+            int[] CPUBestMove = new int[3];
+            int[,] replacemenentBitboard = bitboard;
             // Get the best move from ReturnRandomMove from MiniMax.cs
             stopWatch.Start();
             CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MaxValue, int.MinValue);
@@ -338,6 +338,7 @@ public class Bitboard : MonoBehaviour
             ShowValidMoves();
             bitboard = replacemenentBitboard;
             UnityEngine.Debug.Log(CPUBestMove[0] + " " + CPUBestMove[1]);
+            UnityEngine.Debug.Log(CPUBestMove[2]);
             // Perform the move
             CPUTurn(CPUBestMove);
             //ShowAIPoints(CPUBestMove);
@@ -351,7 +352,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    /*void ShowAIPoints(byte[] CPUBestMove)
+    /*void ShowAIPoints(int[] CPUBestMove)
     {
         if (GameOverCanvas.isActiveAndEnabled)
         {
