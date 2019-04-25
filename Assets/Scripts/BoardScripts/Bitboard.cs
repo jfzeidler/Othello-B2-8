@@ -192,8 +192,8 @@ public class Bitboard : MonoBehaviour
 
     void flipIt(int i, int j)
     {
-
         string playerToFlip = "Player_" + j + i;
+        UnityEngine.Debug.Log(playerToFlip);
         Vector3 vectorPos = new Vector3(i, -0.85f, j);
         // Find the piece to capture, and destroy it
         DestroyImmediate(GameObject.Find(playerToFlip));
