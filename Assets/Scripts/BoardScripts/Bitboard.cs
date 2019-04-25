@@ -335,13 +335,11 @@ public class Bitboard : MonoBehaviour
             stopWatch.Stop();
             // Remove the red tiles, since the AI doesn't need them
             ShowValidMoves();
-            UnityEngine.Debug.Log(CPUBestMove[0] + " " + CPUBestMove[1]);
-            UnityEngine.Debug.Log(CPUBestMove[2]);
             // Perform the move
             CPUTurn(CPUBestMove);
             //ShowAIPoints(CPUBestMove);
             TimeSpan ts = stopWatch.Elapsed;
-            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+            string elapsedTime = String.Format("M{1:00}:S{2:00}.Mil{3:00}",
                 ts.Hours, ts.Minutes, ts.Seconds,
                 ts.Milliseconds / 10);
 
