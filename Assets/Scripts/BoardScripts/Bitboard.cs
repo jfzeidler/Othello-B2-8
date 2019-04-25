@@ -198,7 +198,7 @@ public class Bitboard : MonoBehaviour
         DestroyImmediate(GameObject.Find(playerToFlip));
         //UnityEngine.Debug.Log(playerToFlip);
 
-        if (playerturn == 2)
+        if (playerturn == (byte)Player.white)
         {
             // Place a white piece on the board
             var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity) as GameObject;
@@ -206,7 +206,7 @@ public class Bitboard : MonoBehaviour
             newObject.name = "Player_" + j + i;
         }
 
-        if (playerturn == 1)
+        if (playerturn == (byte)Player.black)
         {
             // Place a black piece on the board
             var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity) as GameObject;
@@ -217,12 +217,12 @@ public class Bitboard : MonoBehaviour
 
     void ShowPlayerTurn()
     {
-        if (playerturn == (int)Player.black)
+        if (playerturn == (byte)Player.black)
         {
             ScorePanelTurnText.GetComponent<TextMeshProUGUI>().text = "Black";
         }
 
-        else if (playerturn == (int)Player.white)
+        else if (playerturn == (byte)Player.white)
         {
             ScorePanelTurnText.GetComponent<TextMeshProUGUI>().text = "White";
         }
@@ -280,17 +280,17 @@ public class Bitboard : MonoBehaviour
         // Call CheckForNine from BoardRules.cs
         if (BoardState.CheckForNine(bitboard) == true)
         {
-            if (playerturn == 1)
+            if (playerturn == (byte)Player.black)
             {
                 // Give the turn to the opposite player
-                playerturn = 2;
+                playerturn = (byte)Player.white;
                 UnityEngine.Debug.Log("No valid moves for black player");
             }
 
-            else if (playerturn == 2)
+            else if (playerturn == (byte)Player.white)
             {
                 // Give the turn to the opposite player
-                playerturn = 1;
+                playerturn = (byte)Player.black;
                 UnityEngine.Debug.Log("No valid moves for white player");
             }
             // Call ValidMove from BoardRules.cs
@@ -331,6 +331,7 @@ public class Bitboard : MonoBehaviour
             // Get the best move from ReturnRandomMove from MiniMax.cs
             stopWatch.Start();
             CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MaxValue, int.MinValue);
+            //UnityEngine.Debug.Log(CPUBestMove);
             stopWatch.Stop();
             // Remove the red tiles, since the AI doesn't need them
             ShowValidMoves();

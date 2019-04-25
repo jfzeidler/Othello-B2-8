@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class tileScript : MonoBehaviour
 {
+    enum Player { blank = 0, black = 1, white = 2};
     byte DEBUG = 0;
 
     public GameObject The_Board;
@@ -45,13 +46,13 @@ public class tileScript : MonoBehaviour
         }
     }
 
-    void placePlayer(int x, int y, int z)
+    void placePlayer(byte playerturn, int y, int z)
     {
         // Make position vector for Instantiate
         Vector3 vectorPos = new Vector3(z, -0.85f, y);
 
         //If black turn
-        if (x == 1)
+        if (playerturn == (byte)Player.black)
         {
             // Places black piece on the board
             var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity) as GameObject;
@@ -62,7 +63,7 @@ public class tileScript : MonoBehaviour
         }
 
         //If white turn
-        else if (x == 2)
+        else if (playerturn == (byte)Player.white)
         {
             // Places white piece on the board
             var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity) as GameObject;
@@ -95,5 +96,7 @@ public class tileScript : MonoBehaviour
         The_Board.GetComponent<Bitboard>().bitboard[yPos, xPos] = playerturn;
         // Call bitboardUpdate from Bitboard.cs
         The_Board.GetComponent<Bitboard>().bitboardUpdate();
+        //The_Board.GetComponent<Bitboard>().bitboardResetTurn();
+
     }
 }
