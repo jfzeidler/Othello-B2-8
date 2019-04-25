@@ -199,7 +199,6 @@ public class Bitboard : MonoBehaviour
         DestroyImmediate(GameObject.Find(playerToFlip));
         //UnityEngine.Debug.Log(playerToFlip);
 
-        if (playerturn == 2)
         if (playerturn == (byte)Player.white)
         {
             // Place a white piece on the board
