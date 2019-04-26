@@ -304,14 +304,13 @@ public class Bitboard : MonoBehaviour
     void CPUTurn(int[] CPUBestMove)
     {
         // If the move is inside the bitboard
-        if (CPUBestMove[0] < 8 && CPUBestMove[1] < 8)
+        if (BoardState.InRange(CPUBestMove[0], CPUBestMove[1]))
         {
             int temp = CPUBestMove[1] + 65;
             char c = (char)temp;
             UnityEngine.Debug.Log("CPU: " + c + (CPUBestMove[0] + 1));
             // Call MakeMove from tileScript.cs
             Tiles.GetComponent<tileScript>().MakeMove(CPUBestMove[1], CPUBestMove[0], playerturn);
-
         }
     }
 
@@ -324,7 +323,7 @@ public class Bitboard : MonoBehaviour
 
         if (playerturn == (int)Player.white)
         {
-            int maxDepth = 5;
+            int maxDepth = 2;
             int currentDepth = 0;
             // Active AI if the playerturn is White
             Stopwatch stopWatch = new Stopwatch();
