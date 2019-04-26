@@ -84,13 +84,13 @@ public class MiniMax : BoardRules
         if (playerturn == 1)
         {
             result = (playerScore - AIScore);
-            File.AppendAllText(fileName, Environment.NewLine + "RESULT FOR BLACK: " + result + Environment.NewLine);
+            //File.AppendAllText(fileName, Environment.NewLine + "RESULT FOR BLACK: " + result + Environment.NewLine);
         }
 
         else if (playerturn == 2)
         {
             result = (AIScore - playerScore);
-            File.AppendAllText(fileName, Environment.NewLine + "RESULT FOR WHITE: " + result + Environment.NewLine);
+            //File.AppendAllText(fileName, Environment.NewLine + "RESULT FOR WHITE: " + result + Environment.NewLine);
         }
         return result;
     }
@@ -154,7 +154,7 @@ public class MiniMax : BoardRules
             allMoves = MoveList(bitboard, 2);
             foreach (Vector2 move in allMoves)
             {
-                File.AppendAllText(fileName, "Chosen VECTOR WHITE: " + (int)move.X + " " + (int)move.Y + Environment.NewLine);
+                //File.AppendAllText(fileName, "Chosen VECTOR WHITE: " + (int)move.X + " " + (int)move.Y + Environment.NewLine);
                 int[,] newBoard = GetNextBoardState(bitboard, playerturn, (int)move.X, (int)move.Y);
                 int score = MiniMaxAlgorithm(newBoard, 1, maxDepth, (currentDepth + 1), alpha, beta).score;
                 if (score > ms.score)
@@ -162,7 +162,7 @@ public class MiniMax : BoardRules
                     ms.row = (int)move.X;
                     ms.col = (int)move.Y;
                     ms.score = score;
-                    File.AppendAllText(fileName, "BEST VECTOR MOVE WHITE FOR NOW:" + ms.row + " " + ms.col + " " + ms.score + Environment.NewLine + Environment.NewLine);
+                    //File.AppendAllText(fileName, "BEST VECTOR MOVE WHITE FOR NOW:" + ms.row + " " + ms.col + " " + ms.score + Environment.NewLine + Environment.NewLine);
                     if (ms.score > alpha)
                         alpha = ms.score;
                     if (alpha >= beta)
