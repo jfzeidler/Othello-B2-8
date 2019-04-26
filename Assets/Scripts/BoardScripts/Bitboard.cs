@@ -324,14 +324,14 @@ public class Bitboard : MonoBehaviour
 
         if (playerturn == (int)Player.white)
         {
-            int maxDepth = 2;
+            int maxDepth = 7;
             int currentDepth = 0;
             // Active AI if the playerturn is White
             Stopwatch stopWatch = new Stopwatch();
             int[] CPUBestMove = new int[2];
             // Get the best move from ReturnRandomMove from MiniMax.cs
             stopWatch.Start();
-            CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MaxValue, int.MinValue);
+            CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MinValue, int.MaxValue);
             //UnityEngine.Debug.Log(CPUBestMove);
             stopWatch.Stop();
             // Remove the red tiles, since the AI doesn't need them

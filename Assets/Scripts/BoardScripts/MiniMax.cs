@@ -35,33 +35,62 @@ public class MiniMax : BoardRules
 
     public int EvaluateBoard(int[,] bitboard, int playerturn)
     {
-        List<Vector2> playerMoves = MoveList(bitboard, 2);
-        List<Vector2> AIMoves = MoveList(bitboard, 1);
+        
+        // List<Vector2> playerMoves = MoveList(bitboard, 1);
+        // List<Vector2> AIMoves = MoveList(bitboard, 2);
 
         int playerScore = 0;
         int AIScore = 0;
         int result = 0;
+
+        /* foreach (Vector2 move in playerMoves)
+        {
+            File.AppendAllText(fileName, "VECTOR: " + (int)move.X + " " + (int)move.Y + Environment.NewLine);
+        }
+
+        foreach (Vector2 move in AIMoves)
+        {
+            File.AppendAllText(fileName, "AI_VECTOR: " + (int)move.X + " " + (int)move.Y + Environment.NewLine);
+        }
 
         foreach (Vector2 move in playerMoves)
         {
             playerScore += Evaluation[(int)move.X, (int)move.Y];
             File.AppendAllText(fileName, Environment.NewLine + "EVALUATION: " + playerScore + Environment.NewLine);
         }
+
         foreach (Vector2 move in AIMoves)
         {
             AIScore += Evaluation[(int)move.X, (int)move.Y];
             File.AppendAllText(fileName, Environment.NewLine + "AI_EVALUATION: " + AIScore + Environment.NewLine);
+        }*/
+
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                if (bitboard[i, j] == 1)
+                {
+                    playerScore += Evaluation[i, j];
+                }
+
+                else if (bitboard[i, j] == 2)
+                {
+                    AIScore += Evaluation[i, j];
+                }
+            }
         }
 
         if (playerturn == 1)
         {
             result = (playerScore - AIScore);
-            File.AppendAllText(fileName, Environment.NewLine + "RESULT: " + result + Environment.NewLine);
+            File.AppendAllText(fileName, Environment.NewLine + "RESULT FOR BLACK: " + result + Environment.NewLine);
         }
+
         else if (playerturn == 2)
         {
             result = (AIScore - playerScore);
-            File.AppendAllText(fileName, Environment.NewLine + "RESULT: " + result + Environment.NewLine);
+            File.AppendAllText(fileName, Environment.NewLine + "RESULT FOR WHITE: " + result + Environment.NewLine);
         }
         return result;
     }
@@ -123,14 +152,9 @@ public class MiniMax : BoardRules
         if (playerturn == 2)
         {
             allMoves = MoveList(bitboard, 2);
-            File.AppendAllText(fileName, "LIST OF VECTORS FOR PLAYER WHITE: " + Environment.NewLine + Environment.NewLine);
             foreach (Vector2 move in allMoves)
             {
-                File.AppendAllText(fileName, "VECTOR: " + (int)move.X + " " + (int)move.Y + Environment.NewLine);
-            }
-
-            foreach (Vector2 move in allMoves)
-            {
+                File.AppendAllText(fileName, "Chosen VECTOR WHITE: " + (int)move.X + " " + (int)move.Y + Environment.NewLine);
                 int[,] newBoard = GetNextBoardState(bitboard, playerturn, (int)move.X, (int)move.Y);
                 int score = MiniMaxAlgorithm(newBoard, 1, maxDepth, (currentDepth + 1), alpha, beta).score;
                 if (score > ms.score)
@@ -138,7 +162,7 @@ public class MiniMax : BoardRules
                     ms.row = (int)move.X;
                     ms.col = (int)move.Y;
                     ms.score = score;
-                    File.AppendAllText(fileName, "VECTOR MOVE WHITE:" + ms.row + " " + ms.col + " " + ms.score + Environment.NewLine + Environment.NewLine);
+                    File.AppendAllText(fileName, "BEST VECTOR MOVE WHITE FOR NOW:" + ms.row + " " + ms.col + " " + ms.score + Environment.NewLine + Environment.NewLine);
                     if (ms.score > alpha)
                         alpha = ms.score;
                     if (alpha >= beta)
@@ -149,14 +173,10 @@ public class MiniMax : BoardRules
         else if (playerturn == 1)
         {
             allMoves = MoveList(bitboard, 1);
-            File.AppendAllText(fileName, "LIST OF VECTORS FOR PLAYER BLACK: " + Environment.NewLine + Environment.NewLine);
-            foreach (Vector2 move in allMoves)
-            {
-                File.AppendAllText(fileName, "VECTOR " + (int)move.X + " " + (int)move.Y + Environment.NewLine);
-            }
 
             foreach (Vector2 move in allMoves)
             {
+                File.AppendAllText(fileName, "Chosen VECTOR BLACK: " + (int)move.X + " " + (int)move.Y + Environment.NewLine);
                 int[,] newBoard = GetNextBoardState(bitboard, playerturn, (int)move.X, (int)move.Y);
                 int score = MiniMaxAlgorithm(newBoard, 2, maxDepth, (currentDepth + 1), alpha, beta).score;
                 if (score < ms.score)
@@ -164,7 +184,7 @@ public class MiniMax : BoardRules
                     ms.row = (int)move.X;
                     ms.col = (int)move.Y;
                     ms.score = score;
-                    File.AppendAllText(fileName, "VECTOR MOVE BLACK:" + ms.row + " " + ms.col + " " + ms.score + Environment.NewLine + Environment.NewLine);
+                    File.AppendAllText(fileName, "BEST VECTOR MOVE BLACK FOR NOW:" + ms.row + " " + ms.col + " " + ms.score + Environment.NewLine + Environment.NewLine);
                     if (ms.score < beta)
                         beta = ms.score;
                     if (beta <= alpha)
@@ -172,7 +192,6 @@ public class MiniMax : BoardRules
                 }
             }
         }
-        File.AppendAllText(fileName, "BEST VECTOR MOVE:" + ms.row + ms.col + ms.score + Environment.NewLine);
         return ms;
     }
 
@@ -183,7 +202,7 @@ public class MiniMax : BoardRules
         result[0] = (int)bestMove.row;
         result[1] = (int)bestMove.col;
         result[2] = bestMove.score;
-        File.AppendAllText(fileName, "BEST VECTOR MOVE:" + bestMove.row + bestMove.col + Environment.NewLine);
+        File.AppendAllText(fileName, "BEST VECTOR MOVE:" + bestMove.row + bestMove.col + bestMove.score + Environment.NewLine);
         return result;
     }
 

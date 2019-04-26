@@ -253,8 +253,8 @@ public class BoardRules
     {
         int[,] bitboardCopy = (int[,])bitboard.Clone();
         bitboardCopy[bitboardX, bitboardY] = playerturn;
-        bitboardCopy = bitboardOnlyResetTurn(bitboardCopy, playerturn);
         CaptureEnemyPlayer(bitboardCopy, bitboardY, bitboardX, playerturn);
+        bitboardCopy = bitboardOnlyResetTurn(bitboardCopy, playerturn);
         ValidMove(bitboardCopy, playerturn);
         return bitboardCopy;
     }
