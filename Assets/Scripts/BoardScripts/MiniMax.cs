@@ -131,7 +131,7 @@ public class MiniMax : BoardRules
     public MoveStatus MiniMaxAlgorithm(int[,] bitboard, int playerturn, int maxDepth, int currentDepth, int alpha, int beta)
     {
 
-        if (currentDepth == maxDepth)
+        if (CheckForNine(bitboard) == true || currentDepth == maxDepth)
         {
             File.AppendAllText(fileName, Environment.NewLine + "Return" + Environment.NewLine);
             return new MoveStatus(-1, -1, EvaluateBoard(bitboard, playerturn));

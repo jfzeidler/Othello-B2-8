@@ -351,11 +351,7 @@ public class Bitboard : MonoBehaviour
 
     void ShowAIPoints(int[] CPUBestMove)
     {
-        if (GameOverCanvas.activeSelf)
-        {
-
-        }
-        else
+        if (BoardState.InRange(CPUBestMove[0], CPUBestMove[1]))
         {
             CPUPoints += Evaluation[CPUBestMove[0], CPUBestMove[1]];
             UnityEngine.Debug.Log("CPU Points: " + CPUPoints);
