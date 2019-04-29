@@ -12,28 +12,30 @@ public class MainMenu : MonoBehaviour
     public GameObject Rotation_Camera;
     public GameObject UI;
 
-    void WaitForSceneManager()
+    /*void WaitForSceneManager()
     {
-        float temptime = Time.time + 5.0f; float time = Time.time;
+        float temptime = Time.time + 2.0f; float time = Time.time;
 
-        Debug.Log(temptime + "   " + time);
+        Debug.Log(temptime + ">" + time);
         
         while (temptime > time)
         {
-            Debug.Log("WAIT");
-            time = Time.time;
+            time += 0.0001f;
         }
         
-        CanvasMenu.SetActive(false);
-        Main_Camera.SetActive(true);
-        Rotation_Camera.SetActive(false);
-        UI.SetActive(true);
+        CanvasMenu.SetActive(true);
+        Main_Camera.SetActive(false);
+        Rotation_Camera.SetActive(true);
+        UI.SetActive(false);
         Debug.Log("TESTING");
-    }
+    }*/
 
-    public void Start()
+    void Start()
     {
-
+        CanvasMenu.SetActive(true);
+        Main_Camera.SetActive(false);
+        Rotation_Camera.SetActive(true);
+        UI.SetActive(false);
     }
 
     public void Update()
@@ -44,18 +46,21 @@ public class MainMenu : MonoBehaviour
     public void MenuButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        CanvasMenu.SetActive(true);
+        Main_Camera.SetActive(false);
+        Rotation_Camera.SetActive(true);
+        UI.SetActive(false);
     }
 
     public void PlayButton()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        StartCoroutine("WaitForSceneManager", 5.0f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //StartCoroutine("WaitForSceneManager", 5.0f);
     }
 
     public void PlayAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        WaitForSceneManager();
     }
 
     public void ExitGame()
