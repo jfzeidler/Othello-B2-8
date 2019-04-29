@@ -7,11 +7,8 @@ public class BoardButtons : MonoBehaviour
 {
     public void ToMainmenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void PlayAgain()
-    {
-        SceneManager.LoadScene(1);
-    }
+
 }

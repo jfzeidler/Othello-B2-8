@@ -18,7 +18,7 @@ public class Bitboard : MonoBehaviour
     int CPUPoints = 0;
     int Blackpieces = 0; int Whitepieces = 0;
     int maxDepth = 2;
-    int playMode = 1; // 1 = Player vs. CPU, 2 = Player vs. Player, 3 = CPU vs. CPU
+    int playMode = 0; // 0 = Player vs. CPU, 1 = Player vs. Player, 2 = CPU vs. CPU
 
     readonly int[,] Evaluation = {
         // A       B     C     D     E     F      G      H
@@ -88,7 +88,13 @@ public class Bitboard : MonoBehaviour
     public void ChangeMaxDepth(Slider slider)
     {
         maxDepth = (int)slider.value;
-        UnityEngine.Debug.Log("New Value: " + slider.value);
+        UnityEngine.Debug.Log("New maxDepth: " + slider.value);
+    }
+
+    public void ChangePlayingMode(TMP_Dropdown dropdown)
+    {
+        playMode = dropdown.value;
+        UnityEngine.Debug.Log("New PlayMode: " + dropdown.value);
     }
 
     public void boardRules(int bitboardX, int bitboardY)
@@ -328,7 +334,7 @@ public class Bitboard : MonoBehaviour
 
     void PlayingMode()
     {
-        if (playMode == 1)
+        if (playMode == 0)
         {
             if (playerturn == (int)Player.black)
             {
@@ -361,12 +367,12 @@ public class Bitboard : MonoBehaviour
             }
         }
 
-        else if (playMode == 2)
+        else if (playMode == 1)
         {
             ShowValidMoves();
         }
 
-        else if (playMode == 3)
+        else if (playMode == 2)
         {
             int currentDepth = 0;
             // Active AI if the playerturn is White
