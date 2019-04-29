@@ -18,7 +18,7 @@ public class Bitboard : MonoBehaviour
     int CPUPoints = 0;
     int Blackpieces = 0; int Whitepieces = 0;
     int maxDepth = 2;
-    int playMode = 3; // 1 = Player vs. CPU, 2 = Player vs. Player, 3 = CPU vs. CPU
+    int playMode = 1; // 1 = Player vs. CPU, 2 = Player vs. Player, 3 = CPU vs. CPU
 
     readonly int[,] Evaluation = {
         // A       B     C     D     E     F      G      H
