@@ -7,22 +7,33 @@ using System.Threading;
 public class MainMenu : MonoBehaviour
 {
 
-    IEnumerator Delay()
-    {
-        print(Time.time);
-        yield return new WaitForSeconds(5);
-        print(Time.time);
-    }
-
     public GameObject CanvasMenu;
     public GameObject Main_Camera;
     public GameObject Rotation_Camera;
     public GameObject UI;
 
+    void WaitForSceneManager()
+    {
+        float temptime = Time.time + 5.0f; float time = Time.time;
+
+        Debug.Log(temptime + "   " + time);
+
+        while (temptime > time)
+        {
+            Debug.Log("WAIT");
+        }
+        CanvasMenu.SetActive(false);
+        Main_Camera.SetActive(true);
+        Rotation_Camera.SetActive(false);
+        UI.SetActive(true);
+        Debug.Log("TESTING");
+    }
+
     public void Update()
     {
 
     }
+
     public void MenuButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -30,17 +41,14 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        StartCoroutine(Delay());
-        CanvasMenu.SetActive(false);
-        Main_Camera.SetActive(true);
-        Rotation_Camera.SetActive(false);
-        UI.SetActive(true);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        WaitForSceneManager();
     }
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        WaitForSceneManager();
     }
 
     public void ExitGame()
