@@ -54,7 +54,6 @@ public class Bitboard : MonoBehaviour
     public GameObject Whitecountertext;
     public GameObject ScorePanelTurnText;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +83,12 @@ public class Bitboard : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void ChangeMaxDepth(Slider slider)
+    {
+        maxDepth = (int)slider.value;
+        UnityEngine.Debug.Log("New Value: " + slider.value);
     }
 
     public void boardRules(int bitboardX, int bitboardY)
