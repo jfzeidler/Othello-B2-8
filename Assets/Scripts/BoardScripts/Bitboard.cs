@@ -17,6 +17,8 @@ public class Bitboard : MonoBehaviour
     int DEBUG = 1;
     int CPUPoints = 0;
     int Blackpieces = 0; int Whitepieces = 0;
+    int maxDepth = 2;
+    int playMode = 3; // 1 = Player vs. CPU, 2 = Player vs. Player, 3 = CPU vs. CPU
 
     readonly int[,] Evaluation = {
         // A       B     C     D     E     F      G      H
@@ -72,9 +74,10 @@ public class Bitboard : MonoBehaviour
         }
         // Call ValidMove from BoardRules.cs
         BoardState.ValidMove(bitboard, playerturn);
-        ShowValidMoves();
         // Show current player
         ShowPlayerTurn();
+        // Play in accordance with the current playing mode
+        PlayingMode();
     }
 
     // Update is called once per frame
@@ -114,8 +117,8 @@ public class Bitboard : MonoBehaviour
         ShowPlayerTurn();
         // Check if theres a Game Over Senario
         IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
-        // Give the current player the right to make a move
-        PlayerToMakeMove(playerturn);
+        // Play in accordance with the current playing mode
+        PlayingMode();
 
     }
 
@@ -314,16 +317,57 @@ public class Bitboard : MonoBehaviour
         }
     }
 
-    void PlayerToMakeMove(int playerturn)
+    void ShowAIPoints(int[] CPUBestMove)
     {
-        if (playerturn == (int)Player.black)
+        if (BoardState.InRange(CPUBestMove[0], CPUBestMove[1]))
+        {
+            CPUPoints += Evaluation[CPUBestMove[0], CPUBestMove[1]];
+            UnityEngine.Debug.Log("CPU Points: " + CPUPoints);
+        }
+    }
+
+    void PlayingMode()
+    {
+        if (playMode == 1)
+        {
+            if (playerturn == (int)Player.black)
+            {
+                ShowValidMoves();
+            }
+
+            if (playerturn == (int)Player.white)
+            {
+                int currentDepth = 0;
+                // Active AI if the playerturn is White
+                Stopwatch stopWatch = new Stopwatch();
+                int[] CPUBestMove = new int[2];
+                // Get the best move from ReturnRandomMove from MiniMax.cs
+                stopWatch.Start();
+                CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MinValue, int.MaxValue);
+                //UnityEngine.Debug.Log(CPUBestMove);
+                stopWatch.Stop();
+                // Remove the red tiles, since the AI doesn't need them
+                ShowValidMoves();
+                // Perform the move
+                CPUTurn(CPUBestMove);
+                //ShowAIPoints(CPUBestMove);
+                TimeSpan ts = stopWatch.Elapsed;
+                string elapsedTime = String.Format("M{1:00}:S{2:00}.Mil{3:00}",
+                    ts.Hours, ts.Minutes, ts.Seconds,
+                    ts.Milliseconds / 10);
+
+                UnityEngine.Debug.Log(elapsedTime);
+                ShowAIPoints(CPUBestMove);
+            }
+        }
+
+        else if (playMode == 2)
         {
             ShowValidMoves();
         }
 
-        if (playerturn == (int)Player.white)
+        else if (playMode == 3)
         {
-            int maxDepth = 2;
             int currentDepth = 0;
             // Active AI if the playerturn is White
             Stopwatch stopWatch = new Stopwatch();
@@ -345,15 +389,6 @@ public class Bitboard : MonoBehaviour
 
             UnityEngine.Debug.Log(elapsedTime);
             ShowAIPoints(CPUBestMove);
-        }
-    }
-
-    void ShowAIPoints(int[] CPUBestMove)
-    {
-        if (BoardState.InRange(CPUBestMove[0], CPUBestMove[1]))
-        {
-            CPUPoints += Evaluation[CPUBestMove[0], CPUBestMove[1]];
-            UnityEngine.Debug.Log("CPU Points: " + CPUPoints);
         }
     }
 }
