@@ -7,6 +7,13 @@ using System.Threading;
 public class MainMenu : MonoBehaviour
 {
 
+    IEnumerator Delay()
+    {
+        print(Time.time);
+        yield return new WaitForSeconds(5);
+        print(Time.time);
+    }
+
     public GameObject CanvasMenu;
     public GameObject Main_Camera;
     public GameObject Rotation_Camera;
@@ -23,7 +30,8 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButton()
     {
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        StartCoroutine(Delay());
         CanvasMenu.SetActive(false);
         Main_Camera.SetActive(true);
         Rotation_Camera.SetActive(false);
