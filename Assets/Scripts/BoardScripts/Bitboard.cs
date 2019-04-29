@@ -323,7 +323,7 @@ public class Bitboard : MonoBehaviour
 
         if (playerturn == (int)Player.white)
         {
-            int maxDepth = 5;
+            int maxDepth = 2;
             int currentDepth = 0;
             // Active AI if the playerturn is White
             Stopwatch stopWatch = new Stopwatch();
