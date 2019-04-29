@@ -17,16 +17,23 @@ public class MainMenu : MonoBehaviour
         float temptime = Time.time + 5.0f; float time = Time.time;
 
         Debug.Log(temptime + "   " + time);
-
+        
         while (temptime > time)
         {
             Debug.Log("WAIT");
+            time = Time.time;
         }
+        
         CanvasMenu.SetActive(false);
         Main_Camera.SetActive(true);
         Rotation_Camera.SetActive(false);
         UI.SetActive(true);
         Debug.Log("TESTING");
+    }
+
+    public void Start()
+    {
+
     }
 
     public void Update()
@@ -41,13 +48,13 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButton()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-        WaitForSceneManager();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        StartCoroutine("WaitForSceneManager", 5.0f);
     }
 
     public void PlayAgain()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         WaitForSceneManager();
     }
 
