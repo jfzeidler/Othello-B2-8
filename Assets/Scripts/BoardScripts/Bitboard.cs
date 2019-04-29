@@ -83,12 +83,7 @@ public class Bitboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // If the player presses "ESC" on the keyboard
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            // Go back to the main menu
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        }
+
     }
 
     public void boardRules(int bitboardX, int bitboardY)

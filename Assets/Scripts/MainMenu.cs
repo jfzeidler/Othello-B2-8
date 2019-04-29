@@ -12,9 +12,9 @@ public class MainMenu : MonoBehaviour
             Application.Quit();
         }
     }
-    public void PlayGame()
+    public void MenuButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ExitGame()
