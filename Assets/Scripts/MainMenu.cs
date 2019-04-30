@@ -8,9 +8,12 @@ using System.Threading;
 
 public class MainMenu : MonoBehaviour
 {
-    public void MenuButton()
+    public Slider slider;
+    public TMP_Dropdown dropdown;
+    void Awake()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        slider.value = PlayerPrefs.GetInt("maxDepth", 2);
+        dropdown.value = PlayerPrefs.GetInt("playMode", 0);
     }
 
     public void PlayButton()
@@ -29,13 +32,13 @@ public class MainMenu : MonoBehaviour
         Debug.Log("EXIT");
     }
 
-    public void ChangeMaxDepth(Slider slider)
+    public void ChangeMaxDepth()
     {
         PlayerPrefs.SetInt("maxDepth", (int)slider.value);
         Debug.Log("New maxDepth: " + slider.value);
     }
 
-    public void ChangePlayingMode(TMP_Dropdown dropdown)
+    public void ChangePlayingMode()
     {
         PlayerPrefs.SetInt("playMode", dropdown.value);
         Debug.Log("New PlayMode: " + dropdown.value);

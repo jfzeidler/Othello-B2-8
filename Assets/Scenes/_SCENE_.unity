@@ -2733,7 +2733,6 @@ GameObject:
   - component: {fileID: 386293780}
   - component: {fileID: 386293779}
   - component: {fileID: 386293778}
-  - component: {fileID: 386293781}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -2801,7 +2800,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 386293781}
+      - m_Target: {fileID: 1051862554}
         m_MethodName: MenuButton
         m_Mode: 1
         m_Arguments:
@@ -2851,18 +2850,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386293776}
   m_CullTransparentMesh: 0
---- !u!114 &386293781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386293776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6825b1f95fe0f3b449779808eaf16f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &426979592
 GameObject:
   m_ObjectHideFlags: 0
@@ -14446,6 +14433,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6825b1f95fe0f3b449779808eaf16f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 0}
+  dropdown: {fileID: 0}
 --- !u!4 &1996827273 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
