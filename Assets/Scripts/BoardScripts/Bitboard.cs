@@ -25,6 +25,11 @@ public class Bitboard : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     readonly int[,] Evaluation = {
         // A       B     C     D     E     F      G      H
         {10000, -3000, 1000,  800,  800, 1000, -3000, 10000}, // 1
