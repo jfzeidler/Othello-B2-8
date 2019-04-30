@@ -3007,10 +3007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6825b1f95fe0f3b449779808eaf16f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasMenu: {fileID: 1647917364}
-  Main_Camera: {fileID: 0}
-  Rotation_Camera: {fileID: 1184374491}
-  UI: {fileID: 1828331709}
 --- !u!1 &411782919
 GameObject:
   m_ObjectHideFlags: 0
@@ -4061,10 +4057,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6825b1f95fe0f3b449779808eaf16f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasMenu: {fileID: 1647917364}
-  Main_Camera: {fileID: 0}
-  Rotation_Camera: {fileID: 1184374491}
-  UI: {fileID: 1828331709}
 --- !u!4 &557086378 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
@@ -5473,7 +5465,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 16}
-  m_SizeDelta: {x: 250, y: 32}
+  m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &695013260
 MonoBehaviour:
@@ -12513,10 +12505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6825b1f95fe0f3b449779808eaf16f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasMenu: {fileID: 1647917364}
-  Main_Camera: {fileID: 0}
-  Rotation_Camera: {fileID: 1184374491}
-  UI: {fileID: 1828331709}
 --- !u!4 &1657895133 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
@@ -14374,7 +14362,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1051862554}
+      - m_Target: {fileID: 1647917366}
         m_MethodName: ChangeMaxDepth
         m_Mode: 2
         m_Arguments:
@@ -15223,7 +15211,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1051862554}
+      - m_Target: {fileID: 1647917366}
         m_MethodName: ChangePlayingMode
         m_Mode: 2
         m_Arguments:
@@ -16423,7 +16411,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0

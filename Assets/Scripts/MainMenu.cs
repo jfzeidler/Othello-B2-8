@@ -33,13 +33,11 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetInt("maxDepth", (int)slider.value);
         Debug.Log("New maxDepth: " + slider.value);
-        PlayerPrefs.Save();
     }
 
     public void ChangePlayingMode(TMP_Dropdown dropdown)
     {
         PlayerPrefs.SetInt("playMode", dropdown.value);
         Debug.Log("New PlayMode: " + dropdown.value);
-        PlayerPrefs.Save();
     }
 }

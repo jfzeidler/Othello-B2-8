@@ -120,7 +120,6 @@ public class Bitboard : MonoBehaviour
         IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
         // Play in accordance with the current playing mode
         PlayingMode();
-
     }
 
     void bitboardDisplayUpdate()
@@ -329,14 +328,47 @@ public class Bitboard : MonoBehaviour
 
     void PlayingMode()
     {
-        if (playMode == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            if (playerturn == (int)Player.black)
+            if (playMode == 0)
+            {
+                if (playerturn == (int)Player.black)
+                {
+                    ShowValidMoves();
+                }
+
+                if (playerturn == (int)Player.white)
+                {
+                    int currentDepth = 0;
+                    // Active AI if the playerturn is White
+                    Stopwatch stopWatch = new Stopwatch();
+                    int[] CPUBestMove = new int[2];
+                    // Get the best move from ReturnRandomMove from MiniMax.cs
+                    stopWatch.Start();
+                    CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MinValue, int.MaxValue);
+                    //UnityEngine.Debug.Log(CPUBestMove);
+                    stopWatch.Stop();
+                    // Remove the red tiles, since the AI doesn't need them
+                    ShowValidMoves();
+                    // Perform the move
+                    CPUTurn(CPUBestMove);
+                    //ShowAIPoints(CPUBestMove);
+                    TimeSpan ts = stopWatch.Elapsed;
+                    string elapsedTime = String.Format("M{1:00}:S{2:00}.Mil{3:00}",
+                        ts.Hours, ts.Minutes, ts.Seconds,
+                        ts.Milliseconds / 10);
+
+                    UnityEngine.Debug.Log(elapsedTime);
+                    ShowAIPoints(CPUBestMove);
+                }
+            }
+
+            else if (playMode == 1)
             {
                 ShowValidMoves();
             }
 
-            if (playerturn == (int)Player.white)
+            else if (playMode == 2)
             {
                 int currentDepth = 0;
                 // Active AI if the playerturn is White
@@ -362,34 +394,9 @@ public class Bitboard : MonoBehaviour
             }
         }
 
-        else if (playMode == 1)
+        else if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             ShowValidMoves();
-        }
-
-        else if (playMode == 2)
-        {
-            int currentDepth = 0;
-            // Active AI if the playerturn is White
-            Stopwatch stopWatch = new Stopwatch();
-            int[] CPUBestMove = new int[2];
-            // Get the best move from ReturnRandomMove from MiniMax.cs
-            stopWatch.Start();
-            CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MinValue, int.MaxValue);
-            //UnityEngine.Debug.Log(CPUBestMove);
-            stopWatch.Stop();
-            // Remove the red tiles, since the AI doesn't need them
-            ShowValidMoves();
-            // Perform the move
-            CPUTurn(CPUBestMove);
-            //ShowAIPoints(CPUBestMove);
-            TimeSpan ts = stopWatch.Elapsed;
-            string elapsedTime = String.Format("M{1:00}:S{2:00}.Mil{3:00}",
-                ts.Hours, ts.Minutes, ts.Seconds,
-                ts.Milliseconds / 10);
-
-            UnityEngine.Debug.Log(elapsedTime);
-            ShowAIPoints(CPUBestMove);
         }
     }
 }
