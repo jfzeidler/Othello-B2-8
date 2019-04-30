@@ -252,30 +252,33 @@ public class Bitboard : MonoBehaviour
 
     void IsGameOver(int[,] bitboard, int playerturn, int Whitepieces, int Blackpieces)
     {
-        // If black player has the most pieces, show "Player Black Won"
-        if (Blackpieces > Whitepieces)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player Black Won";
-        }
+            // If black player has the most pieces, show "Player Black Won"
+            if (Blackpieces > Whitepieces)
+            {
+                AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player Black Won";
+            }
 
-        // If black player has the most pieces, show "Player White Won"
-        else if (Whitepieces > Blackpieces)
-        {
-            AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player White Won";
-        }
+            // If black player has the most pieces, show "Player White Won"
+            else if (Whitepieces > Blackpieces)
+            {
+                AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player White Won";
+            }
 
-        // If black player has the most pieces, show "Draw"
-        else if (Whitepieces == Blackpieces)
-        {
-            AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Draw";
-        }
+            // If black player has the most pieces, show "Draw"
+            else if (Whitepieces == Blackpieces)
+            {
+                AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Draw";
+            }
 
-        // Call CheckForNine from BoardRules.cs
-        if (BoardState.CheckForNine(bitboard) == true)
-        {
-            UnityEngine.Debug.Log("Game over");
-            // Show the Game Over canvas, to show who won
-            GameOverCanvas.SetActive(true);
+            // Call CheckForNine from BoardRules.cs
+            if (BoardState.CheckForNine(bitboard) == true)
+            {
+                UnityEngine.Debug.Log("Game over");
+                // Show the Game Over canvas, to show who won
+                GameOverCanvas.SetActive(true);
+            }
         }
     }
 
