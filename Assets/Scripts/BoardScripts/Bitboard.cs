@@ -20,6 +20,7 @@ public class Bitboard : MonoBehaviour
     int maxDepth = 2;
     int playMode = 0; // 0 = Player vs. CPU, 1 = Player vs. Player, 2 = CPU vs. CPU
 
+
     readonly int[,] Evaluation = {
         // A       B     C     D     E     F      G      H
         {10000, -3000, 1000,  800,  800, 1000, -3000, 10000}, // 1
@@ -54,6 +55,12 @@ public class Bitboard : MonoBehaviour
     public GameObject Whitecountertext;
     public GameObject ScorePanelTurnText;
 
+    void Awake()
+    {
+        maxDepth = PlayerPrefs.GetInt("maxDepth", 2);
+        playMode = PlayerPrefs.GetInt("playMode", 0);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,18 +90,6 @@ public class Bitboard : MonoBehaviour
     void Update()
     {
 
-    }
-
-    public void ChangeMaxDepth(Slider slider)
-    {
-        maxDepth = (int)slider.value;
-        UnityEngine.Debug.Log("New maxDepth: " + slider.value);
-    }
-
-    public void ChangePlayingMode(TMP_Dropdown dropdown)
-    {
-        playMode = dropdown.value;
-        UnityEngine.Debug.Log("New PlayMode: " + dropdown.value);
     }
 
     public void boardRules(int bitboardX, int bitboardY)

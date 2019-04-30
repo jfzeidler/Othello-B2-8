@@ -1,61 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 using System.Threading;
 
 public class MainMenu : MonoBehaviour
 {
-
-    public GameObject CanvasMenu;
-    public GameObject Main_Camera;
-    public GameObject Rotation_Camera;
-    public GameObject UI;
-
-    /*void WaitForSceneManager()
-    {
-        float temptime = Time.time + 2.0f; float time = Time.time;
-
-        Debug.Log(temptime + ">" + time);
-        
-        while (temptime > time)
-        {
-            time += 0.0001f;
-        }
-        
-        CanvasMenu.SetActive(true);
-        Main_Camera.SetActive(false);
-        Rotation_Camera.SetActive(true);
-        UI.SetActive(false);
-        Debug.Log("TESTING");
-    }*/
-
-    void Start()
-    {
-        CanvasMenu.SetActive(true);
-        Main_Camera.SetActive(false);
-        Rotation_Camera.SetActive(true);
-        UI.SetActive(false);
-    }
-
-    public void Update()
-    {
-
-    }
-
     public void MenuButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        CanvasMenu.SetActive(true);
-        Main_Camera.SetActive(false);
-        Rotation_Camera.SetActive(true);
-        UI.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void PlayButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //StartCoroutine("WaitForSceneManager", 5.0f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void PlayAgain()
@@ -67,5 +27,19 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("EXIT");
+    }
+
+    public void ChangeMaxDepth(Slider slider)
+    {
+        PlayerPrefs.SetInt("maxDepth", (int)slider.value);
+        Debug.Log("New maxDepth: " + slider.value);
+        PlayerPrefs.Save();
+    }
+
+    public void ChangePlayingMode(TMP_Dropdown dropdown)
+    {
+        PlayerPrefs.SetInt("playMode", dropdown.value);
+        Debug.Log("New PlayMode: " + dropdown.value);
+        PlayerPrefs.Save();
     }
 }
