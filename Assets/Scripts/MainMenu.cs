@@ -10,10 +10,13 @@ public class MainMenu : MonoBehaviour
 {
     public Slider slider;
     public TMP_Dropdown dropdown;
+    public Toggle toggle;
+
     void Awake()
     {
         slider.value = PlayerPrefs.GetInt("maxDepth", 2);
         dropdown.value = PlayerPrefs.GetInt("playMode", 0);
+        toggle.isOn = (PlayerPrefs.GetInt("MoveGuide", 0) != 0);
     }
 
     public void PlayButton()
@@ -41,6 +44,7 @@ public class MainMenu : MonoBehaviour
 
     public void ChangeShowMoves()
     {
-        //PlayerPrefs.SetInt("MoveGuide", 1);
+        PlayerPrefs.SetInt("MoveGuide", (toggle.isOn ? 1 : 0));
+        Debug.Log("New MoveGuide: " + (toggle.isOn ? 1 : 0));
     }
 }

@@ -122,7 +122,6 @@ public class Bitboard : MonoBehaviour
         if (DEBUG == 1)
         {
             bitboardDisplayUpdate();
-
         }
 
         // Show current player
@@ -187,8 +186,11 @@ public class Bitboard : MonoBehaviour
                     char c = (char)temp;
                     string tileGameObject = c + System.Convert.ToString(i + 1 + "/TileVisual");
 
-                    // Call TextureSwap from the gameobject
-                    GameObject.Find(tileGameObject).GetComponent<SwapTextures>().TextureSwap();
+                    if (MoveGuide == 1)
+                    {
+                        // Call TextureSwap from the gameobject
+                        GameObject.Find(tileGameObject).GetComponent<SwapTextures>().TextureSwap();
+                    }
                     // reset the bitboard value to 0
                     bitboard[i, j] = 0;
                 }
