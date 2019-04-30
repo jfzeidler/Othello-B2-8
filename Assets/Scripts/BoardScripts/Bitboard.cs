@@ -20,6 +20,10 @@ public class Bitboard : MonoBehaviour
     int maxDepth = 2;
     int playMode = 0; // 0 = Player vs. CPU, 1 = Player vs. Player, 2 = CPU vs. CPU
 
+    public void MenuButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
 
     readonly int[,] Evaluation = {
         // A       B     C     D     E     F      G      H
