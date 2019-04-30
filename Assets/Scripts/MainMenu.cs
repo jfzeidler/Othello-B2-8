@@ -38,4 +38,9 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("playMode", dropdown.value);
         Debug.Log("New PlayMode: " + dropdown.value);
     }
+
+    public void ChangeShowMoves()
+    {
+        //PlayerPrefs.SetInt("MoveGuide", 1);
+    }
 }
