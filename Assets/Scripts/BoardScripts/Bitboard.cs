@@ -19,7 +19,8 @@ public class Bitboard : MonoBehaviour
     int Blackpieces = 0; int Whitepieces = 0;
     int maxDepth = 2;
     int playMode = 0; // 0 = Player vs. CPU, 1 = Player vs. Player, 2 = CPU vs. CPU
-    int MoveGuide = 0; // 0 = No Moves, 1 = Show Moves
+    int moveGuide = 0; // 0 = No Moves, 1 = Show Moves
+    int startHelp = 0; // 0 = Show help at start, 1 = No help is shown
 
     public void MenuButton()
     {
@@ -64,18 +65,31 @@ public class Bitboard : MonoBehaviour
     public GameObject Blackcountertext;
     public GameObject Whitecountertext;
     public GameObject ScorePanelTurnText;
+    public GameObject HelpBoard;
+    public GameObject Scoreboard;
+    public GameObject Menu_Button;
+    public GameObject BackButton;
+    public GameObject HelpButton;
+    public GameObject Text2image;
 
     void Awake()
     {
         maxDepth = PlayerPrefs.GetInt("maxDepth", 2);
         playMode = PlayerPrefs.GetInt("playMode", 0);
-        MoveGuide = PlayerPrefs.GetInt("MoveGuide", 0);
+        startHelp = PlayerPrefs.GetInt("startHelp", 0);
+        moveGuide = PlayerPrefs.GetInt("moveGuide", 0);
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        if (startHelp == 0)
+        {
+            ShowHelp();
+        }
+
         MiniMax.PrepareDebugForMinimax();
+
         if (DEBUG == 1)
         {
             BitboardDisplay.GetComponent<Text>().text = "     AB CD EF GH";
@@ -186,7 +200,7 @@ public class Bitboard : MonoBehaviour
                     char c = (char)temp;
                     string tileGameObject = c + System.Convert.ToString(i + 1 + "/TileVisual");
 
-                    if (MoveGuide == 1)
+                    if (moveGuide == 1)
                     {
                         // Call TextureSwap from the gameobject
                         GameObject.Find(tileGameObject).GetComponent<SwapTextures>().TextureSwap();
@@ -247,7 +261,7 @@ public class Bitboard : MonoBehaviour
 
     void ShowValidMoves()
     {
-        if (MoveGuide == 1)
+        if (moveGuide == 1)
         {
             for (int i = 0; i < 8; i++)
             {
@@ -401,5 +415,18 @@ public class Bitboard : MonoBehaviour
 
         UnityEngine.Debug.Log(elapsedTime);
         ShowAIPoints(CPUBestMove);
+    }
+
+    void ShowHelp()
+    {
+        HelpBoard.SetActive(true);
+        Scoreboard.SetActive(false);
+        Menu_Button.SetActive(false);
+        BitboardDisplay.SetActive(false);
+        BackButton.SetActive(false);
+        HelpButton.SetActive(false);
+        Text2image.SetActive(false);
+        PlayerPrefs.SetInt("startHelp", 1);
+        PlayerPrefs.Save();
     }
 }

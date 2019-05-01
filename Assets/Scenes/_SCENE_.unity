@@ -6966,6 +6966,12 @@ MonoBehaviour:
   Blackcountertext: {fileID: 1751374260}
   Whitecountertext: {fileID: 1821975511}
   ScorePanelTurnText: {fileID: 1758297898}
+  HelpBoard: {fileID: 843090681}
+  Scoreboard: {fileID: 87951822}
+  Menu_Button: {fileID: 386293776}
+  BackButton: {fileID: 1018180918}
+  HelpButton: {fileID: 210887906}
+  Text2image: {fileID: 288640967}
 --- !u!1001 &1073071325
 PrefabInstance:
   m_ObjectHideFlags: 0
