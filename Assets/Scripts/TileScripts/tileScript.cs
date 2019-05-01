@@ -50,7 +50,11 @@ public class tileScript : MonoBehaviour
 
             if (playerturn == 1)
             {
-                MakeMove(bitboardX, bitboardY, playerturn);
+                // If the tile sellected, has a possible move
+                if (The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9)
+                {
+                    MakeMove(bitboardX, bitboardY, playerturn);
+                }
             }
         }
     }
