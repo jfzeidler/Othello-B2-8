@@ -13,16 +13,11 @@ public class tileScript : MonoBehaviour
     public GameObject spawnWhitePlayer;
     public GameObject spawnDarkPlayer;
 
-    // Start is called before the first frame update
-    void Start()
+    int playMode = 0;
+
+    void Awake()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        playMode = PlayerPrefs.GetInt("playMode", 0);
     }
 
     // What to do when clicking on a tile on the board
@@ -33,16 +28,30 @@ public class tileScript : MonoBehaviour
         string selectedTile = gameObject.ToString();
         var Char = selectedTile[0];
 
-        // Convert, to compare with bitboard - C4 = [3 , 4]
+        // Convert, to compare with bitboard - C4 = [3 , 5]
         var bitboardX = char.ToUpper(Char) - 65;
         var bitboardY = selectedTile[1] - '1';
 
-        // If the tile sellected, has a possible move
-        if (The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9)
+        if (playMode == 1)
+        {
+            // If the tile sellected, has a possible move
+            if (The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9)
+            {
+                // Get playerturn to tell which turn it is
+                int playerturn = The_Board.GetComponent<Bitboard>().playerturn;
+                MakeMove(bitboardX, bitboardY, playerturn);
+            }
+        }
+
+        else if (playMode == 0)
         {
             // Get playerturn to tell which turn it is
             int playerturn = The_Board.GetComponent<Bitboard>().playerturn;
-            MakeMove(bitboardX, bitboardY, playerturn);
+
+            if (playerturn == 1)
+            {
+                MakeMove(bitboardX, bitboardY, playerturn);
+            }
         }
     }
 
