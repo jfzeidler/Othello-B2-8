@@ -33,6 +33,17 @@ public class MiniMax : BoardRules
         {10000, -3000, 1000,  800,  800, 1000, -3000, 10000}  // 8
     };
 
+    readonly int[,] Evaluation2 = {
+        {  30, -25, 10, 5, 5, 10, -25,  30 },
+        { -25, -25,  1, 1, 1,  1, -25, -25 },
+        {  10,   1,  5, 2, 2,  5,   1,  10 },
+        {   5,   1,  2, 1, 1,  2,   1,   5 },
+        {   5,   1,  2, 1, 1,  2,   1,   5 },
+        {  10,   1,  5, 2, 2,  5,   1,  10 },
+        { -25, -25,  1, 1, 1,  1, -25, -25 },
+        {  30, -25, 10, 5, 5, 10, -25,  30 }
+    };
+
     public int EvaluateBoard(int[,] bitboard, int playerturn)
     {
         
@@ -71,12 +82,12 @@ public class MiniMax : BoardRules
             {
                 if (bitboard[i, j] == 1)
                 {
-                    playerScore += Evaluation[i, j];
+                    playerScore += Evaluation2[i, j];
                 }
 
                 else if (bitboard[i, j] == 2)
                 {
-                    AIScore += Evaluation[i, j];
+                    AIScore += Evaluation2[i, j];
                 }
             }
         }
