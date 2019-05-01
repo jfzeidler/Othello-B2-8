@@ -19,10 +19,16 @@ public class Bitboard : MonoBehaviour
     int Blackpieces = 0; int Whitepieces = 0;
     int maxDepth = 2;
     int playMode = 0; // 0 = Player vs. CPU, 1 = Player vs. Player, 2 = CPU vs. CPU
+    int MoveGuide = 0; // 0 = No Moves, 1 = Show Moves
 
     public void MenuButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     readonly int[,] Evaluation = {
@@ -63,6 +69,7 @@ public class Bitboard : MonoBehaviour
     {
         maxDepth = PlayerPrefs.GetInt("maxDepth", 2);
         playMode = PlayerPrefs.GetInt("playMode", 0);
+        MoveGuide = PlayerPrefs.GetInt("MoveGuide", 0);
     }
 
     // Start is called before the first frame update
@@ -115,7 +122,6 @@ public class Bitboard : MonoBehaviour
         if (DEBUG == 1)
         {
             bitboardDisplayUpdate();
-
         }
 
         // Show current player
@@ -180,8 +186,11 @@ public class Bitboard : MonoBehaviour
                     char c = (char)temp;
                     string tileGameObject = c + System.Convert.ToString(i + 1 + "/TileVisual");
 
-                    // Call TextureSwap from the gameobject
-                    GameObject.Find(tileGameObject).GetComponent<SwapTextures>().TextureSwap();
+                    if (MoveGuide == 1)
+                    {
+                        // Call TextureSwap from the gameobject
+                        GameObject.Find(tileGameObject).GetComponent<SwapTextures>().TextureSwap();
+                    }
                     // reset the bitboard value to 0
                     bitboard[i, j] = 0;
                 }
@@ -238,17 +247,20 @@ public class Bitboard : MonoBehaviour
 
     void ShowValidMoves()
     {
-        for (int i = 0; i < 8; i++)
+        if (MoveGuide == 1)
         {
-            for (int j = 0; j < 8; j++)
+            for (int i = 0; i < 8; i++)
             {
-                if (bitboard[i, j] == 9)
+                for (int j = 0; j < 8; j++)
                 {
-                    int temp = j + 65;
-                    char c = (char)temp;
-                    string tileGameObject = c + System.Convert.ToString(i + 1 + "/TileVisual");
-                    // Call TextureSwap from the gameobject
-                    GameObject.Find(tileGameObject).GetComponent<SwapTextures>().TextureSwap();
+                    if (bitboard[i, j] == 9)
+                    {
+                        int temp = j + 65;
+                        char c = (char)temp;
+                        string tileGameObject = c + System.Convert.ToString(i + 1 + "/TileVisual");
+                        // Call TextureSwap from the gameobject
+                        GameObject.Find(tileGameObject).GetComponent<SwapTextures>().TextureSwap();
+                    }
                 }
             }
         }
@@ -385,8 +397,7 @@ public class Bitboard : MonoBehaviour
         //ShowAIPoints(CPUBestMove);
         TimeSpan ts = stopWatch.Elapsed;
         string elapsedTime = String.Format("M{1:00}:S{2:00}.Mil{3:00}",
-            ts.Hours, ts.Minutes, ts.Seconds,
-            ts.Milliseconds / 10);
+            ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
 
         UnityEngine.Debug.Log(elapsedTime);
         ShowAIPoints(CPUBestMove);

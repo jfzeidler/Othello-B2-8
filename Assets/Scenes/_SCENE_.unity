@@ -14251,7 +14251,6 @@ GameObject:
   - component: {fileID: 1994191191}
   - component: {fileID: 1994191190}
   - component: {fileID: 1994191189}
-  - component: {fileID: 1994191192}
   m_Layer: 5
   m_Name: AgainButton
   m_TagString: Untagged
@@ -14319,7 +14318,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1994191192}
+      - m_Target: {fileID: 1051862554}
         m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
@@ -14369,20 +14368,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994191187}
   m_CullTransparentMesh: 0
---- !u!114 &1994191192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994191187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6825b1f95fe0f3b449779808eaf16f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 0}
-  dropdown: {fileID: 0}
 --- !u!4 &1996827273 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
@@ -14837,8 +14822,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 44
-  m_fontSizeBase: 44
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
