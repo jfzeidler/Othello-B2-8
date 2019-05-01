@@ -78,6 +78,7 @@ public class Bitboard : MonoBehaviour
         playMode = PlayerPrefs.GetInt("playMode", 0);
         startHelp = PlayerPrefs.GetInt("startHelp", 0);
         moveGuide = PlayerPrefs.GetInt("moveGuide", 0);
+        PlayerPrefs.Save();
     }
 
     // Start is called before the first frame update
