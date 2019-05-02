@@ -18,19 +18,9 @@ public class Bitboard : MonoBehaviour
     int CPUPoints = 0;
     int Blackpieces = 0; int Whitepieces = 0;
     int maxDepth = 2;
-    int playMode = 0; // 0 = Player vs. CPU, 1 = Player vs. Player, 2 = CPU vs. CPU
+    int playMode = 0; //+ 0 = Player vs. CPU, 1 = Player vs. Player, 2 = CPU vs. CPU
     int moveGuide = 0; // 0 = No Moves, 1 = Show Moves
     int startHelp = 0; // 0 = Show help at start, 1 = No help is shown
-
-    public void MenuButton()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-    }
-
-    public void PlayAgain()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 
     readonly int[,] Evaluation = {
         // A       B     C     D     E     F      G      H
@@ -72,6 +62,15 @@ public class Bitboard : MonoBehaviour
     public GameObject HelpButton;
     public GameObject Text2image;
 
+    public void MenuButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     void Awake()
     {
         maxDepth = PlayerPrefs.GetInt("maxDepth", 2);
