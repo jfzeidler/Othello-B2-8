@@ -18,7 +18,7 @@ public class Bitboard : MonoBehaviour
     int CPUPoints = 0;
     int Blackpieces = 0; int Whitepieces = 0;
     int maxDepth = 2;
-    int playMode = 0; //+ 0 = Player vs. CPU, 1 = Player vs. Player, 2 = CPU vs. CPU
+    int playMode = 0; // 0 = Player vs. CPU, 1 = Player vs. Player, 2 = CPU vs. CPU
     int moveGuide = 0; // 0 = No Moves, 1 = Show Moves
     int startHelp = 0; // 0 = Show help at start, 1 = No help is shown
 
@@ -71,27 +71,35 @@ public class Bitboard : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
     void Awake()
     {
-        maxDepth = PlayerPrefs.GetInt("maxDepth", 2);
-        playMode = PlayerPrefs.GetInt("playMode", 0);
-        startHelp = PlayerPrefs.GetInt("startHelp", 0);
-        moveGuide = PlayerPrefs.GetInt("moveGuide", 0);
+        // Get values from PlayerPrefs, else default to \/ 
+        maxDepth =       PlayerPrefs.GetInt("maxDepth", 2);
+        playMode =       PlayerPrefs.GetInt("playMode", 0);
+        startHelp =     PlayerPrefs.GetInt("startHelp", 0);
+        moveGuide =     PlayerPrefs.GetInt("moveGuide", 0);
         PlayerPrefs.Save();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        // If it's the first time launching the game
         if (startHelp == 0)
         {
+            // Show the help menu
             ShowHelp();
+
+            PlayerPrefs.SetInt("startHelp", 1);
+            PlayerPrefs.Save();
         }
 
-        MiniMax.PrepareDebugForMinimax();
-
+        // For Debugging
         if (DEBUG == 1)
         {
+            MiniMax.PrepareDebugForMinimax();
+
             BitboardDisplay.GetComponent<Text>().text = "     AB CD EF GH";
             for (int i = 0; i < 8; i++)
             {
@@ -133,6 +141,8 @@ public class Bitboard : MonoBehaviour
         BoardState.ValidMove(bitboard, playerturn);
         // Check if there are available moves for the current player
         playerturn = PassCounter(bitboard, playerturn);
+
+        // For Debugging
         if (DEBUG == 1)
         {
             bitboardDisplayUpdate();
@@ -146,6 +156,7 @@ public class Bitboard : MonoBehaviour
         PlayingMode();
     }
 
+    // This method is for debugging and show the current bitboard to the game overlay
     void bitboardDisplayUpdate()
     {
         BitboardDisplay.GetComponent<Text>().text = "     AB CD EF GH";
@@ -160,6 +171,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
+    // A counter for counting pieces
     public void PieceCounter(int[,] bitboard)
     {
         Blackpieces = 0; Whitepieces = 0;
@@ -171,6 +183,7 @@ public class Bitboard : MonoBehaviour
                 {
                     Blackpieces++;
                 }
+
                 else if (bitboard[i, j] == 2)
                 {
                     Whitepieces++;
@@ -181,12 +194,14 @@ public class Bitboard : MonoBehaviour
         pieceCounterUpdate(Blackpieces, Whitepieces);
     }
 
+    // This method updates the number of white and black pieces, to keep count of the score
     void pieceCounterUpdate(int Blackpieces, int Whitepieces)
     {
         Blackcountertext.GetComponent<TextMeshProUGUI>().text = $"{Blackpieces}";
         Whitecountertext.GetComponent<TextMeshProUGUI>().text = $"{Whitepieces}";
     }
 
+    // This method resets the bitboard, to remove unnecessary values
     void bitboardResetTurn()
     {
         for (int i = 0; i < 8; i++)
@@ -221,6 +236,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
+    // This method is used to flip the captured pieces
     void flipIt(int i, int j)
     {
         string playerToFlip = "Player_" + j + i;
@@ -246,6 +262,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
+    // This method is used to show whose turn it is
     void ShowPlayerTurn()
     {
         if (playerturn == (byte)Player.black)
@@ -259,8 +276,10 @@ public class Bitboard : MonoBehaviour
         }
     }
 
+    // This method is used to show which tiles follow the rules, and are valid moves
     void ShowValidMoves()
     {
+        // Only show valid moves, if the player has toggled this option on in the menu
         if (moveGuide == 1)
         {
             for (int i = 0; i < 8; i++)
@@ -271,7 +290,7 @@ public class Bitboard : MonoBehaviour
                     {
                         int temp = j + 65;
                         char c = (char)temp;
-                        string tileGameObject = c + System.Convert.ToString(i + 1 + "/TileVisual");
+                        string tileGameObject = c + System.Convert.ToString((i + 1) + "/TileVisual");
                         // Call TextureSwap from the gameobject
                         GameObject.Find(tileGameObject).GetComponent<SwapTextures>().TextureSwap();
                     }
@@ -280,8 +299,10 @@ public class Bitboard : MonoBehaviour
         }
     }
 
+    // This method is used to check if there are any valid moves left
     void IsGameOver(int[,] bitboard, int playerturn, int Whitepieces, int Blackpieces)
     {
+        // Only use this method when on the main scene
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             // If black player has the most pieces, show "Player Black Won"
@@ -312,6 +333,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
+    // This method is used to pass the turn on to the opposite player, if no moves are available
     public int PassCounter(int[,] bitboard, int playerturn)
     {
         // Call CheckForNine from BoardRules.cs
@@ -337,6 +359,7 @@ public class Bitboard : MonoBehaviour
         return playerturn;
     }
 
+    // This method is used to perform the best move from MiniMax
     void CPUTurn(int[] CPUBestMove)
     {
         // If the move is inside the bitboard
@@ -350,6 +373,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
+    // This method is used to debug how many points the CPU have
     void ShowAIPoints(int[] CPUBestMove)
     {
         if (BoardState.InRange(CPUBestMove[0], CPUBestMove[1]))
@@ -359,6 +383,7 @@ public class Bitboard : MonoBehaviour
         }
     }
 
+    // This method is used to change how you play the game
     void PlayingMode()
     {
         if (SceneManager.GetActiveScene().buildIndex == 1)
@@ -372,6 +397,7 @@ public class Bitboard : MonoBehaviour
 
                 if (playerturn == (int)Player.white)
                 {
+                    // Invoke is used to run the method CPU(), after 1 sec. delay
                     Invoke("CPU", 1);
                 }
             }
@@ -393,30 +419,33 @@ public class Bitboard : MonoBehaviour
         }
     }
 
+    // This method is used to calculate the best move for the CPU turn
     void CPU()
     {
         int currentDepth = 0;
         // Active AI if the playerturn is White
         Stopwatch stopWatch = new Stopwatch();
         int[] CPUBestMove = new int[2];
-        // Get the best move from ReturnRandomMove from MiniMax.cs
+        // Start a stopwatch to calculate the runtime of the MiniMax method
         stopWatch.Start();
+        // Get the best move from CalculateAIMove from MiniMax.cs
         CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MinValue, int.MaxValue);
-        //UnityEngine.Debug.Log(CPUBestMove);
+        // Stop the stopwatch to calculate the runtime of the MiniMax method
         stopWatch.Stop();
         // Remove the red tiles, since the AI doesn't need them
         ShowValidMoves();
         // Perform the move
         CPUTurn(CPUBestMove);
-        //ShowAIPoints(CPUBestMove);
+        // Calculate runtime of MiniMax
         TimeSpan ts = stopWatch.Elapsed;
         string elapsedTime = String.Format("M{1:00}:S{2:00}.Mil{3:00}",
             ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
-
+        // Both method below is for debugging
         UnityEngine.Debug.Log(elapsedTime);
         ShowAIPoints(CPUBestMove);
     }
 
+    // This method is used to show the help menu when the "HELP" button is pressed
     void ShowHelp()
     {
         HelpBoard.SetActive(true);
@@ -426,7 +455,5 @@ public class Bitboard : MonoBehaviour
         BackButton.SetActive(false);
         HelpButton.SetActive(false);
         Text2image.SetActive(false);
-        PlayerPrefs.SetInt("startHelp", 1);
-        PlayerPrefs.Save();
     }
 }

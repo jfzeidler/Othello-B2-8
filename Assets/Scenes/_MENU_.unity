@@ -8244,7 +8244,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1051862552}
   - component: {fileID: 1051862554}
-  - component: {fileID: 1051862553}
   m_Layer: 0
   m_Name: The-Board
   m_TagString: Untagged
@@ -8273,18 +8272,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1051862553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051862551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b717782fe324efb439c40a3b6f39a6d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1051862554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8309,6 +8296,12 @@ MonoBehaviour:
   Blackcountertext: {fileID: 1751374260}
   Whitecountertext: {fileID: 1821975511}
   ScorePanelTurnText: {fileID: 1758297898}
+  HelpBoard: {fileID: 0}
+  Scoreboard: {fileID: 0}
+  Menu_Button: {fileID: 0}
+  BackButton: {fileID: 0}
+  HelpButton: {fileID: 0}
+  Text2image: {fileID: 0}
 --- !u!1001 &1073071325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16062,7 +16055,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1051862553}
+      - m_Target: {fileID: 0}
         m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:

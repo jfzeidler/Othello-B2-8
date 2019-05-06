@@ -24,7 +24,9 @@ public class SwapTextures : MonoBehaviour
     public void TextureSwap()
     {
         currentTextures++;
+        // currentTextures = currentTextures % textures.Length
         currentTextures %= textures.Length;
+        // Change the texture of the selected tile
         GetComponent<Renderer>().material.mainTexture = textures[currentTextures];
     }
 }

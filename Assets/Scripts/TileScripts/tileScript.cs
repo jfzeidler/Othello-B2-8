@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class tileScript : MonoBehaviour
 {
@@ -32,7 +33,8 @@ public class tileScript : MonoBehaviour
         var bitboardX = char.ToUpper(Char) - 65;
         var bitboardY = selectedTile[1] - '1';
 
-        if (playMode == 1)
+        // If playingmode is Player Vs. Player or on main scene
+        if (playMode == 1 || SceneManager.GetActiveScene().buildIndex == 0)
         {
             // If the tile sellected, has a possible move
             if (The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9)
@@ -43,12 +45,13 @@ public class tileScript : MonoBehaviour
             }
         }
 
+        // Else if playingmode is Player Vs. CPU
         else if (playMode == 0)
         {
             // Get playerturn to tell which turn it is
             int playerturn = The_Board.GetComponent<Bitboard>().playerturn;
 
-            if (playerturn == 1)
+            if (playerturn == (int)Player.black)
             {
                 // If the tile sellected, has a possible move
                 if (The_Board.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9)
@@ -65,7 +68,7 @@ public class tileScript : MonoBehaviour
         Vector3 vectorPos = new Vector3(z, -0.85f, y);
 
         //If black turn
-        if (playerturn == (byte)Player.black)
+        if (playerturn == (int)Player.black)
         {
             // Places black piece on the board
             var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity) as GameObject;
@@ -76,7 +79,7 @@ public class tileScript : MonoBehaviour
         }
 
         //If white turn
-        else if (playerturn == (byte)Player.white)
+        else if (playerturn == (int)Player.white)
         {
             // Places white piece on the board
             var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity) as GameObject;

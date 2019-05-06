@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
 
     void Awake()
     {
+        // Get values from PlayerPrefs, else default to \/ 
         slider.value = PlayerPrefs.GetInt("maxDepth", 2);
         dropdown.value = PlayerPrefs.GetInt("playMode", 0);
         toggle.isOn = (PlayerPrefs.GetInt("moveGuide", 0) != 0);
@@ -21,17 +22,20 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButton()
     {
+        // If the play button is pressed, go to the next scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void ExitGame()
     {
+        // If the exit button is pressed, Quit the game. To debug in editer, print EXIT to the log
         Application.Quit();
         Debug.Log("EXIT");
     }
 
     public void ChangeMaxDepth()
     {
+        // When slider value changes, change the value in PlayerPrefs, and save it
         PlayerPrefs.SetInt("maxDepth", (int)slider.value);
         Debug.Log("New maxDepth: " + slider.value);
         PlayerPrefs.Save();
@@ -39,6 +43,7 @@ public class MainMenu : MonoBehaviour
 
     public void ChangePlayingMode()
     {
+        // When dropdown menu value changes, change the value in PlayerPrefs, and save it
         PlayerPrefs.SetInt("playMode", dropdown.value);
         Debug.Log("New PlayMode: " + dropdown.value);
         PlayerPrefs.Save();
@@ -46,6 +51,7 @@ public class MainMenu : MonoBehaviour
 
     public void ChangeShowMoves()
     {
+        // When the toggle value changes, change the value in PlayerPrefs, and save it
         PlayerPrefs.SetInt("moveGuide", (toggle.isOn ? 1 : 0));
         Debug.Log("New moveGuide: " + (toggle.isOn ? 1 : 0));
         PlayerPrefs.Save();
