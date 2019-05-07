@@ -44,7 +44,7 @@ public class MiniMax : BoardRules
         {  30, -25, 10, 5, 5, 10, -25,  30 }
     };
 
-    // This method is used to calculate the score of the possible moves
+    // This method is used to calculate the score of the branch in Minimax
     public int EvaluateBoard(int[,] bitboard, int playerturn)
     {
         int playerScore = 0;
@@ -133,7 +133,7 @@ public class MiniMax : BoardRules
             ms.score = int.MinValue;
         }
 
-        // If white turn (Maximizer)
+        // If black turn (Maximizer)
         else if (playerturn == 1)
         {
             ms.score = int.MaxValue;
