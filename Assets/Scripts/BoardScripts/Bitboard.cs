@@ -7,19 +7,19 @@ using TMPro;
 
 public class Bitboard : MonoBehaviour
 {
-    public BoardRules BoardState = new BoardRules();
+    public BoardRules BoardRules = new BoardRules();
     public MiniMax MiniMax = new MiniMax();
     public enum Player { blank = 0, black = 1, white = 2 };
-    public int playerturn = 1;
+    public int playerTurn = 1;
     int DEBUG = 0;
-    int CPUPoints = 0;
-    int Blackpieces = 0; int Whitepieces = 0;
+    int cpuPoints = 0;
+    int blackPieces = 0; int whitePieces = 0;
     int maxDepth = 2;
     int playMode = 0; // 0 = Player vs. CPU, 1 = Player vs. Player, 2 = CPU vs. CPU
     int moveGuide = 0; // 0 = No Moves, 1 = Show Moves
     int startHelp = 0; // 0 = Show help at start, 1 = No help is shown
 
-    readonly int[,] Evaluation = {
+    readonly int[,] evaluation = {
         // A       B     C     D     E     F      G      H
         {10000, -3000, 1000,  800,  800, 1000, -3000, 10000}, // 1
         {-3000, -5000, -450, -500, -500, -450, -5000, -3000}, // 2
@@ -46,18 +46,18 @@ public class Bitboard : MonoBehaviour
     public GameObject Tiles;
     public GameObject AndTheWinnerIs;
     public GameObject GameOverCanvas;
-    public GameObject spawnWhitePlayer;
-    public GameObject spawnDarkPlayer;
+    public GameObject SpawnWhitePlayer;
+    public GameObject SpawnDarkPlayer;
     public GameObject BitboardDisplay;
-    public GameObject Blackcountertext;
-    public GameObject Whitecountertext;
+    public GameObject BlackCounterText;
+    public GameObject WhiteCounterText;
     public GameObject ScorePanelTurnText;
     public GameObject HelpBoard;
-    public GameObject Scoreboard;
-    public GameObject Menu_Button;
+    public GameObject ScoreBoard;
+    public GameObject MainMenuButton;
     public GameObject BackButton;
     public GameObject HelpButton;
-    public GameObject Text2image;
+    public GameObject Text2Image;
 
     public void MenuButton()
     {
@@ -109,7 +109,7 @@ public class Bitboard : MonoBehaviour
             }
         }
         // Call ValidMove from BoardRules.cs
-        BoardState.ValidMove(bitboard, playerturn);
+        BoardRules.ValidMove(bitboard, playerTurn);
         // Show current player
         ShowPlayerTurn();
         // Play in accordance with the current playing mode
@@ -125,36 +125,36 @@ public class Bitboard : MonoBehaviour
     public void boardRules(int bitboardX, int bitboardY)
     {
         // Call CaptureEnemyPlayer from BoardRules.cs
-        BoardState.CaptureEnemyPlayer(bitboard, bitboardY, bitboardX, playerturn);
+        BoardRules.CaptureEnemyPlayer(bitboard, bitboardY, bitboardX, playerTurn);
         // Reset the bitboard for the next turn
-        bitboardResetTurn();
+        BitboardResetTurn();
     }
 
-    public void bitboardUpdate()
+    public void BitboardUpdate()
     {
         // Update the scoreboard
         PieceCounter(bitboard);
         // Call ValidMove from BoardRules.cs
-        BoardState.ValidMove(bitboard, playerturn);
+        BoardRules.ValidMove(bitboard, playerTurn);
         // Check if there are available moves for the current player
-        playerturn = PassCounter(bitboard, playerturn);
+        playerTurn = PassCounter(bitboard, playerTurn);
 
         // For Debugging
         if (DEBUG == 1)
         {
-            bitboardDisplayUpdate();
+            BitboardDisplayUpdate();
         }
 
         // Show current player
         ShowPlayerTurn();
         // Check if theres a Game Over Senario
-        IsGameOver(bitboard, playerturn, Whitepieces, Blackpieces);
+        IsGameOver(bitboard, playerTurn, whitePieces, blackPieces);
         // Play in accordance with the current playing mode
         PlayingMode();
     }
 
     // This method is for debugging and show the current bitboard to the game overlay
-    void bitboardDisplayUpdate()
+    void BitboardDisplayUpdate()
     {
         BitboardDisplay.GetComponent<Text>().text = "     AB CD EF GH";
         for (int i = 0; i < 8; i++)
@@ -171,35 +171,35 @@ public class Bitboard : MonoBehaviour
     // A counter for counting pieces
     public void PieceCounter(int[,] bitboard)
     {
-        Blackpieces = 0; Whitepieces = 0;
+        blackPieces = 0; whitePieces = 0;
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
             {
                 if (bitboard[i, j] == 1)
                 {
-                    Blackpieces++;
+                    blackPieces++;
                 }
 
                 else if (bitboard[i, j] == 2)
                 {
-                    Whitepieces++;
+                    whitePieces++;
                 }
             }
         }
         // Update the visual scoreboard
-        pieceCounterUpdate(Blackpieces, Whitepieces);
+        PieceCounterUpdate(blackPieces, whitePieces);
     }
 
     // This method updates the number of white and black pieces, to keep count of the score
-    void pieceCounterUpdate(int Blackpieces, int Whitepieces)
+    void PieceCounterUpdate(int blackPieces, int whitePieces)
     {
-        Blackcountertext.GetComponent<TextMeshProUGUI>().text = $"{Blackpieces}";
-        Whitecountertext.GetComponent<TextMeshProUGUI>().text = $"{Whitepieces}";
+        BlackCounterText.GetComponent<TextMeshProUGUI>().text = $"{blackPieces}";
+        WhiteCounterText.GetComponent<TextMeshProUGUI>().text = $"{whitePieces}";
     }
 
     // This method resets the bitboard, to remove unnecessary values
-    void bitboardResetTurn()
+    void BitboardResetTurn()
     {
         for (int i = 0; i < 8; i++)
         {
@@ -225,35 +225,35 @@ public class Bitboard : MonoBehaviour
                 else if (bitboard[i, j] == 5)
                 {
                     // Change the pieces thats captured
-                    flipIt(i, j);
+                    FlipIt(i, j);
                     // Change the bitboard value to the current player
-                    bitboard[i, j] = playerturn;
+                    bitboard[i, j] = playerTurn;
                 }
             }
         }
     }
 
     // This method is used to flip the captured pieces
-    void flipIt(int i, int j)
+    void FlipIt(int i, int j)
     {
         string playerToFlip = "Player_" + j + i;
-        Vector3 vectorPos = new Vector3(i, -0.85f, j);
+        Vector3 piecePosition = new Vector3(i, -0.85f, j);
         // Find the piece to capture, and destroy it
         DestroyImmediate(GameObject.Find(playerToFlip));
         //UnityEngine.Debug.Log(playerToFlip);
 
-        if (playerturn == (byte)Player.white)
+        if (playerTurn == (byte)Player.white)
         {
             // Place a white piece on the board
-            var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity) as GameObject;
+            var newObject = Instantiate(SpawnWhitePlayer, piecePosition, Quaternion.identity) as GameObject;
             // Naming the piece for the capture rule
             newObject.name = "Player_" + j + i;
         }
 
-        if (playerturn == (byte)Player.black)
+        if (playerTurn == (byte)Player.black)
         {
             // Place a black piece on the board
-            var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity) as GameObject;
+            var newObject = Instantiate(SpawnDarkPlayer, piecePosition, Quaternion.identity) as GameObject;
             // Naming the piece for the capture rule
             newObject.name = "Player_" + j + i;
         }
@@ -262,12 +262,12 @@ public class Bitboard : MonoBehaviour
     // This method is used to show whose turn it is
     void ShowPlayerTurn()
     {
-        if (playerturn == (byte)Player.black)
+        if (playerTurn == (byte)Player.black)
         {
             ScorePanelTurnText.GetComponent<TextMeshProUGUI>().text = "Black";
         }
 
-        else if (playerturn == (byte)Player.white)
+        else if (playerTurn == (byte)Player.white)
         {
             ScorePanelTurnText.GetComponent<TextMeshProUGUI>().text = "White";
         }
@@ -297,31 +297,31 @@ public class Bitboard : MonoBehaviour
     }
 
     // This method is used to check if there are any valid moves left
-    void IsGameOver(int[,] bitboard, int playerturn, int Whitepieces, int Blackpieces)
+    void IsGameOver(int[,] bitboard, int playerTurn, int whitePieces, int blackPieces)
     {
         // Only use this method when on the main scene
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             // If black player has the most pieces, show "Player Black Won"
-            if (Blackpieces > Whitepieces)
+            if (blackPieces > whitePieces)
             {
                 AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player Black Won";
             }
 
             // If black player has the most pieces, show "Player White Won"
-            else if (Whitepieces > Blackpieces)
+            else if (whitePieces > blackPieces)
             {
                 AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player White Won";
             }
 
             // If black player has the most pieces, show "Draw"
-            else if (Whitepieces == Blackpieces)
+            else if (whitePieces == blackPieces)
             {
                 AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Draw";
             }
 
             // Call CheckForNine from BoardRules.cs
-            if (BoardState.CheckForNine(bitboard) == true)
+            if (BoardRules.CheckForNine(bitboard) == true)
             {
                 UnityEngine.Debug.Log("Game over");
                 // Show the Game Over canvas, to show who won
@@ -331,52 +331,52 @@ public class Bitboard : MonoBehaviour
     }
 
     // This method is used to pass the turn on to the opposite player, if no moves are available
-    public int PassCounter(int[,] bitboard, int playerturn)
+    public int PassCounter(int[,] bitboard, int playerTurn)
     {
         // Call CheckForNine from BoardRules.cs
-        if (BoardState.CheckForNine(bitboard) == true)
+        if (BoardRules.CheckForNine(bitboard) == true)
         {
-            if (playerturn == (byte)Player.black)
+            if (playerTurn == (byte)Player.black)
             {
                 // Give the turn to the opposite player
-                playerturn = (byte)Player.white;
+                playerTurn = (byte)Player.white;
                 UnityEngine.Debug.Log("No valid moves for black player");
             }
 
-            else if (playerturn == (byte)Player.white)
+            else if (playerTurn == (byte)Player.white)
             {
                 // Give the turn to the opposite player
-                playerturn = (byte)Player.black;
+                playerTurn = (byte)Player.black;
                 UnityEngine.Debug.Log("No valid moves for white player");
             }
             // Call ValidMove from BoardRules.cs
-            BoardState.ValidMove(bitboard, playerturn);
+            BoardRules.ValidMove(bitboard, playerTurn);
         }
         // return the new playerturn
-        return playerturn;
+        return playerTurn;
     }
 
     // This method is used to perform the best move from MiniMax
-    void CPUTurn(int[] CPUBestMove)
+    void CPUTurn(int[] cpuBestMove)
     {
         // If the move is inside the bitboard
-        if (BoardState.InRange(CPUBestMove[0], CPUBestMove[1]))
+        if (BoardRules.InRange(cpuBestMove[0], cpuBestMove[1]))
         {
-            int temp = CPUBestMove[1] + 65;
+            int temp = cpuBestMove[1] + 65;
             char c = (char)temp;
-            UnityEngine.Debug.Log("CPU: " + c + (CPUBestMove[0] + 1));
+            UnityEngine.Debug.Log("CPU: " + c + (cpuBestMove[0] + 1));
             // Call MakeMove from tileScript.cs
-            Tiles.GetComponent<tileScript>().MakeMove(CPUBestMove[1], CPUBestMove[0], playerturn);
+            Tiles.GetComponent<tileScript>().MakeMove(cpuBestMove[1], cpuBestMove[0], playerTurn);
         }
     }
 
     // This method is used to debug how many points the CPU have
-    void ShowAIPoints(int[] CPUBestMove)
+    void ShowAIPoints(int[] cpuBestMove)
     {
-        if (BoardState.InRange(CPUBestMove[0], CPUBestMove[1]))
+        if (BoardRules.InRange(cpuBestMove[0], cpuBestMove[1]))
         {
-            CPUPoints += Evaluation[CPUBestMove[0], CPUBestMove[1]];
-            UnityEngine.Debug.Log("CPU Points: " + CPUPoints);
+            cpuPoints += evaluation[cpuBestMove[0], cpuBestMove[1]];
+            UnityEngine.Debug.Log("CPU Points: " + cpuPoints);
         }
     }
 
@@ -387,12 +387,12 @@ public class Bitboard : MonoBehaviour
         {
             if (playMode == 0)
             {
-                if (playerturn == (int)Player.black)
+                if (playerTurn == (int)Player.black)
                 {
                     ShowValidMoves();
                 }
 
-                if (playerturn == (int)Player.white)
+                if (playerTurn == (int)Player.white)
                 {
                     // Invoke is used to run the method CPU(), after 1 sec. delay
                     Invoke("CPU", 1);
@@ -422,35 +422,35 @@ public class Bitboard : MonoBehaviour
         int currentDepth = 0;
         // Active AI if the playerturn is White
         Stopwatch stopWatch = new Stopwatch();
-        int[] CPUBestMove = new int[2];
+        int[] cpuBestMove = new int[2];
         // Start a stopwatch to calculate the runtime of the MiniMax method
         stopWatch.Start();
         // Get the best move from CalculateAIMove from MiniMax.cs
-        CPUBestMove = MiniMax.CalculateAIMove(bitboard, playerturn, maxDepth, currentDepth, int.MinValue, int.MaxValue);
+        cpuBestMove = MiniMax.CalculateAIMove(bitboard, playerTurn, maxDepth, currentDepth, int.MinValue, int.MaxValue);
         // Stop the stopwatch to calculate the runtime of the MiniMax method
         stopWatch.Stop();
         // Remove the red tiles, since the AI doesn't need them
         ShowValidMoves();
         // Perform the move
-        CPUTurn(CPUBestMove);
+        CPUTurn(cpuBestMove);
         // Calculate runtime of MiniMax
         TimeSpan ts = stopWatch.Elapsed;
         string elapsedTime = String.Format("M{1:00}:S{2:00}.Mil{3:00}",
             ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
         // Both method below is for debugging
         UnityEngine.Debug.Log(elapsedTime);
-        ShowAIPoints(CPUBestMove);
+        ShowAIPoints(cpuBestMove);
     }
 
     // This method is used to show the help menu when the "HELP" button is pressed
     void ShowHelp()
     {
         HelpBoard.SetActive(true);
-        Scoreboard.SetActive(false);
-        Menu_Button.SetActive(false);
+        ScoreBoard.SetActive(false);
+        MainMenuButton.SetActive(false);
         BitboardDisplay.SetActive(false);
         BackButton.SetActive(false);
         HelpButton.SetActive(false);
-        Text2image.SetActive(false);
+        Text2Image.SetActive(false);
     }
 }

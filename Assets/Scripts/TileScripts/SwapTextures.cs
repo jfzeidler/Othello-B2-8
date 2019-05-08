@@ -4,29 +4,16 @@ using UnityEngine;
 
 public class SwapTextures : MonoBehaviour
 {
-    public Texture[] textures;
+    public Texture[] Textures;
     public int currentTextures;
-    public GameObject tile;
-
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public GameObject Tile;
 
     public void TextureSwap()
     {
         currentTextures++;
         // currentTextures = currentTextures % textures.Length
-        currentTextures %= textures.Length;
+        currentTextures %= Textures.Length;
         // Change the texture of the selected tile
-        GetComponent<Renderer>().material.mainTexture = textures[currentTextures];
+        GetComponent<Renderer>().material.mainTexture = Textures[currentTextures];
     }
 }

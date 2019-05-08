@@ -18,9 +18,9 @@ public class BoardRules
         };
 
     // This method is used to check for opposite pieces
-    public void ValidMove(int[,] bitboard, int playerturn)
+    public void ValidMove(int[,] bitboard, int playerTurn)
     {
-        if (playerturn == (int)Player.black)
+        if (playerTurn == (int)Player.black)
         {
             for (int i = 0; i < 8; i++)
             {
@@ -29,13 +29,13 @@ public class BoardRules
                     if (bitboard[i, j] == (int)Player.white)
                     {
                         // If a opposite piece is found run CheckForAdjacent()
-                        CheckForAdjacent(bitboard, i, j, playerturn);
+                        CheckForAdjacent(bitboard, i, j, playerTurn);
                     }
                 }
             }
         }
 
-        else if (playerturn == (int)Player.white)
+        else if (playerTurn == (int)Player.white)
         {
             for (int i = 0; i < 8; i++)
             {
@@ -44,7 +44,7 @@ public class BoardRules
                     if (bitboard[i, j] == (int)Player.black)
                     {
                         // If a opposite piece is found run CheckForAdjacent()
-                        CheckForAdjacent(bitboard, i, j, playerturn);
+                        CheckForAdjacent(bitboard, i, j, playerTurn);
                     }
                 }
             }
@@ -52,9 +52,9 @@ public class BoardRules
     }
 
     // This method is used to check if there are any tiles that follow the rule of capturing
-    void CheckForAdjacent(int[,] bitboard, int i, int j, int playerturn)
+    void CheckForAdjacent(int[,] bitboard, int i, int j, int playerTurn)
     {
-        if (playerturn == (int)Player.white)
+        if (playerTurn == (int)Player.white)
         {
             for (int k = 0; k < 8; k++)
             {
@@ -91,7 +91,7 @@ public class BoardRules
             }
         }
 
-        if (playerturn == (int)Player.black)
+        if (playerTurn == (int)Player.black)
         {
             for (int k = 0; k < 8; k++)
             {
@@ -130,9 +130,9 @@ public class BoardRules
     }
 
     // This method is used to mark bitboard tile as a captured piece
-    public void CaptureEnemyPlayer(int[,] bitboard, int i, int j, int playerturn)
+    public void CaptureEnemyPlayer(int[,] bitboard, int i, int j, int playerTurn)
     {
-        if (playerturn == (int)Player.black)
+        if (playerTurn == (int)Player.black)
         {
             for (int k = 0; k < 8; k++)
             {
@@ -174,7 +174,7 @@ public class BoardRules
             }
         }
 
-        if (playerturn == (int)Player.white)
+        if (playerTurn == (int)Player.white)
         {
             for (int k = 0; k < 8; k++)
             {
@@ -244,7 +244,7 @@ public class BoardRules
     }
 
     // This method is used to prepare the bitboard for MiniMax 
-    int[,] bitboardOnlyResetTurn(int[,] bitboard, int playerturn)
+    int[,] BitboardOnlyResetTurn(int[,] bitboard, int playerTurn)
     {
         for (int i = 0; i < 8; i++)
         {
@@ -260,7 +260,7 @@ public class BoardRules
                 else if (bitboard[i, j] == 5)
                 {
                     // Change the bitboard value to the current player
-                    bitboard[i, j] = playerturn;
+                    bitboard[i, j] = playerTurn;
                 }
             }
         }
@@ -268,18 +268,18 @@ public class BoardRules
     }
 
     // This method is used to get the next board state for MiniMax
-    public int[,] GetNextBoardState(int[,] bitboard, int playerturn, int bitboardX, int bitboardY)
+    public int[,] GetNextBoardState(int[,] bitboard, int playerTurn, int bitboardX, int bitboardY)
     {
         // Clone bitboard
         int[,] bitboardCopy = (int[,])bitboard.Clone();
         // Make bitboard move
-        bitboardCopy[bitboardX, bitboardY] = playerturn;
+        bitboardCopy[bitboardX, bitboardY] = playerTurn;
         // Capture pieces
-        CaptureEnemyPlayer(bitboardCopy, bitboardY, bitboardX, playerturn);
+        CaptureEnemyPlayer(bitboardCopy, bitboardY, bitboardX, playerTurn);
         // Reset bitboard
-        bitboardCopy = bitboardOnlyResetTurn(bitboardCopy, playerturn);
+        bitboardCopy = BitboardOnlyResetTurn(bitboardCopy, playerTurn);
         // Calculate valid moves
-        ValidMove(bitboardCopy, playerturn);
+        ValidMove(bitboardCopy, playerTurn);
         // return bitboard
         return bitboardCopy;
     }

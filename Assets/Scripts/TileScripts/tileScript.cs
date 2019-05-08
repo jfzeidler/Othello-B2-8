@@ -10,9 +10,9 @@ public class tileScript : MonoBehaviour
     enum Player { blank = 0, black = 1, white = 2};
     byte DEBUG = 0;
 
-    public GameObject theBoard;
-    public GameObject spawnWhitePlayer;
-    public GameObject spawnDarkPlayer;
+    public GameObject TheBoard;
+    public GameObject SpawnWhitePlayer;
+    public GameObject SpawnDarkPlayer;
 
     int playMode = 0;
 
@@ -37,10 +37,10 @@ public class tileScript : MonoBehaviour
         if (playMode == 1 || SceneManager.GetActiveScene().buildIndex == 0)
         {
             // If the tile sellected, has a possible move
-            if (theBoard.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9)
+            if (TheBoard.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9)
             {
                 // Get playerturn to tell which turn it is
-                int playerTurn = theBoard.GetComponent<Bitboard>().playerTurn;
+                int playerTurn = TheBoard.GetComponent<Bitboard>().playerTurn;
                 MakeMove(bitboardX, bitboardY, playerTurn);
             }
         }
@@ -49,12 +49,12 @@ public class tileScript : MonoBehaviour
         else if (playMode == 0)
         {
             // Get playerturn to tell which turn it is
-            int playerTurn = theBoard.GetComponent<Bitboard>().playerTurn;
+            int playerTurn = TheBoard.GetComponent<Bitboard>().playerTurn;
 
             if (playerTurn == (int)Player.black)
             {
                 // If the tile sellected, has a possible move
-                if (theBoard.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9)
+                if (TheBoard.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9)
                 {
                     MakeMove(bitboardX, bitboardY, playerTurn);
                 }
@@ -71,22 +71,22 @@ public class tileScript : MonoBehaviour
         if (playerTurn == (int)Player.black)
         {
             // Places black piece on the board
-            var newObject = Instantiate(spawnDarkPlayer, vectorPos, Quaternion.identity) as GameObject;
+            var newObject = Instantiate(SpawnDarkPlayer, vectorPos, Quaternion.identity) as GameObject;
             // Naming the piece for the capture rule
             newObject.name = "Player_" + y + z;
             // Update playerturn
-            theBoard.GetComponent<Bitboard>().playerTurn += 1;
+            TheBoard.GetComponent<Bitboard>().playerTurn += 1;
         }
 
         //If white turn
         else if (playerTurn == (int)Player.white)
         {
             // Places white piece on the board
-            var newObject = Instantiate(spawnWhitePlayer, vectorPos, Quaternion.identity) as GameObject;
+            var newObject = Instantiate(SpawnWhitePlayer, vectorPos, Quaternion.identity) as GameObject;
             // Naming the piece for the capture rule
             newObject.name = "Player_" + y + z;
             // Update playerturn
-            theBoard.GetComponent<Bitboard>().playerTurn -= 1;
+            TheBoard.GetComponent<Bitboard>().playerTurn -= 1;
         }
     }
 
@@ -102,16 +102,16 @@ public class tileScript : MonoBehaviour
     {
         if (DEBUG == 1)
         {
-            DEBUGLOG(theBoard.GetComponent<Bitboard>().bitboard);
+            DEBUGLOG(TheBoard.GetComponent<Bitboard>().bitboard);
         }
         // Call boardRules from Bitboard.cs
-        theBoard.GetComponent<Bitboard>().boardRules(xPos, yPos);
+        TheBoard.GetComponent<Bitboard>().boardRules(xPos, yPos);
         // Place a piece on the sellected tile
         placePlayer(playerTurn, xPos, yPos);
         // Update the bitboard with the new value
-        theBoard.GetComponent<Bitboard>().bitboard[yPos, xPos] = playerTurn;
+        TheBoard.GetComponent<Bitboard>().bitboard[yPos, xPos] = playerTurn;
         // Call bitboardUpdate from Bitboard.cs
-        theBoard.GetComponent<Bitboard>().bitboardUpdate();
+        TheBoard.GetComponent<Bitboard>().BitboardUpdate();
         //The_Board.GetComponent<Bitboard>().bitboardResetTurn();
 
     }

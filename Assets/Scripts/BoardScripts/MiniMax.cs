@@ -5,15 +5,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 
-public class MoveStatus
+public class Move
 {
     public int row, col, score;
 
-    public MoveStatus(int Row, int Col, int Score)
+    public Move(int x, int y, int _score)
     {
-        row = Row;
-        col = Col;
-        score = Score;
+        row = x;
+        col = y;
+        score = _score;
     }
 }
 
@@ -21,7 +21,7 @@ public class MiniMax : BoardRules
 {
     string fileName = @"C:\temp\MINIMAX_DEBUG.txt";
 
-    readonly int[,] Evaluation = {
+    readonly int[,] evaluation = {
         // A       B     C     D     E     F      G      H
         {10000, -3000, 1000,  800,  800, 1000, -3000, 10000}, // 1
         {-3000, -5000, -450, -500, -500, -450, -5000, -3000}, // 2
@@ -33,7 +33,7 @@ public class MiniMax : BoardRules
         {10000, -3000, 1000,  800,  800, 1000, -3000, 10000}  // 8
     };
 
-    readonly int[,] Evaluation2 = {
+    readonly int[,] evaluation2 = {
         {  30, -25, 10, 5, 5, 10, -25,  30 },
         { -25, -25,  1, 1, 1,  1, -25, -25 },
         {  10,   1,  5, 2, 2,  5,   1,  10 },
@@ -45,10 +45,10 @@ public class MiniMax : BoardRules
     };
 
     // This method is used to calculate the score of the branch in Minimax
-    public int EvaluateBoard(int[,] bitboard, int playerturn)
+    public int EvaluateBoard(int[,] bitboard, int playerTurn)
     {
         int playerScore = 0;
-        int AIScore = 0;
+        int cpuScore = 0;
         int result = 0;
 
         for (int i = 0; i < 8; i++)
@@ -57,35 +57,35 @@ public class MiniMax : BoardRules
             {
                 if (bitboard[i, j] == 1)
                 {
-                    playerScore += Evaluation2[i, j];
+                    playerScore += evaluation2[i, j];
                 }
 
                 else if (bitboard[i, j] == 2)
                 {
-                    AIScore += Evaluation2[i, j];
+                    cpuScore += evaluation2[i, j];
                 }
             }
         }
 
-        if (playerturn == 1)
+        if (playerTurn == 1)
         {
-            result = (playerScore - AIScore);
+            result = (playerScore - cpuScore);
             //File.AppendAllText(fileName, Environment.NewLine + "RESULT FOR BLACK: " + result + Environment.NewLine);
         }
 
-        else if (playerturn == 2)
+        else if (playerTurn == 2)
         {
-            result = (AIScore - playerScore);
+            result = (cpuScore - playerScore);
             //File.AppendAllText(fileName, Environment.NewLine + "RESULT FOR WHITE: " + result + Environment.NewLine);
         }
         return result;
     }
 
     // This is a list of all possible moves for at given player
-    public List<Vector2> MoveList(int[,] bitboard, int playerturn)
+    public List<Vector2> ValidMoves(int[,] bitboard, int playerTurn)
     {
         List<Vector2> list = new List<Vector2>();
-        if (playerturn == 1)
+        if (playerTurn == 1)
         {
             for (int i = 0; i < 8; i++)
             {
@@ -99,7 +99,7 @@ public class MiniMax : BoardRules
             }
         }
 
-        else if (playerturn == 2)
+        else if (playerTurn == 2)
         {
             for (int i = 0; i < 8; i++)
             {
@@ -116,94 +116,94 @@ public class MiniMax : BoardRules
     }
 
     // This is the MiniMax algorithm
-    public MoveStatus MiniMaxAlgorithm(int[,] bitboard, int playerturn, int maxDepth, int currentDepth, int alpha, int beta)
+    public Move MiniMaxAlgorithm(int[,] bitboard, int playerTurn, int maxDepth, int currentDepth, int alpha, int beta)
     {
         // If game over or maxDepth is reached
         if (CheckForNine(bitboard) == true || currentDepth == maxDepth)
         {
             File.AppendAllText(fileName, Environment.NewLine + "Return" + Environment.NewLine);
-            return new MoveStatus(-1, -1, EvaluateBoard(bitboard, playerturn));
+            return new Move(-1, -1, EvaluateBoard(bitboard, playerTurn));
         }
 
-        MoveStatus ms = new MoveStatus(-1, -1, 0);
+        Move selectedMove = new Move(-1, -1, 0);
 
         // If white turn (Minimizer)
-        if (playerturn == 2)
+        if (playerTurn == 2)
         {
-            ms.score = int.MinValue;
+            selectedMove.score = int.MinValue;
         }
 
         // If black turn (Maximizer)
-        else if (playerturn == 1)
+        else if (playerTurn == 1)
         {
-            ms.score = int.MaxValue;
+            selectedMove.score = int.MaxValue;
         }
 
         List<Vector2> allMoves;
 
-        if (playerturn == 2)
+        if (playerTurn == 2)
         {
-            allMoves = MoveList(bitboard, 2);
+            allMoves = ValidMoves(bitboard, 2);
 
             // Calculate a move for each vector in allMoves
             foreach (Vector2 move in allMoves)
             {
                 //File.AppendAllText(fileName, "Chosen VECTOR WHITE: " + (int)move.X + " " + (int)move.Y + Environment.NewLine);
                 // Get the next board for MiniMax
-                int[,] newBoard = GetNextBoardState(bitboard, playerturn, (int)move.X, (int)move.Y);
+                int[,] newBoard = GetNextBoardState(bitboard, playerTurn, (int)move.X, (int)move.Y);
                 // Get the score from the next MiniMax algorithm
                 int score = MiniMaxAlgorithm(newBoard, 1, maxDepth, (currentDepth + 1), alpha, beta).score;
 
                 // Alpha
-                if (score > ms.score)
+                if (score > selectedMove.score)
                 {
-                    ms.row = (int)move.X;
-                    ms.col = (int)move.Y;
-                    ms.score = score;
+                    selectedMove.row = (int)move.X;
+                    selectedMove.col = (int)move.Y;
+                    selectedMove.score = score;
                     //File.AppendAllText(fileName, "BEST VECTOR MOVE WHITE FOR NOW:" + ms.row + " " + ms.col + " " + ms.score + Environment.NewLine + Environment.NewLine);
-                    if (ms.score > alpha)
-                        alpha = ms.score;
+                    if (selectedMove.score > alpha)
+                        alpha = selectedMove.score;
                     if (alpha >= beta)
                         break;
                 }
             }
         }
-        else if (playerturn == 1)
+        else if (playerTurn == 1)
         {
-            allMoves = MoveList(bitboard, 1);
+            allMoves = ValidMoves(bitboard, 1);
 
             // Calculate a move for each vector in allMoves
             foreach (Vector2 move in allMoves)
             {
                 //File.AppendAllText(fileName, "Chosen VECTOR BLACK: " + (int)move.X + " " + (int)move.Y + Environment.NewLine);
                 // Get the next board for MiniMax
-                int[,] newBoard = GetNextBoardState(bitboard, playerturn, (int)move.X, (int)move.Y);
+                int[,] newBoard = GetNextBoardState(bitboard, playerTurn, (int)move.X, (int)move.Y);
                 // Get the score from the next MiniMax algorithm
                 int score = MiniMaxAlgorithm(newBoard, 2, maxDepth, (currentDepth + 1), alpha, beta).score;
 
                 // Beta
-                if (score < ms.score)
+                if (score < selectedMove.score)
                 {
-                    ms.row = (int)move.X;
-                    ms.col = (int)move.Y;
-                    ms.score = score;
+                    selectedMove.row = (int)move.X;
+                    selectedMove.col = (int)move.Y;
+                    selectedMove.score = score;
                     //File.AppendAllText(fileName, "BEST VECTOR MOVE BLACK FOR NOW:" + ms.row + " " + ms.col + " " + ms.score + Environment.NewLine + Environment.NewLine);
-                    if (ms.score < beta)
-                        beta = ms.score;
+                    if (selectedMove.score < beta)
+                        beta = selectedMove.score;
                     if (beta <= alpha)
                         break;
                 }
             }
         }
-        return ms;
+        return selectedMove;
     }
 
     // This method is used to run the Minimax algorithm
-    public int[] CalculateAIMove(int[,] bitboard, int playerturn, int maxDepth, int currentDepth, int alpha, int beta)
+    public int[] CalculateAIMove(int[,] bitboard, int playerTurn, int maxDepth, int currentDepth, int alpha, int beta)
     {
         int[] result = new int[3];
         // Get the best move from MiniMax
-        MoveStatus bestMove = MiniMaxAlgorithm(bitboard, playerturn, maxDepth, currentDepth, alpha, beta);
+        Move bestMove = MiniMaxAlgorithm(bitboard, playerTurn, maxDepth, currentDepth, alpha, beta);
         result[0] = (int)bestMove.row;
         result[1] = (int)bestMove.col;
         result[2] = bestMove.score;

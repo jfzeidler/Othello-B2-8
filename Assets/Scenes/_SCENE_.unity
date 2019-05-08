@@ -196,6 +196,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1027058870}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &26977810 stripped
@@ -210,11 +247,23 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1422599916}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &47620551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1730728158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &48162064 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
     type: 3}
   m_PrefabInstance: {fileID: 918348158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &50039945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 2017394848}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &57346467 stripped
 Transform:
@@ -519,6 +568,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -30}
   m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &93033147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 180424940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &94902589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 918348158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &99205648 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
@@ -822,6 +883,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 559268773}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &163958042
@@ -908,6 +1006,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1398475930}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &170076733
@@ -1069,8 +1204,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 93033147}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &195539276 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1698568874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &196402323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
@@ -1161,6 +1339,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 443306083}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &210887906
@@ -1565,11 +1780,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &216055393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1849550417}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &223209409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1803308744343299259, guid: d355af7086d58f24d87d784c52b35366,
     type: 3}
   m_PrefabInstance: {fileID: 790633376}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &228568693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1717445441}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &231541200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1233408039}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &248201882
 PrefabInstance:
@@ -1655,6 +1888,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 288535246}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &260008425 stripped
@@ -1747,6 +2017,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 609225751}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &285594955
@@ -1833,8 +2140,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1571198261}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &288535246 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 248201882}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &288640967
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,6 +2376,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1532028432}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &327132680
@@ -2112,6 +2499,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1691683287}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &327942357
@@ -2198,6 +2622,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 427533187}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &332142224
@@ -2292,6 +2753,12 @@ Transform:
   m_Father: {fileID: 1051862552}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &336738308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 519047789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &358368307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2376,6 +2843,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1909976188}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &359932927
@@ -2539,6 +3043,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359932927}
   m_CullTransparentMesh: 0
+--- !u!1 &362507869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1950970461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &363464313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1635447809}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &371099654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2611,6 +3127,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371099654}
   m_CullTransparentMesh: 0
+--- !u!1 &377005024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1964212939}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &381705871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2695,6 +3217,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1078626325}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &386293776
@@ -2826,6 +3385,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386293776}
   m_CullTransparentMesh: 0
+--- !u!1 &387951237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1029965107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &396974032 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1866399117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &418657236 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 857637735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &426979592
 GameObject:
   m_ObjectHideFlags: 0
@@ -2987,6 +3564,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426979592}
   m_CullTransparentMesh: 0
+--- !u!1 &427533187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 327942357}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &443306083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 208952835}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &478441110 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
@@ -3139,6 +3728,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506837638}
   m_CullTransparentMesh: 0
+--- !u!1 &514648282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 612616892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &519047789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3233,8 +3828,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 336738308}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &519821667 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 7256558920847274726}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &521866543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3319,8 +3957,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 2104129938}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &522645513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1592816824}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &528974469 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
@@ -3420,6 +4101,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
     type: 3}
   m_PrefabInstance: {fileID: 2085644486}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &559268773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 162393429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &568525046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1845243335}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &573849310 stripped
 Transform:
@@ -3724,8 +4417,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1880681860}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &609225751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 270598596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &612616892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3810,6 +4546,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 514648282}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &613095691
@@ -3896,8 +4669,56 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: currentTextures
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 625950247}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &625950247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 613095691}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &635238736
 GameObject:
   m_ObjectHideFlags: 0
@@ -4177,8 +4998,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 781546466}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &671452064 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 2050451364}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &671707830 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
@@ -4281,6 +5145,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1991952056}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &695661540
@@ -4490,6 +5391,12 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &702413765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1175756505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &703538295 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
@@ -4876,6 +5783,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7256558920847274726}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &775292713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1737441092}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &781546466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 670304136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &790633376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5029,6 +5948,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1963959502}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &821590710
@@ -5324,6 +6280,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1365869976}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &857637735
@@ -5410,8 +6403,57 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 418657236}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &860872753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1931550442}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &864779537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1689816053}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &878678546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
@@ -5508,6 +6550,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 94902589}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &918460649
@@ -5594,13 +6673,68 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1250632279}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &923545014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1226256928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &924256967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
     type: 3}
   m_PrefabInstance: {fileID: 1540750541}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &929127522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1073071325}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &932837201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1127346349}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &932900539 stripped
 Transform:
@@ -5905,6 +7039,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1647611499}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &984212408
@@ -6203,6 +7374,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1994644427}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1002858780
@@ -6266,6 +7474,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 15d111bc4b35bd7419be0c87bf30ba0e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d4da4c359c48f64883e3d6d11decdd1, type: 3}
+--- !u!1 &1004397838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1858367415}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1018180918
 GameObject:
   m_ObjectHideFlags: 0
@@ -6652,6 +7866,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1035496335}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1027058870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 26621306}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1027543402
 GameObject:
   m_ObjectHideFlags: 0
@@ -6808,6 +8028,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 387951237}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1035496335
@@ -6891,6 +8148,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2121647909}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1051458058 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1432627470}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1051862551
 GameObject:
   m_ObjectHideFlags: 0
@@ -6941,24 +8204,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5dbfad451e53c46ab22337ff72917c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerturn: 1
+  playerTurn: 1
   Tiles: {fileID: 1219122927}
   AndTheWinnerIs: {fileID: 2118630178}
   GameOverCanvas: {fileID: 1616836163}
-  spawnWhitePlayer: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+  SpawnWhitePlayer: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
     type: 3}
-  spawnDarkPlayer: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+  SpawnDarkPlayer: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
     type: 3}
   BitboardDisplay: {fileID: 1086227241}
-  Blackcountertext: {fileID: 1751374260}
-  Whitecountertext: {fileID: 1821975511}
+  BlackCounterText: {fileID: 1751374260}
+  WhiteCounterText: {fileID: 1821975511}
   ScorePanelTurnText: {fileID: 1758297898}
   HelpBoard: {fileID: 843090681}
-  Scoreboard: {fileID: 87951822}
-  Menu_Button: {fileID: 386293776}
+  ScoreBoard: {fileID: 87951822}
+  MainMenuButton: {fileID: 386293776}
   BackButton: {fileID: 1018180918}
   HelpButton: {fileID: 210887906}
-  Text2image: {fileID: 288640967}
+  Text2Image: {fileID: 288640967}
 --- !u!1001 &1073071325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7043,8 +8306,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 929127522}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &1078626325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 381705871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1084259196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7129,6 +8435,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1636863754}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1085717750 stripped
@@ -7377,6 +8720,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087360384}
   m_CullTransparentMesh: 0
+--- !u!1 &1097595678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1982051081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1099012882
 GameObject:
   m_ObjectHideFlags: 0
@@ -7584,6 +8933,12 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &1105751421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1763236256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1127346349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7668,6 +9023,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 932837201}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1137392200 stripped
@@ -7760,6 +9152,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 702413765}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &1180064307
@@ -8179,10 +9608,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b20017f4afc30c646be6e9e1e8aa5ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  The_Board: {fileID: 1051862551}
-  spawnWhitePlayer: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+  TheBoard: {fileID: 1051862551}
+  SpawnWhitePlayer: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
     type: 3}
-  spawnDarkPlayer: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+  SpawnDarkPlayer: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
     type: 3}
 --- !u!1 &1223005698
 GameObject:
@@ -8475,6 +9904,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 923545014}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1233408039
@@ -8561,8 +10027,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 231541200}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &1250632279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 918460649}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1290992683
 GameObject:
   m_ObjectHideFlags: 0
@@ -8808,6 +10317,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1785137245}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1311589608 stripped
@@ -8827,6 +10373,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
     type: 3}
   m_PrefabInstance: {fileID: 918460649}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1365869976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 855623295}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1381741461 stripped
 Transform:
@@ -9003,6 +10555,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387918078}
   m_CullTransparentMesh: 0
+--- !u!1 &1398475930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 163958042}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1401684146
 GameObject:
   m_ObjectHideFlags: 0
@@ -9396,6 +10954,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 2033181539}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &1415570412
@@ -9689,6 +11284,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1945677248}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1423860450
@@ -9775,6 +11407,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1946025474}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1432627470
@@ -9871,6 +11540,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1051458058}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1436614453 stripped
@@ -10888,6 +12594,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &1529904937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 2085644486}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1532028432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 298152722}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1540750541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10972,8 +12690,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1631192098}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &1545163272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 2121647909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1546367506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
@@ -10985,6 +12746,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
     type: 3}
   m_PrefabInstance: {fileID: 1233408039}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1571198261 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 285594955}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1579765281 stripped
 Transform:
@@ -11148,6 +12915,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 522645513}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1596631902 stripped
@@ -11268,6 +13072,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1730728158}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1631192098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1540750541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1635447809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11352,13 +13162,62 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 363464313}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &1636863754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1084259196}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1640017461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
     type: 3}
   m_PrefabInstance: {fileID: 1731938932}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1647611499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 963351934}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1657895133 stripped
 Transform:
@@ -11450,6 +13309,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1998019834}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1689816053
@@ -11536,8 +13432,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 864779537}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &1691683287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 327132680}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1695759187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
@@ -11628,6 +13567,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 195539276}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &1704810698
@@ -11696,6 +13672,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1713949288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1731938932}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1717445441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11780,6 +13762,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 228568693}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1720229991 stripped
@@ -11967,6 +13986,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 47620551}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1731938932
@@ -12053,6 +14109,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1713949288}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &1734019910
@@ -12322,6 +14415,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 775292713}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1746024700 stripped
@@ -12742,8 +14872,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1105751421}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &1785137245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1301105451}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1788714939
 GameObject:
   m_ObjectHideFlags: 0
@@ -13302,6 +15475,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 568525046}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &1846672664
@@ -13549,6 +15759,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 216055393}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1858367415
@@ -13635,6 +15882,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1004397838}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1866399117
@@ -13721,6 +16005,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 396974032}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &1872277601 stripped
@@ -13781,6 +16102,12 @@ Transform:
   m_Father: {fileID: 1051862552}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1880681860 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 600524039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1881213246 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
@@ -13793,11 +16120,23 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1002436079}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1886126435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 2015948581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1893582531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
     type: 3}
   m_PrefabInstance: {fileID: 1950970461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1909976188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 358368307}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1931550442
 PrefabInstance:
@@ -13883,8 +16222,57 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 860872753}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &1945677248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1422599916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1946025474 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1423860450}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1950970461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13969,6 +16357,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 362507869}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1 &1955941959
@@ -14060,6 +16485,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1955941959}
   m_CullTransparentMesh: 0
+--- !u!1 &1963959502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 800180304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1964212939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14144,6 +16575,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 377005024}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &1982051081
@@ -14230,8 +16698,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1097595678}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &1991952056 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 682952167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1994191187
 GameObject:
   m_ObjectHideFlags: 0
@@ -14361,11 +16872,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994191187}
   m_CullTransparentMesh: 0
+--- !u!1 &1994644427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1002436079}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1996827273 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
     type: 3}
   m_PrefabInstance: {fileID: 670304136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1998019834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1667881374}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2011241213 stripped
 Transform:
@@ -14457,6 +16980,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1886126435}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &2017394848
@@ -14543,6 +17103,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 50039945}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &2032537533 stripped
@@ -14550,6 +17147,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7256558921621419635, guid: c45fbd5b9ac2fae44b347d0f3169e288,
     type: 3}
   m_PrefabInstance: {fileID: 613095691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2033181539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 1412962668}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2050451364
 PrefabInstance:
@@ -14635,6 +17238,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 671452064}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!4 &2082979254 stripped
@@ -14727,8 +17367,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1529904937}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
+--- !u!1 &2104129938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7256558920619730731, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+    type: 3}
+  m_PrefabInstance: {fileID: 521866543}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2118630178
 GameObject:
   m_ObjectHideFlags: 0
@@ -14980,6 +17663,43 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 1545163272}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
 --- !u!1001 &6858631199314584817
@@ -15204,5 +17924,47 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
         type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: TheBoard
+      value: 
+      objectReference: {fileID: 1051862551}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnDarkPlayer
+      value: 
+      objectReference: {fileID: 5158308613953058981, guid: d355af7086d58f24d87d784c52b35366,
+        type: 3}
+    - target: {fileID: 7974997770577057219, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: SpawnWhitePlayer
+      value: 
+      objectReference: {fileID: 4567381609472732443, guid: feab44380df934448af41528b45243ec,
+        type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[0]
+      value: 
+      objectReference: {fileID: 2800000, guid: 8205a400fda40514aa82ff8392b73de3, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Textures.Array.data[1]
+      value: 
+      objectReference: {fileID: 2800000, guid: f3d35695dfdec59499eefe335f08dc47, type: 3}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: Tile
+      value: 
+      objectReference: {fileID: 519821667}
+    - target: {fileID: 8938494353646218028, guid: c45fbd5b9ac2fae44b347d0f3169e288,
+        type: 3}
+      propertyPath: currentTextures
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c45fbd5b9ac2fae44b347d0f3169e288, type: 3}
