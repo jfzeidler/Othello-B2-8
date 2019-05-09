@@ -141,9 +141,7 @@ public class Bitboard : MonoBehaviour
 
         // For Debugging
         if (DEBUG == 1)
-        {
             BitboardDisplayUpdate();
-        }
 
         // Show current player
         ShowPlayerTurn();
@@ -160,10 +158,10 @@ public class Bitboard : MonoBehaviour
         for (int i = 0; i < 8; i++)
         {
             BitboardDisplay.GetComponent<Text>().text += "\n " + (i + 1) + " [";
+
             for (int j = 0; j < 8; j++)
-            {
                 BitboardDisplay.GetComponent<Text>().text += board2D[i, j] + " ";
-            }
+
             BitboardDisplay.GetComponent<Text>().text += "]";
         }
     }
@@ -177,14 +175,10 @@ public class Bitboard : MonoBehaviour
             for (int j = 0; j < 8; j++)
             {
                 if (board2D[i, j] == 1)
-                {
                     blackPieces++;
-                }
 
                 else if (board2D[i, j] == 2)
-                {
                     whitePieces++;
-                }
             }
         }
         // Update the visual scoreboard
@@ -213,10 +207,9 @@ public class Bitboard : MonoBehaviour
                     string tileGameObject = c + System.Convert.ToString(i + 1 + "/TileVisual");
 
                     if (moveGuide == 1)
-                    {
                         // Call TextureSwap from the gameobject
                         GameObject.Find(tileGameObject).GetComponent<SwapTextures>().TextureSwap();
-                    }
+
                     // reset the bitboard value to 0
                     board2D[i, j] = 0;
                 }
@@ -263,14 +256,10 @@ public class Bitboard : MonoBehaviour
     void ShowPlayerTurn()
     {
         if (playerTurn == (byte)Player.black)
-        {
             ScorePanelTurnText.GetComponent<TextMeshProUGUI>().text = "Black";
-        }
 
         else if (playerTurn == (byte)Player.white)
-        {
             ScorePanelTurnText.GetComponent<TextMeshProUGUI>().text = "White";
-        }
     }
 
     // This method is used to show which tiles follow the rules, and are valid moves
@@ -304,21 +293,15 @@ public class Bitboard : MonoBehaviour
         {
             // If black player has the most pieces, show "Player Black Won"
             if (blackPieces > whitePieces)
-            {
                 AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player Black Won";
-            }
 
             // If black player has the most pieces, show "Player White Won"
             else if (whitePieces > blackPieces)
-            {
                 AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player White Won";
-            }
 
             // If black player has the most pieces, show "Draw"
             else if (whitePieces == blackPieces)
-            {
                 AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Draw";
-            }
 
             // Call CheckForNine from BoardRules.cs
             if (BoardRules.CheckForNine(board2D) == true)
@@ -388,32 +371,22 @@ public class Bitboard : MonoBehaviour
             if (playMode == 0)
             {
                 if (playerTurn == (int)Player.black)
-                {
                     ShowValidMoves();
-                }
 
                 if (playerTurn == (int)Player.white)
-                {
                     // Invoke is used to run the method CPU(), after 1 sec. delay
                     Invoke("CPU", 1);
-                }
             }
 
             else if (playMode == 1)
-            {
                 ShowValidMoves();
-            }
 
             else if (playMode == 2)
-            {
                 Invoke("CPU", 1);
-            }
         }
 
         else if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
             ShowValidMoves();
-        }
     }
 
     // This method is used to calculate the best move for the CPU turn

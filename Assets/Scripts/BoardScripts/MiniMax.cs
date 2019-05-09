@@ -45,28 +45,19 @@ public class MiniMax : BoardRules
             for (int j = 0; j < 8; j++)
             {
                 if (board2D[i, j] == 1)
-                {
                     playerScore += evaluation[i, j];
-                }
 
                 else if (board2D[i, j] == 2)
-                {
                     cpuScore += evaluation[i, j];
-                }
             }
         }
 
         if (playerTurn == 1)
-        {
             result = (playerScore - cpuScore);
-            //File.AppendAllText(fileName, Environment.NewLine + "RESULT FOR BLACK: " + result + Environment.NewLine);
-        }
 
         else if (playerTurn == 2)
-        {
             result = (cpuScore - playerScore);
-            //File.AppendAllText(fileName, Environment.NewLine + "RESULT FOR WHITE: " + result + Environment.NewLine);
-        }
+
         return result;
     }
 
@@ -118,15 +109,11 @@ public class MiniMax : BoardRules
 
         // If white turn (Minimizer)
         if (playerTurn == 2)
-        {
             selectedMove.score = int.MinValue;
-        }
 
         // If black turn (Maximizer)
         else if (playerTurn == 1)
-        {
             selectedMove.score = int.MaxValue;
-        }
 
         List<Vector2> allMoves;
 
@@ -205,13 +192,9 @@ public class MiniMax : BoardRules
     {
         // Check if file already exists. If yes, delete it.     
         if (File.Exists(fileName))
-        {
             File.Delete(fileName);
-        }
 
         using (StreamWriter sw = File.CreateText(fileName))
-        {
             sw.WriteLine("DEBUGGING;");
-        }
     }
 }

@@ -55,9 +55,7 @@ public class tileScript : MonoBehaviour
             {
                 // If the tile sellected, has a possible move
                 if (TheBoard.GetComponent<Bitboard>().board2D[bitboardY, bitboardX] == 9)
-                {
                     MakeMove(bitboardX, bitboardY, playerTurn);
-                }
             }
         }
     }
@@ -93,17 +91,14 @@ public class tileScript : MonoBehaviour
     void DEBUGLOG(int[,] board2D)
     {
         for (int i = 0; i < 8; i++)
-        {
             Debug.Log(board2D[i, 0] + " " + board2D[i, 1] + " " + board2D[i, 2] + " " + board2D[i, 3] + " " + board2D[i, 4] + " " + board2D[i, 5] + " " + board2D[i, 6] + " " + board2D[i, 7]);
-        }
     }
 
     public void MakeMove (int xPos, int yPos, int playerTurn)
     {
         if (DEBUG == 1)
-        {
             DEBUGLOG(TheBoard.GetComponent<Bitboard>().board2D);
-        }
+
         // Call boardRules from Bitboard.cs
         TheBoard.GetComponent<Bitboard>().boardRules(xPos, yPos);
         // Place a piece on the sellected tile
