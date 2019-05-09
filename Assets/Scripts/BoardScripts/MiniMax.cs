@@ -33,17 +33,6 @@ public class MiniMax : BoardRules
         {10000, -3000, 1000,  800,  800, 1000, -3000, 10000}  // 8
     };
 
-    readonly int[,] evaluation2 = {
-        {  30, -25, 10, 5, 5, 10, -25,  30 },
-        { -25, -25,  1, 1, 1,  1, -25, -25 },
-        {  10,   1,  5, 2, 2,  5,   1,  10 },
-        {   5,   1,  2, 1, 1,  2,   1,   5 },
-        {   5,   1,  2, 1, 1,  2,   1,   5 },
-        {  10,   1,  5, 2, 2,  5,   1,  10 },
-        { -25, -25,  1, 1, 1,  1, -25, -25 },
-        {  30, -25, 10, 5, 5, 10, -25,  30 }
-    };
-
     // This method is used to calculate the score of the branch in Minimax
     public int EvaluateBoard(int[,] bitboard, int playerTurn)
     {
@@ -57,12 +46,12 @@ public class MiniMax : BoardRules
             {
                 if (bitboard[i, j] == 1)
                 {
-                    playerScore += evaluation2[i, j];
+                    playerScore += evaluation[i, j];
                 }
 
                 else if (bitboard[i, j] == 2)
                 {
-                    cpuScore += evaluation2[i, j];
+                    cpuScore += evaluation[i, j];
                 }
             }
         }
