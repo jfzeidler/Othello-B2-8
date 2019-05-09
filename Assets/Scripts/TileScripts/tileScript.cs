@@ -37,7 +37,7 @@ public class tileScript : MonoBehaviour
         if (playMode == 1 || SceneManager.GetActiveScene().buildIndex == 0)
         {
             // If the tile sellected, has a possible move
-            if (TheBoard.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9)
+            if (TheBoard.GetComponent<Bitboard>().board2D[bitboardY, bitboardX] == 9)
             {
                 // Get playerturn to tell which turn it is
                 int playerTurn = TheBoard.GetComponent<Bitboard>().playerTurn;
@@ -54,7 +54,7 @@ public class tileScript : MonoBehaviour
             if (playerTurn == (int)Player.black)
             {
                 // If the tile sellected, has a possible move
-                if (TheBoard.GetComponent<Bitboard>().bitboard[bitboardY, bitboardX] == 9)
+                if (TheBoard.GetComponent<Bitboard>().board2D[bitboardY, bitboardX] == 9)
                 {
                     MakeMove(bitboardX, bitboardY, playerTurn);
                 }
@@ -90,11 +90,11 @@ public class tileScript : MonoBehaviour
         }
     }
 
-    void DEBUGLOG(int[,] bitboard)
+    void DEBUGLOG(int[,] board2D)
     {
         for (int i = 0; i < 8; i++)
         {
-            Debug.Log(bitboard[i, 0] + " " + bitboard[i, 1] + " " + bitboard[i, 2] + " " + bitboard[i, 3] + " " + bitboard[i, 4] + " " + bitboard[i, 5] + " " + bitboard[i, 6] + " " + bitboard[i, 7]);
+            Debug.Log(board2D[i, 0] + " " + board2D[i, 1] + " " + board2D[i, 2] + " " + board2D[i, 3] + " " + board2D[i, 4] + " " + board2D[i, 5] + " " + board2D[i, 6] + " " + board2D[i, 7]);
         }
     }
 
@@ -102,14 +102,14 @@ public class tileScript : MonoBehaviour
     {
         if (DEBUG == 1)
         {
-            DEBUGLOG(TheBoard.GetComponent<Bitboard>().bitboard);
+            DEBUGLOG(TheBoard.GetComponent<Bitboard>().board2D);
         }
         // Call boardRules from Bitboard.cs
         TheBoard.GetComponent<Bitboard>().boardRules(xPos, yPos);
         // Place a piece on the sellected tile
         placePlayer(playerTurn, xPos, yPos);
         // Update the bitboard with the new value
-        TheBoard.GetComponent<Bitboard>().bitboard[yPos, xPos] = playerTurn;
+        TheBoard.GetComponent<Bitboard>().board2D[yPos, xPos] = playerTurn;
         // Call bitboardUpdate from Bitboard.cs
         TheBoard.GetComponent<Bitboard>().BitboardUpdate();
         //The_Board.GetComponent<Bitboard>().bitboardResetTurn();
