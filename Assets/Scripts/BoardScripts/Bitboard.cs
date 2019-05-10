@@ -366,6 +366,7 @@ public class Bitboard : MonoBehaviour
     // This method is used to change how you play the game
     void PlayingMode()
     {
+        // If on main scene
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             if (playMode == 0)
@@ -385,6 +386,7 @@ public class Bitboard : MonoBehaviour
                 Invoke("CPU", 1);
         }
 
+        // If on main menu scene
         else if (SceneManager.GetActiveScene().buildIndex == 0)
             ShowValidMoves();
     }
