@@ -122,15 +122,15 @@ public class Bitboard : MonoBehaviour
 
     }
 
-    public void boardRules(int bitboardX, int bitboardY)
+    public void boardRules(int boardX, int boardY)
     {
         // Call CaptureEnemyPlayer from BoardRules.cs
-        BoardRules.CaptureEnemyPlayer(board2D, bitboardY, bitboardX, playerTurn);
-        // Reset the bitboard for the next turn
-        BitboardResetTurn();
+        BoardRules.CaptureEnemyPlayer(board2D, boardY, boardX, playerTurn);
+        // Reset the board for the next turn
+        boardResetTurn();
     }
 
-    public void BitboardUpdate()
+    public void boardUpdate()
     {
         // Update the scoreboard
         PieceCounter(board2D);
@@ -141,7 +141,7 @@ public class Bitboard : MonoBehaviour
 
         // For Debugging
         if (DEBUG == 1)
-            BitboardDisplayUpdate();
+            boardDisplayUpdate();
 
         // Show current player
         ShowPlayerTurn();
@@ -151,8 +151,8 @@ public class Bitboard : MonoBehaviour
         PlayingMode();
     }
 
-    // This method is for debugging and show the current bitboard to the game overlay
-    void BitboardDisplayUpdate()
+    // This method is for debugging and show the current board to the game overlay
+    void boardDisplayUpdate()
     {
         BitboardDisplay.GetComponent<Text>().text = "     AB CD EF GH";
         for (int i = 0; i < 8; i++)
@@ -192,8 +192,8 @@ public class Bitboard : MonoBehaviour
         WhiteCounterText.GetComponent<TextMeshProUGUI>().text = $"{whitePieces}";
     }
 
-    // This method resets the bitboard, to remove unnecessary values
-    void BitboardResetTurn()
+    // This method resets the board, to remove unnecessary values
+    void boardResetTurn()
     {
         for (int i = 0; i < 8; i++)
         {
@@ -210,7 +210,7 @@ public class Bitboard : MonoBehaviour
                         // Call TextureSwap from the gameobject
                         GameObject.Find(tileGameObject).GetComponent<SwapTextures>().TextureSwap();
 
-                    // reset the bitboard value to 0
+                    // reset the board value to 0
                     board2D[i, j] = 0;
                 }
 
@@ -219,7 +219,7 @@ public class Bitboard : MonoBehaviour
                 {
                     // Change the pieces thats captured
                     FlipIt(i, j);
-                    // Change the bitboard value to the current player
+                    // Change the board value to the current player
                     board2D[i, j] = playerTurn;
                 }
             }
@@ -342,7 +342,7 @@ public class Bitboard : MonoBehaviour
     // This method is used to perform the best move from MiniMax
     void CPUTurn(int[] cpuBestMove)
     {
-        // If the move is inside the bitboard
+        // If the move is inside the board
         if (BoardRules.InRange(cpuBestMove[0], cpuBestMove[1]))
         {
             int temp = cpuBestMove[1] + 65;

@@ -62,7 +62,7 @@ public class MiniMax : BoardRules
     }
 
     // This is a list of all possible moves for at given player
-    public List<Vector2> ValidMoves(int[,] bitboard, int playerTurn)
+    public List<Vector2> ValidMoves(int[,] board2D, int playerTurn)
     {
         List<Vector2> list = new List<Vector2>();
         if (playerTurn == 1)
@@ -71,7 +71,7 @@ public class MiniMax : BoardRules
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (bitboard[i, j] == 9)
+                    if (board2D[i, j] == 9)
                     {
                         list.Add(new Vector2(i, j));
                     }
@@ -85,7 +85,7 @@ public class MiniMax : BoardRules
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (bitboard[i, j] == 9)
+                    if (board2D[i, j] == 9)
                     {
                         list.Add(new Vector2(i, j));
                     }
@@ -101,7 +101,7 @@ public class MiniMax : BoardRules
         // If game over or maxDepth is reached
         if (CheckForNine(board2D) == true || currentDepth == maxDepth)
         {
-            File.AppendAllText(fileName, Environment.NewLine + "Return" + Environment.NewLine);
+            //File.AppendAllText(fileName, Environment.NewLine + "Return" + Environment.NewLine);
             return new Move(-1, -1, EvaluateBoard(board2D, playerTurn));
         }
 

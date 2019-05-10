@@ -106,7 +106,7 @@ public class tileScript : MonoBehaviour
         // Update the bitboard with the new value
         TheBoard.GetComponent<Bitboard>().board2D[yPos, xPos] = playerTurn;
         // Call bitboardUpdate from Bitboard.cs
-        TheBoard.GetComponent<Bitboard>().BitboardUpdate();
+        TheBoard.GetComponent<Bitboard>().boardUpdate();
         //The_Board.GetComponent<Bitboard>().bitboardResetTurn();
 
     }

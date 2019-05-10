@@ -18,7 +18,7 @@ public class BoardRules
         };
 
     // This method is used to check for opposite pieces
-    public void ValidMove(int[,] bitboard, int playerTurn)
+    public void ValidMove(int[,] board2D, int playerTurn)
     {
         if (playerTurn == (int)Player.black)
         {
@@ -26,10 +26,10 @@ public class BoardRules
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (bitboard[i, j] == (int)Player.white)
+                    if (board2D[i, j] == (int)Player.white)
                     {
                         // If a opposite piece is found run CheckForAdjacent()
-                        CheckForAdjacent(bitboard, i, j, playerTurn);
+                        CheckForAdjacent(board2D, i, j, playerTurn);
                     }
                 }
             }
@@ -41,10 +41,10 @@ public class BoardRules
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (bitboard[i, j] == (int)Player.black)
+                    if (board2D[i, j] == (int)Player.black)
                     {
                         // If a opposite piece is found run CheckForAdjacent()
-                        CheckForAdjacent(bitboard, i, j, playerTurn);
+                        CheckForAdjacent(board2D, i, j, playerTurn);
                     }
                 }
             }
@@ -52,7 +52,7 @@ public class BoardRules
     }
 
     // This method is used to check if there are any tiles that follow the rule of capturing
-    void CheckForAdjacent(int[,] bitboard, int i, int j, int playerTurn)
+    void CheckForAdjacent(int[,] board2D, int i, int j, int playerTurn)
     {
         if (playerTurn == (int)Player.white)
         {
@@ -62,26 +62,26 @@ public class BoardRules
                 int getValueY = (int)vectors[k].Y;
                 Vector2 vector = vectors[k];
 
-                // Check if the next tile is inside the bitboard
+                // Check if the next tile is inside the board
                 if (InRange(getValueX + i, getValueY + j))
                 {
                     // Follow vector. If white piece is found follow this vector
-                    if (bitboard[i + getValueX, j + getValueY] == (int)Player.white)
+                    if (board2D[i + getValueX, j + getValueY] == (int)Player.white)
                     {
                         for (int l = 1; l < 8; l++)
                         {
                             if (InRange(i - getValueX * l, j - getValueY * l))
                             {
                                 // If this tile is already a valid move or white, stop following this vector
-                                if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.validMove || bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.white)
+                                if (board2D[i - getValueX * l, j - getValueY * l] == (int)Player.validMove || board2D[i - getValueX * l, j - getValueY * l] == (int)Player.white)
                                 {
                                     l = 8;
                                 }
                                 
                                 // If this tile is blank, mark as valid move
-                                else if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
+                                else if (board2D[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
                                 {
-                                    bitboard[i - getValueX * l, j - getValueY * l] = (int)Player.validMove;
+                                    board2D[i - getValueX * l, j - getValueY * l] = (int)Player.validMove;
                                     l = 8;
                                 }
                             }
@@ -99,26 +99,26 @@ public class BoardRules
                 int getValueY = (int)vectors[k].Y;
                 Vector2 vector = vectors[k];
 
-                // Check if the next tile is inside the bitboard
+                // Check if the next tile is inside the board
                 if (InRange(getValueX + i, getValueY + j))
                 {
                     // Follow vector. If black piece is found follow this vector
-                    if (bitboard[i + getValueX, j + getValueY] == (int)Player.black)
+                    if (board2D[i + getValueX, j + getValueY] == (int)Player.black)
                     {
                         for (int l = 1; l < 8; l++)
                         {
                             if (InRange(i - getValueX * l, j - getValueY * l))
                             {
                                 // If this tile is already a valid move or black, stop following this vector
-                                if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.validMove || bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.black)
+                                if (board2D[i - getValueX * l, j - getValueY * l] == (int)Player.validMove || board2D[i - getValueX * l, j - getValueY * l] == (int)Player.black)
                                 {
                                     l = 8;
                                 }
 
                                 // If this tile is blank, mark as valid move
-                                else if (bitboard[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
+                                else if (board2D[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
                                 {
-                                    bitboard[i - getValueX * l, j - getValueY * l] = (int)Player.validMove;
+                                    board2D[i - getValueX * l, j - getValueY * l] = (int)Player.validMove;
                                     l = 8;
                                 }
                             }
@@ -129,8 +129,8 @@ public class BoardRules
         }
     }
 
-    // This method is used to mark bitboard tile as a captured piece
-    public void CaptureEnemyPlayer(int[,] bitboard, int i, int j, int playerTurn)
+    // This method is used to mark board tile as a captured piece
+    public void CaptureEnemyPlayer(int[,] board2D, int i, int j, int playerTurn)
     {
         if (playerTurn == (int)Player.black)
         {
@@ -139,7 +139,7 @@ public class BoardRules
                 int getValueX = (int)vectors[k].X;
                 int getValueY = (int)vectors[k].Y;
 
-                // Check if the next tile is inside the bitboard
+                // Check if the next tile is inside the board
                 if (InRange(getValueX + i, getValueY + j))
                 {
                     for (int l = 1; l < 8; l++)
@@ -147,24 +147,24 @@ public class BoardRules
                         // Follow vector
                         if (InRange(i + getValueX * l, j + getValueY * l))
                         {
-                            if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
+                            if (board2D[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
                             {
                                 l = 10;
                             }
 
-                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.capture)
+                            else if (board2D[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || board2D[i + getValueX * l, j + getValueY * l] == (int)Player.capture)
                             {
                                 l = 10;
                             }
 
                             // Only if a black piece is found, backtace the vector
-                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.black)
+                            else if (board2D[i + getValueX * l, j + getValueY * l] == (int)Player.black)
                             {
                                 l--;
                                 for (; l >= 1; l--)
                                 {
                                     // Mark all pieces in the backtracing vectors way, as captured pieces
-                                    bitboard[i + getValueX * l, j + getValueY * l] = (int)Player.capture;
+                                    board2D[i + getValueX * l, j + getValueY * l] = (int)Player.capture;
                                 }
                                 l = 10;
                             }
@@ -181,7 +181,7 @@ public class BoardRules
                 int getValueX = (int)vectors[k].X;
                 int getValueY = (int)vectors[k].Y;
 
-                // Check if the next tile is inside the bitboard
+                // Check if the next tile is inside the board
                 if (InRange(getValueX + i, getValueY + j))
                 {
                     // Follow vector
@@ -189,24 +189,24 @@ public class BoardRules
                     {
                         if (InRange(i + getValueX * l, j + getValueY * l))
                         {
-                            if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
+                            if (board2D[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
                             {
                                 l = 10;
                             }
 
-                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.capture)
+                            else if (board2D[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || board2D[i + getValueX * l, j + getValueY * l] == (int)Player.capture)
                             {
                                 l = 10;
                             }
 
                             // Only if a white piece is found, backtace the vector
-                            else if (bitboard[i + getValueX * l, j + getValueY * l] == (int)Player.white)
+                            else if (board2D[i + getValueX * l, j + getValueY * l] == (int)Player.white)
                             {
                                 l--;
                                 for (; l >= 1; l--)
                                 {
                                     // Mark all pieces in the backtracing vectors way, as captured pieces
-                                    bitboard[i + getValueX * l, j + getValueY * l] = (int)Player.capture;
+                                    board2D[i + getValueX * l, j + getValueY * l] = (int)Player.capture;
                                 }
                                 l = 10;
                             }
@@ -226,15 +226,15 @@ public class BoardRules
             return false;
     }
 
-    // This method is used to check if there are any valid moves in the bitboard 
-    public bool CheckForNine(int[,] bitboard)
+    // This method is used to check if there are any valid moves in the board 
+    public bool CheckForNine(int[,] board2D)
     {
         bool returnValue = true;
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
             {
-                if (bitboard[i, j] == 9)
+                if (board2D[i, j] == 9)
                 {
                     returnValue = false;
                 }
@@ -243,44 +243,44 @@ public class BoardRules
         return returnValue;
     }
 
-    // This method is used to prepare the bitboard for MiniMax 
-    int[,] BitboardOnlyResetTurn(int[,] bitboard, int playerTurn)
+    // This method is used to prepare the board for MiniMax 
+    int[,] boardOnlyResetTurn(int[,] board2D, int playerTurn)
     {
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
             {
                 // If theres an available move, change the texture of the current tile
-                if (bitboard[i, j] == 9)
+                if (board2D[i, j] == 9)
                 {
-                    bitboard[i, j] = 0;
+                    board2D[i, j] = 0;
                 }
 
                 // If theres a captured piece, change the piece
-                else if (bitboard[i, j] == 5)
+                else if (board2D[i, j] == 5)
                 {
-                    // Change the bitboard value to the current player
-                    bitboard[i, j] = playerTurn;
+                    // Change the board value to the current player
+                    board2D[i, j] = playerTurn;
                 }
             }
         }
-        return bitboard;
+        return board2D;
     }
 
     // This method is used to get the next board state for MiniMax
-    public int[,] GetNextBoardState(int[,] bitboard, int playerTurn, int bitboardX, int bitboardY)
+    public int[,] GetNextBoardState(int[,] board2D, int playerTurn, int board2DX, int board2DY)
     {
-        // Clone bitboard
-        int[,] bitboardCopy = (int[,])bitboard.Clone();
-        // Make bitboard move
-        bitboardCopy[bitboardX, bitboardY] = playerTurn;
+        // Clone board
+        int[,] boardCopy = (int[,])board2D.Clone();
+        // Make board move
+        boardCopy[board2DX, board2DY] = playerTurn;
         // Capture pieces
-        CaptureEnemyPlayer(bitboardCopy, bitboardY, bitboardX, playerTurn);
-        // Reset bitboard
-        bitboardCopy = BitboardOnlyResetTurn(bitboardCopy, playerTurn);
+        CaptureEnemyPlayer(boardCopy, board2DY, board2DX, playerTurn);
+        // Reset board
+        boardCopy = boardOnlyResetTurn(boardCopy, playerTurn);
         // Calculate valid moves
-        ValidMove(bitboardCopy, playerTurn);
-        // return bitboard
-        return bitboardCopy;
+        ValidMove(boardCopy, playerTurn);
+        // return board
+        return boardCopy;
     }
 }
