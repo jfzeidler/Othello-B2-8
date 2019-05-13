@@ -60,7 +60,7 @@ public class tileScript : MonoBehaviour
         }
     }
 
-    void placePlayer(int playerTurn, int y, int z)
+    void PlacePlayer(int playerTurn, int y, int z)
     {
         // Make position vector for Instantiate
         Vector3 vectorPos = new Vector3(z, -0.85f, y);
@@ -102,7 +102,7 @@ public class tileScript : MonoBehaviour
         // Call boardRules from Bitboard.cs
         TheBoard.GetComponent<Bitboard>().boardRules(xPos, yPos);
         // Place a piece on the sellected tile
-        placePlayer(playerTurn, xPos, yPos);
+        PlacePlayer(playerTurn, xPos, yPos);
         // Update the bitboard with the new value
         TheBoard.GetComponent<Bitboard>().board2D[yPos, xPos] = playerTurn;
         // Call bitboardUpdate from Bitboard.cs
