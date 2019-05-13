@@ -11,7 +11,7 @@ public class Bitboard : MonoBehaviour
     public MiniMax MiniMax = new MiniMax();
     public enum Player { blank = 0, black = 1, white = 2 };
     public int playerTurn = 1;
-    int DEBUG = 0;
+    readonly int DEBUG = 0;
     int cpuPoints = 0;
     int blackPieces = 0; int whitePieces = 0;
     int maxDepth = 2;
