@@ -18,7 +18,7 @@ public class Move
 public class MiniMax : BoardRules
 {
     string fileName = @"C:\temp\MINIMAX_DEBUG.txt";
-    readonly bool alphaBetaOn = false;
+    readonly bool alphaBetaOn = true;
 
     readonly int[,] evaluation = {
         // A       B     C     D     E     F      G      H
