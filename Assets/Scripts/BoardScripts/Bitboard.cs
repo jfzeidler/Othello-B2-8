@@ -95,8 +95,6 @@ public class Bitboard : MonoBehaviour
         // For Debugging
         if (DEBUG == 1)
         {
-            MiniMax.PrepareDebugForMinimax();
-
             BitboardDisplay.GetComponent<Text>().text = "     AB CD EF GH";
             for (int i = 0; i < 8; i++)
             {
@@ -108,6 +106,10 @@ public class Bitboard : MonoBehaviour
                 BitboardDisplay.GetComponent<Text>().text += "]";
             }
         }
+
+        else if (DEBUG == 2)
+            MiniMax.PrepareDebugForMinimax();
+
         // Call ValidMove from BoardRules.cs
         BoardRules.ValidMove(board2D, playerTurn);
         // Show current player
