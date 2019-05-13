@@ -18,6 +18,7 @@ public class Move
 public class MiniMax : BoardRules
 {
     string fileName = @"C:\temp\MINIMAX_DEBUG.txt";
+    readonly bool alphaBetaOn = true;
 
     readonly int[,] evaluation = {
         // A       B     C     D     E     F      G      H
@@ -128,17 +129,21 @@ public class MiniMax : BoardRules
                 // Get the score from the next MiniMax algorithm
                 int score = MiniMaxAlgorithm(newBoard, 1, maxDepth, (currentDepth + 1), alpha, beta).score;
 
-                // Alpha
                 if (score > selectedMove.score)
                 {
                     selectedMove.row = (int)move.X;
                     selectedMove.col = (int)move.Y;
                     selectedMove.score = score;
                     //File.AppendAllText(fileName, "BEST VECTOR MOVE WHITE FOR NOW:" + (int)move.X + " " + (int)move.Y + " " + score + Environment.NewLine + Environment.NewLine);
-                    if (selectedMove.score > alpha)
-                        alpha = selectedMove.score;
-                    if (alpha >= beta)
-                        break;
+
+                    // Alpha
+                    if (alphaBetaOn == true)
+                    {
+                        if (selectedMove.score > alpha)
+                            alpha = selectedMove.score;
+                        if (alpha >= beta)
+                            break;
+                    }
                 }
             }
         }
@@ -155,17 +160,20 @@ public class MiniMax : BoardRules
                 // Get the score from the next MiniMax algorithm
                 int score = MiniMaxAlgorithm(newBoard, 2, maxDepth, (currentDepth + 1), alpha, beta).score;
 
-                // Beta
                 if (score < selectedMove.score)
                 {
                     selectedMove.row = (int)move.X;
                     selectedMove.col = (int)move.Y;
                     selectedMove.score = score;
                     //File.AppendAllText(fileName, "BEST VECTOR MOVE BLACK FOR NOW:" + (int)move.X + " " + (int)move.Y + " " + score + Environment.NewLine + Environment.NewLine);
-                    if (selectedMove.score < beta)
-                        beta = selectedMove.score;
-                    if (beta <= alpha)
-                        break;
+                    // Beta
+                    if (alphaBetaOn == true)
+                    {
+                        if (selectedMove.score < beta)
+                            beta = selectedMove.score;
+                        if (beta <= alpha)
+                            break;
+                    }
                 }
             }
         }
