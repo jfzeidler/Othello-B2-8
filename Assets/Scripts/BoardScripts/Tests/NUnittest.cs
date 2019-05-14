@@ -205,7 +205,7 @@ public class NUnittest
     }
 
     [Test]
-    public void NUnitEvaluateBoardBlackTest()
+    public void NUnitEvaluateBoardTest()
     {
         int[,] board2D = {
     // A  B  C  D  E  F  G  H
@@ -219,30 +219,9 @@ public class NUnittest
     {0, 0, 0, 0, 0, 0, 0, 0}  // 8
     };
         int playerTurn = 1;
-        int correct = -4980;
+        int correct = 4980;
         Assert.AreEqual(correct, Maximin.EvaluateBoard(board2D, playerTurn));
         // Use the Assert class to test conditions
-    }
-
-    [Test]
-    public void NUnitEvaluateBoardWhiteTest()
-    {
-        int[,] board2D = {
-    // A  B  C  D  E  F  G  H
-    {0, 0, 0, 0, 0, 0, 0, 0}, // 1
-    {0, 1, 0, 0, 0, 0, 0, 0}, // 2
-    {0, 0, 1, 1, 0, 0, 0, 0}, // 3
-    {0, 0, 2, 1, 1, 0, 0, 0}, // 4
-    {0, 0, 2, 2, 2, 0, 0, 0}, // 5
-    {0, 0, 0, 0, 0, 0, 0, 0}, // 6
-    {0, 0, 0, 0, 0, 0, 0, 0}, // 7
-    {0, 0, 0, 0, 0, 0, 0, 0}  // 8
-    };
-        int playerTurn = 2;
-        int correct = -4980;
-        Assert.AreEqual(correct, Maximin.EvaluateBoard(board2D, playerTurn));
-        // Use the Assert class to test conditions
-
     }
 }
 
