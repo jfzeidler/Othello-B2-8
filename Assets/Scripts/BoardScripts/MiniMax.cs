@@ -51,13 +51,7 @@ public class MiniMax : BoardRules
             }
         }
 
-        //if (playerTurn == 1)
-        //    result = (Minimizer - Maximizer);
-
-        //else if (playerTurn == 2)
-            result = (Maximizer - Minimizer);
-
-        return result;
+        return (Maximizer - Minimizer);
     }
 
     // This is a list of all possible moves for at given player
