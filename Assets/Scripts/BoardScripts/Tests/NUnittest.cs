@@ -4,15 +4,16 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace Tests
-{
+
     public class NUnittest
     {
-        // A Test behaves as an ordinary method
+    BoardRules BR = new BoardRules();
+    // A Test behaves as an ordinary method
         [Test]
-        public void NUnittestSimplePasses()
+        public void NUnitInRangeTest()
         {
-            // Use the Assert class to test conditions
+        Assert.IsFalse(BR.InRange(8, 8));
+        // Use the Assert class to test conditions
         }
 
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
@@ -25,4 +26,4 @@ namespace Tests
             yield return null;
         }
     }
-}
+
