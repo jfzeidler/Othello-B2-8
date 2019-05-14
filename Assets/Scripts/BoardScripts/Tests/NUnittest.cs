@@ -8,6 +8,8 @@ using UnityEngine.TestTools;
     public class NUnittest
     {
     BoardRules BR = new BoardRules();
+    Bitboard BB = new Bitboard();
+    MiniMax Maximin = new MiniMax();
     // A Test behaves as an ordinary method
         [Test]
         public void NUnitInRangeTest()
@@ -16,14 +18,24 @@ using UnityEngine.TestTools;
         // Use the Assert class to test conditions
         }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator NUnittestWithEnumeratorPasses()
+        [Test]
+        public void NUnitCaptureEnemyPlayerTest()
         {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
+        Assert.AreEqual(,);
+            // Use the Assert class to test conditions
         }
-    }
+
+        [Test]
+        public void NUnitPlaceNineTest(){
+
+            
+        }
+
+        [Test]
+        public void NUnitTest()
+        {
+            Assert.IsFalse(BR.InRange(8, 8));
+            // Use the Assert class to test conditions
+        }
+}
 
