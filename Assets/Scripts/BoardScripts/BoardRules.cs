@@ -2,7 +2,7 @@
 
 public class BoardRules
 {
-    enum Player { blank = 0, black = 1, white = 2, capture = 5, validMove = 9};
+    enum Player { blank = 0, black = 1, white = 2, capture = 5, validMove = 9 };
 
     // List of vectors for use later on
     Vector2[] vectors = new Vector2[]
@@ -18,7 +18,7 @@ public class BoardRules
         };
 
     // This method is used to check for opposite pieces
-    public void ValidMove(int[,] board2D, int playerTurn)
+    public int [,] ValidMove(int[,] CheckBoard2D, int playerTurn)
     {
         if (playerTurn == (int)Player.black)
         {
@@ -26,10 +26,10 @@ public class BoardRules
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (board2D[i, j] == (int)Player.white)
+                    if (CheckBoard2D[i, j] == (int)Player.white)
                     {
                         // If a opposite piece is found run CheckForAdjacent()
-                        CheckForAdjacent(board2D, i, j, playerTurn);
+                        CheckBoard2D = CheckForAdjacent(CheckBoard2D, i, j, playerTurn);
                     }
                 }
             }
@@ -41,18 +41,19 @@ public class BoardRules
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (board2D[i, j] == (int)Player.black)
+                    if (CheckBoard2D[i, j] == (int)Player.black)
                     {
                         // If a opposite piece is found run CheckForAdjacent()
-                        CheckForAdjacent(board2D, i, j, playerTurn);
+                        CheckBoard2D = CheckForAdjacent(CheckBoard2D, i, j, playerTurn);
                     }
                 }
             }
         }
+        return CheckBoard2D;
     }
 
     // This method is used to check if there are any tiles that follow the rule of capturing
-    void CheckForAdjacent(int[,] board2D, int i, int j, int playerTurn)
+    int [,] CheckForAdjacent(int[,] validBoard2D, int i, int j, int playerTurn)
     {
         if (playerTurn == (int)Player.white)
         {
@@ -66,22 +67,22 @@ public class BoardRules
                 if (InRange(getValueX + i, getValueY + j))
                 {
                     // Follow vector. If white piece is found follow this vector
-                    if (board2D[i + getValueX, j + getValueY] == (int)Player.white)
+                    if (validBoard2D[i + getValueX, j + getValueY] == (int)Player.white)
                     {
                         for (int l = 1; l < 8; l++)
                         {
                             if (InRange(i - getValueX * l, j - getValueY * l))
                             {
                                 // If this tile is already a valid move or white, stop following this vector
-                                if (board2D[i - getValueX * l, j - getValueY * l] == (int)Player.validMove || board2D[i - getValueX * l, j - getValueY * l] == (int)Player.white)
+                                if (validBoard2D[i - getValueX * l, j - getValueY * l] == (int)Player.validMove || validBoard2D[i - getValueX * l, j - getValueY * l] == (int)Player.white)
                                 {
                                     l = 8;
                                 }
                                 
                                 // If this tile is blank, mark as valid move
-                                else if (board2D[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
+                                else if (validBoard2D[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
                                 {
-                                    board2D[i - getValueX * l, j - getValueY * l] = (int)Player.validMove;
+                                    validBoard2D[i - getValueX * l, j - getValueY * l] = (int)Player.validMove;
                                     l = 8;
                                 }
                             }
@@ -103,22 +104,22 @@ public class BoardRules
                 if (InRange(getValueX + i, getValueY + j))
                 {
                     // Follow vector. If black piece is found follow this vector
-                    if (board2D[i + getValueX, j + getValueY] == (int)Player.black)
+                    if (validBoard2D[i + getValueX, j + getValueY] == (int)Player.black)
                     {
                         for (int l = 1; l < 8; l++)
                         {
                             if (InRange(i - getValueX * l, j - getValueY * l))
                             {
                                 // If this tile is already a valid move or black, stop following this vector
-                                if (board2D[i - getValueX * l, j - getValueY * l] == (int)Player.validMove || board2D[i - getValueX * l, j - getValueY * l] == (int)Player.black)
+                                if (validBoard2D[i - getValueX * l, j - getValueY * l] == (int)Player.validMove || validBoard2D[i - getValueX * l, j - getValueY * l] == (int)Player.black)
                                 {
                                     l = 8;
                                 }
 
                                 // If this tile is blank, mark as valid move
-                                else if (board2D[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
+                                else if (validBoard2D[i - getValueX * l, j - getValueY * l] == (int)Player.blank)
                                 {
-                                    board2D[i - getValueX * l, j - getValueY * l] = (int)Player.validMove;
+                                    validBoard2D[i - getValueX * l, j - getValueY * l] = (int)Player.validMove;
                                     l = 8;
                                 }
                             }
@@ -127,10 +128,11 @@ public class BoardRules
                 }
             }
         }
+        return validBoard2D;
     }
 
     // This method is used to mark board tile as a captured piece
-    public void CaptureEnemyPlayer(int[,] board2D, int i, int j, int playerTurn)
+    public int [,] CaptureEnemyPlayer(int[,] captureBoard2D, int i, int j, int playerTurn)
     {
         if (playerTurn == (int)Player.black)
         {
@@ -147,24 +149,24 @@ public class BoardRules
                         // Follow vector
                         if (InRange(i + getValueX * l, j + getValueY * l))
                         {
-                            if (board2D[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
+                            if (captureBoard2D[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
                             {
                                 l = 10;
                             }
 
-                            else if (board2D[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || board2D[i + getValueX * l, j + getValueY * l] == (int)Player.capture)
+                            else if (captureBoard2D[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || captureBoard2D[i + getValueX * l, j + getValueY * l] == (int)Player.capture)
                             {
                                 l = 10;
                             }
 
                             // Only if a black piece is found, backtace the vector
-                            else if (board2D[i + getValueX * l, j + getValueY * l] == (int)Player.black)
+                            else if (captureBoard2D[i + getValueX * l, j + getValueY * l] == (int)Player.black)
                             {
                                 l--;
                                 for (; l >= 1; l--)
                                 {
                                     // Mark all pieces in the backtracing vectors way, as captured pieces
-                                    board2D[i + getValueX * l, j + getValueY * l] = (int)Player.capture;
+                                    captureBoard2D[i + getValueX * l, j + getValueY * l] = (int)Player.capture;
                                 }
                                 l = 10;
                             }
@@ -189,24 +191,24 @@ public class BoardRules
                     {
                         if (InRange(i + getValueX * l, j + getValueY * l))
                         {
-                            if (board2D[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
+                            if (captureBoard2D[i + getValueX * l, j + getValueY * l] == (int)Player.blank)
                             {
                                 l = 10;
                             }
 
-                            else if (board2D[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || board2D[i + getValueX * l, j + getValueY * l] == (int)Player.capture)
+                            else if (captureBoard2D[i + getValueX * l, j + getValueY * l] == (int)Player.validMove || captureBoard2D[i + getValueX * l, j + getValueY * l] == (int)Player.capture)
                             {
                                 l = 10;
                             }
 
                             // Only if a white piece is found, backtace the vector
-                            else if (board2D[i + getValueX * l, j + getValueY * l] == (int)Player.white)
+                            else if (captureBoard2D[i + getValueX * l, j + getValueY * l] == (int)Player.white)
                             {
                                 l--;
                                 for (; l >= 1; l--)
                                 {
                                     // Mark all pieces in the backtracing vectors way, as captured pieces
-                                    board2D[i + getValueX * l, j + getValueY * l] = (int)Player.capture;
+                                    captureBoard2D[i + getValueX * l, j + getValueY * l] = (int)Player.capture;
                                 }
                                 l = 10;
                             }
@@ -215,6 +217,7 @@ public class BoardRules
                 }
             }
         }
+        return captureBoard2D;
     }
 
     // This method is used to check if x and y are in a specific range

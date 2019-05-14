@@ -127,9 +127,9 @@ public class Bitboard : MonoBehaviour
     public void boardRules(int boardX, int boardY)
     {
         // Call CaptureEnemyPlayer from BoardRules.cs
-        BoardRules.CaptureEnemyPlayer(board2D, boardY, boardX, playerTurn);
+        board2D = BoardRules.CaptureEnemyPlayer(board2D, boardY, boardX, playerTurn);
         // Reset the board for the next turn
-        boardResetTurn();
+        board2D = BoardResetTurn(board2D);
     }
 
     public void boardUpdate()
@@ -137,7 +137,7 @@ public class Bitboard : MonoBehaviour
         // Update the scoreboard
         PieceCounter(board2D);
         // Call ValidMove from BoardRules.cs
-        BoardRules.ValidMove(board2D, playerTurn);
+        board2D = BoardRules.ValidMove(board2D, playerTurn);
         // Check if there are available moves for the current player
         playerTurn = PassCounter(board2D, playerTurn);
 
@@ -195,14 +195,14 @@ public class Bitboard : MonoBehaviour
     }
 
     // This method resets the board, to remove unnecessary values
-    void boardResetTurn()
+    int [,] BoardResetTurn(int [,] resetBoard2D)
     {
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
             {
                 // If theres an available move, change the texture of the current tile
-                if (board2D[i, j] == 9)
+                if (resetBoard2D[i, j] == 9)
                 {
                     int temp = j + 65;
                     char c = (char)temp;
@@ -213,19 +213,20 @@ public class Bitboard : MonoBehaviour
                         GameObject.Find(tileGameObject).GetComponent<SwapTextures>().TextureSwap();
 
                     // reset the board value to 0
-                    board2D[i, j] = 0;
+                    resetBoard2D[i, j] = 0;
                 }
 
                 // If theres a captured piece, change the piece
-                else if (board2D[i, j] == 5)
+                else if (resetBoard2D[i, j] == 5)
                 {
                     // Change the pieces thats captured
                     FlipIt(i, j);
                     // Change the board value to the current player
-                    board2D[i, j] = playerTurn;
+                    resetBoard2D[i, j] = playerTurn;
                 }
             }
         }
+        return resetBoard2D;
     }
 
     // This method is used to flip the captured pieces
@@ -416,7 +417,7 @@ public class Bitboard : MonoBehaviour
             ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
         // Both method below is for debugging
         UnityEngine.Debug.Log(elapsedTime);
-        ShowAIPoints(cpuBestMove);
+        //ShowAIPoints(cpuBestMove);
     }
 
     // This method is used to show the help menu when the "HELP" button is pressed
