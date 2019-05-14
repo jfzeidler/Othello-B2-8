@@ -296,13 +296,10 @@ public class Bitboard : MonoBehaviour
         {
             // If black player has the most pieces, show "Player Black Won"
             if (blackPieces > whitePieces)
-                // AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player Black Won";
-            // If white player has the most pieces, show "Player White Won"
                 AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player Black Won";
 
             // If black player has the most pieces, show "Player White Won"
             else if (whitePieces > blackPieces)
-                // AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player White Won";
                 AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player White Won";
 
             // If black player has the most pieces, show "Draw"
