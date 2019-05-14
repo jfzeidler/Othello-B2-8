@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
@@ -86,7 +86,7 @@ public class Bitboard : MonoBehaviour
         if (startHelp == 0)
         {
             // Show the help menu
-            ShowHelp();
+            //ShowHelp();
 
             PlayerPrefs.SetInt("startHelp", 1);
             PlayerPrefs.Save();
@@ -115,7 +115,7 @@ public class Bitboard : MonoBehaviour
         // Show current player
         ShowPlayerTurn();
         // Play in accordance with the current playing mode
-        PlayingMode();
+        //PlayingMode();
     }
 
     // Update is called once per frame
@@ -139,7 +139,7 @@ public class Bitboard : MonoBehaviour
         // Call ValidMove from BoardRules.cs
         board2D = BoardRules.ValidMove(board2D, playerTurn);
         // Check if there are available moves for the current player
-        playerTurn = PassCounter(board2D, playerTurn);
+       // playerTurn = PassCounter(board2D, playerTurn);
 
         // For Debugging
         if (DEBUG == 1)
@@ -150,7 +150,7 @@ public class Bitboard : MonoBehaviour
         // Check if theres a Game Over Senario
         IsGameOver(board2D, playerTurn, whitePieces, blackPieces);
         // Play in accordance with the current playing mode
-        PlayingMode();
+       // PlayingMode();
     }
 
     // This method is for debugging and show the current board to the game overlay
@@ -314,32 +314,20 @@ public class Bitboard : MonoBehaviour
                 GameOverCanvas.SetActive(true);
             }
         }
-    }
-
-    // This method is used to pass the turn on to the opposite player, if no moves are available
-    public int PassCounter(int[,] board2D, int playerTurn)
-    {
-        // Call CheckForNine from BoardRules.cs
-        if (BoardRules.CheckForNine(board2D) == true)
-        {
-            if (playerTurn == (byte)Player.black)
-            {
-                // Give the turn to the opposite player
-                playerTurn = (byte)Player.white;
                 UnityEngine.Debug.Log("No valid moves for black player");
             }
 
-            else if (playerTurn == (byte)Player.white)
+           // else if (playerTurn == (byte)Player.white)
             {
                 // Give the turn to the opposite player
                 playerTurn = (byte)Player.black;
                 UnityEngine.Debug.Log("No valid moves for white player");
             }
             // Call ValidMove from BoardRules.cs
-            BoardRules.ValidMove(board2D, playerTurn);
+          //  BoardRules.ValidMove(board2D, playerTurn);
         }
         // return the new playerturn
-        return playerTurn;
+      //  return playerTurn;
     }
 
     // This method is used to perform the best move from MiniMax
@@ -421,9 +409,9 @@ public class Bitboard : MonoBehaviour
     }
 
     // This method is used to show the help menu when the "HELP" button is pressed
-    void ShowHelp()
+    /*void ShowHelp()
     {
-        HelpBoard.SetActive(true);
+           HelpBoard.SetActive(true);
         ScoreBoard.SetActive(false);
         MainMenuButton.SetActive(false);
         BitboardDisplay.SetActive(false);
@@ -431,4 +419,4 @@ public class Bitboard : MonoBehaviour
         HelpButton.SetActive(false);
         Text2Image.SetActive(false);
     }
-}
+}*/

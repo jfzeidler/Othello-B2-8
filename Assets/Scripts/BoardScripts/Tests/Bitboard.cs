@@ -13,7 +13,7 @@ public class Bitboard : MonoBehaviour
     public int playerTurn = 1;
     readonly int DEBUG = 0;
     int cpuPoints = 0;
-    int blackPieces = 0; int whitePieces = 0;
+    byte blackPieces = 0; byte whitePieces = 0;
     int maxDepth = 2;
     int playMode = 0; // 0 = Player vs. CPU, 1 = Player vs. Player, 2 = CPU vs. CPU
     int moveGuide = 0; // 0 = No Moves, 1 = Show Moves
@@ -135,7 +135,7 @@ public class Bitboard : MonoBehaviour
     public void boardUpdate()
     {
         // Update the scoreboard
-        PieceCounter(board2D);
+        // PieceCounter(board2D);
         // Call ValidMove from BoardRules.cs
         board2D = BoardRules.ValidMove(board2D, playerTurn);
         // Check if there are available moves for the current player
@@ -169,29 +169,32 @@ public class Bitboard : MonoBehaviour
     }
 
     // A counter for counting pieces
-    public void PieceCounter(int[,] board2D)
+    public byte[] PieceCounter(int[,] board2D)
     {
+        byte[] counter = new byte[2];
         blackPieces = 0; whitePieces = 0;
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
             {
                 if (board2D[i, j] == 1)
-                    blackPieces++;
+                    counter[0]++;
 
                 else if (board2D[i, j] == 2)
-                    whitePieces++;
+                    counter[1]++;
             }
         }
+        return counter;
         // Update the visual scoreboard
-        PieceCounterUpdate(blackPieces, whitePieces);
+        //PieceCounterUpdate(blackPieces, whitePieces);
     }
 
     // This method updates the number of white and black pieces, to keep count of the score
     void PieceCounterUpdate(int blackPieces, int whitePieces)
     {
+        PieceCounter(board2D);
         //BlackCounterText.GetComponent<TextMeshProUGUI>().text = $"{blackPieces}";
-        //WhiteCounterText.GetComponent<TextMeshProUGUI>().text = $"{whitePieces}";
+       // WhiteCounterText.GetComponent<TextMeshProUGUI>().text = $"{whitePieces}";
     }
 
     // This method resets the board, to remove unnecessary values
@@ -289,31 +292,34 @@ public class Bitboard : MonoBehaviour
     }
 
     // This method is used to check if there are any valid moves left
-    void IsGameOver(int[,] board2D, int playerTurn, int whitePieces, int blackPieces)
+    public string IsGameOver(int[,] board2D, int playerTurn, int whitePieces, int blackPieces)
     {
+        string s = "Not Over";
         // Only use this method when on the main scene
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (true/*SceneManager.GetActiveScene().buildIndex == 1*/)
         {
             // If black player has the most pieces, show "Player Black Won"
-           // if (blackPieces > whitePieces)
-              //  AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player Black Won";
-
-            // If black player has the most pieces, show "Player White Won"
-          //  else if (whitePieces > blackPieces)
-              //  AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player White Won";
-
+            if (blackPieces > whitePieces)
+                // AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player Black Won";
+                s = "Black Won";
+            // If white player has the most pieces, show "Player White Won"
+            else if (whitePieces > blackPieces)
+                // AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Player White Won";
+                s = "White Won";
             // If black player has the most pieces, show "Draw"
-//else if (whitePieces == blackPieces)
-              // AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Draw";
-
+            else if (whitePieces == blackPieces)
+                // AndTheWinnerIs.GetComponent<TextMeshProUGUI>().text = "Draw";
+                s = "Draw";
             // Call CheckForNine from BoardRules.cs
             if (BoardRules.CheckForNine(board2D) == true)
             {
-                UnityEngine.Debug.Log("Game over");
+                return s;
+                // UnityEngine.Debug.Log("Game over");
                 // Show the Game Over canvas, to show who won
-                GameOverCanvas.SetActive(true);
+                // GameOverCanvas.SetActive(true);
             }
         }
+        return "Not Over";
     }
 
     // This method is used to pass the turn on to the opposite player, if no moves are available
