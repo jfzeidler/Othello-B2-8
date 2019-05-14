@@ -18,7 +18,7 @@ public class Move
 public class MiniMax : BoardRules
 {
     string fileName = @"C:\temp\MINIMAX_DEBUG.txt";
-    readonly bool alphaBetaOn = true;
+    readonly bool alphaBetaOn = false;
 
     readonly int[,] evaluation = {
         // A       B     C     D     E     F      G      H
@@ -64,30 +64,14 @@ public class MiniMax : BoardRules
     public List<Vector2> ValidMoves(int[,] board2D, int playerTurn)
     {
         List<Vector2> list = new List<Vector2>();
-        if (playerTurn == 1)
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                for (int j = 0; j < 8; j++)
-                {
-                    if (board2D[i, j] == 9)
-                    {
-                        list.Add(new Vector2(i, j));
-                    }
-                }
-            }
-        }
 
-        else if (playerTurn == 2)
-        {
-            for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
             {
-                for (int j = 0; j < 8; j++)
+                if (board2D[i, j] == 9)
                 {
-                    if (board2D[i, j] == 9)
-                    {
-                        list.Add(new Vector2(i, j));
-                    }
+                    list.Add(new Vector2(i, j));
                 }
             }
         }
