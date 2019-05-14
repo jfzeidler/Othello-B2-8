@@ -38,6 +38,8 @@ public class MiniMax : BoardRules
     {
         int playerScore = 0;
         int cpuScore = 0;
+        int Minimizer = 0;
+        int Maximizer = 0;
         int result = 0;
 
         for (int i = 0; i < 8; i++)
@@ -46,17 +48,23 @@ public class MiniMax : BoardRules
             {
                 if (board2D[i, j] == 1)
                     playerScore += evaluation[i, j];
+                    Minimizer += evaluation[i, j];
 
                 else if (board2D[i, j] == 2)
                     cpuScore += evaluation[i, j];
+                    Maximizer += evaluation[i, j];
             }
         }
 
         if (playerTurn == 1)
             result = (playerScore - cpuScore);
+        //if (playerTurn == 1)
+        //    result = (Minimizer - Maximizer);
 
         else if (playerTurn == 2)
             result = (cpuScore - playerScore);
+        //else if (playerTurn == 2)
+            result = (Maximizer - Minimizer);
 
         return result;
     }
@@ -82,13 +90,18 @@ public class MiniMax : BoardRules
         else if (playerTurn == 2)
         {
             for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
             {
                 for (int j = 0; j < 8; j++)
+                if (board2D[i, j] == 9)
                 {
                     if (board2D[i, j] == 9)
                     {
                         list.Add(new Vector2(i, j));
                     }
+                    list.Add(new Vector2(i, j));
                 }
             }
         }
@@ -108,10 +121,12 @@ public class MiniMax : BoardRules
         Move selectedMove = new Move(-1, -1, 0);
 
         // If white turn (Minimizer)
+        // If white turn (Maximizer)
         if (playerTurn == 2)
             selectedMove.score = int.MinValue;
 
         // If black turn (Maximizer)
+        // If black turn (Minimizer)
         else if (playerTurn == 1)
             selectedMove.score = int.MaxValue;
 
