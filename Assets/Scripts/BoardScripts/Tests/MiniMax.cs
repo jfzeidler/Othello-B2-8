@@ -52,8 +52,7 @@ public class MiniMax : BoardRules
             }
         }
 
-        result = (Minimizer - Maximizer);
-        return result;
+        return(Maximizer - Minimizer);
     }
 
     // This is a list of all possible moves for at given player
