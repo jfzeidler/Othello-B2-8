@@ -54,7 +54,7 @@ public class NUnittest
     [Test]
     public void NUnitScoreCounterTest()
     {
-          int[,] Captureboard2D = {
+        int[,] Captureboard2D = {
       // A  B  C  D  E  F  G  H
         {0, 0, 0, 0, 0, 0, 0, 0}, // 1
         {0, 0, 0, 0, 0, 0, 0, 0}, // 2
@@ -69,7 +69,7 @@ public class NUnittest
         byte[] Counted = new byte[2];
         Counted[0] = 6;
         Counted[1] = 3;
-        Assert.AreEqual(Counted,BB.PieceCounter(Captureboard2D));
+        Assert.AreEqual(Counted, BB.PieceCounter(Captureboard2D));
     }
 
     [Test]
@@ -99,6 +99,100 @@ public class NUnittest
     [Test]
     public void NUnitPassTurnTest()
     {
+        int[,] passBoard2D = {
+      // A  B  C  D  E  F  G  H
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 1
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 2
+        {0, 0, 0, 0, 1, 0, 0, 0}, // 3
+        {0, 0, 1, 1, 1, 2, 0, 0}, // 4
+        {0, 0, 0, 1, 2, 0, 0, 0}, // 5
+        {0, 0, 0, 2, 1, 0, 0, 0}, // 6
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 7
+        {0, 0, 0, 0, 0, 0, 0, 0}  // 8
+        };
+
+        Assert.AreEqual((int)Player.white, BB.PassCounter((int[,])passBoard2D.Clone(), (int)Player.black));
+        Assert.AreEqual((int)Player.black, BB.PassCounter((int[,])passBoard2D.Clone(), (int)Player.white));
+    }
+
+    [Test]
+    public void NUnitBoardOnlyResetTurnTest()
+    {
+        int[,] board2D = {
+    // A  B  C  D  E  F  G  H
+    {0, 0, 0, 0, 0, 0, 0, 0}, // 1
+    {0, 0, 0, 0, 0, 0, 0, 0}, // 2
+    {0, 0, 0, 9, 0, 0, 0, 0}, // 3
+    {0, 0, 1, 5, 1, 0, 0, 0}, // 4
+    {0, 0, 0, 1, 2, 9, 0, 0}, // 5
+    {0, 0, 0, 0, 9, 0, 0, 0}, // 6
+    {0, 0, 0, 0, 0, 0, 0, 0}, // 7
+    {0, 0, 0, 0, 0, 0, 0, 0}  // 8
+    };
+        int[,] board2DCorrect = {
+    // A  B  C  D  E  F  G  H
+    {0, 0, 0, 0, 0, 0, 0, 0}, // 1
+    {0, 0, 0, 0, 0, 0, 0, 0}, // 2
+    {0, 0, 0, 0, 0, 0, 0, 0}, // 3
+    {0, 0, 1, 1, 1, 0, 0, 0}, // 4
+    {0, 0, 0, 1, 2, 0, 0, 0}, // 5
+    {0, 0, 0, 0, 0, 0, 0, 0}, // 6
+    {0, 0, 0, 0, 0, 0, 0, 0}, // 7
+    {0, 0, 0, 0, 0, 0, 0, 0}  // 8
+    };
+        int playerTurn = 1;
+        Assert.AreEqual(board2DCorrect, BR.boardOnlyResetTurn(board2D, playerTurn));
+        // Use the Assert class to test conditions
+
+    }
+
+    [Test]
+    public void NUnitGetNextBoardStateTest()
+    {
+        int[,] Nextboard2D = {
+      // A  B  C  D  E  F  G  H
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 1
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 2
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 3
+        {0, 0, 0, 2, 1, 0, 0, 0}, // 4
+        {0, 0, 0, 1, 2, 0, 0, 0}, // 5
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 6
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 7
+        {0, 0, 0, 0, 0, 0, 0, 0}  // 8
+    };
+
+        int[,] Expectedboard2D = {
+      // A  B  C  D  E  F  G  H
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 1
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 2
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 3
+        {0, 0, 0, 2, 1, 9, 0, 0}, // 4
+        {0, 0, 0, 1, 1, 0, 0, 0}, // 5
+        {0, 0, 0, 9, 1, 9, 0, 0}, // 6
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 7
+        {0, 0, 0, 0, 0, 0, 0, 0}  // 8
+    };
+        Assert.AreEqual(Expectedboard2D, BR.GetNextBoardState(Nextboard2D, (int)Player.black, 5, 4));
+    }
+
+    [Test]
+    public void NUnitEvaluateBoardTest()
+    {
+        int[,] board2D = {
+    // A  B  C  D  E  F  G  H
+    {0, 0, 0, 0, 0, 0, 0, 0}, // 1
+    {0, 1, 0, 0, 0, 0, 0, 0}, // 2
+    {0, 0, 1, 1, 0, 0, 0, 0}, // 3
+    {0, 0, 2, 1, 1, 0, 0, 0}, // 4
+    {0, 0, 2, 2, 2, 0, 0, 0}, // 5
+    {0, 0, 0, 0, 0, 0, 0, 0}, // 6
+    {0, 0, 0, 0, 0, 0, 0, 0}, // 7
+    {0, 0, 0, 0, 0, 0, 0, 0}  // 8
+    };
+        int playerTurn = 1;
+        int correct = -4980;
+        Assert.AreEqual(correct, Maximin.EvaluateBoard(board2D, playerTurn));
+        // Use the Assert class to test conditions
 
     }
 }
