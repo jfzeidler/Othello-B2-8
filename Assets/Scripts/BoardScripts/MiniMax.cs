@@ -18,7 +18,7 @@ public class Move
 public class MiniMax : BoardRules
 {
     string fileName = @"C:\temp\MINIMAX_DEBUG.txt";
-    readonly bool alphaBetaOn = false;
+    readonly bool alphaBetaOn = true;
 
     readonly int[,] evaluation = {
         // A       B     C     D     E     F      G      H
@@ -35,8 +35,8 @@ public class MiniMax : BoardRules
     // This method is used to calculate the score of the branch in Minimax
     public int EvaluateBoard(int[,] board2D, int playerTurn)
     {
-        int playerScore = 0;
-        int cpuScore = 0;
+        int Minimizer = 0;
+        int Maximizer = 0;
         int result = 0;
 
         for (int i = 0; i < 8; i++)
@@ -44,18 +44,18 @@ public class MiniMax : BoardRules
             for (int j = 0; j < 8; j++)
             {
                 if (board2D[i, j] == 1)
-                    playerScore += evaluation[i, j];
+                    Minimizer += evaluation[i, j];
 
                 else if (board2D[i, j] == 2)
-                    cpuScore += evaluation[i, j];
+                    Maximizer += evaluation[i, j];
             }
         }
 
-        if (playerTurn == 1)
-            result = (playerScore - cpuScore);
+        //if (playerTurn == 1)
+        //    result = (Minimizer - Maximizer);
 
-        else if (playerTurn == 2)
-            result = (cpuScore - playerScore);
+        //else if (playerTurn == 2)
+            result = (Maximizer - Minimizer);
 
         return result;
     }
