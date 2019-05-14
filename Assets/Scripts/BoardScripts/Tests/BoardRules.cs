@@ -30,6 +30,7 @@ public class BoardRules
                     {
                         // If a opposite piece is found run CheckForAdjacent()
                         CheckBoard2D = CheckForAdjacent(CheckBoard2D, i, j, (int)Player.black);
+                        CheckBoard2D = CheckForAdjacent(CheckBoard2D, i, j, playerTurn);
                     }
                 }
             }
@@ -45,6 +46,7 @@ public class BoardRules
                     {
                         // If a opposite piece is found run CheckForAdjacent()
                         CheckBoard2D = CheckForAdjacent(CheckBoard2D, i, j, (int)Player.white);
+                        CheckBoard2D = CheckForAdjacent(CheckBoard2D, i, j, playerTurn);
                     }
                 }
             }
@@ -93,6 +95,7 @@ public class BoardRules
         }
 
         else if (playerTurn == (int)Player.black)
+        if (playerTurn == (int)Player.black)
         {
             for (int k = 0; k < 8; k++)
             {
@@ -248,6 +251,7 @@ public class BoardRules
 
     // This method is used to prepare the board for MiniMax 
     public int[,] boardOnlyResetTurn(int[,] board2D, int playerTurn)
+    int[,] boardOnlyResetTurn(int[,] board2D, int playerTurn)
     {
         for (int i = 0; i < 8; i++)
         {
@@ -279,13 +283,16 @@ public class BoardRules
         boardCopy[board2DY, board2DX] = playerTurn;
         // Capture pieces
         boardCopy = CaptureEnemyPlayer(boardCopy, board2DY, board2DX, playerTurn);
+        CaptureEnemyPlayer(boardCopy, board2DY, board2DX, playerTurn);
         // Reset board
         boardCopy = boardOnlyResetTurn(boardCopy, playerTurn);
         // Calculate valid moves
         if (playerTurn == (int)Player.black)
             boardCopy = ValidMove(boardCopy, (int)Player.white);
+            ValidMove(boardCopy, (int)Player.white);
         else if (playerTurn == (int)Player.white)
             boardCopy = ValidMove(boardCopy, (int)Player.black);
+            ValidMove(boardCopy, (int)Player.black);
         // return board
         return boardCopy;
     }
