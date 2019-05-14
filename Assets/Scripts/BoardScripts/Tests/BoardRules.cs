@@ -92,7 +92,7 @@ public class BoardRules
             }
         }
 
-        if (playerTurn == (int)Player.black)
+        else if (playerTurn == (int)Player.black)
         {
             for (int k = 0; k < 8; k++)
             {
@@ -283,9 +283,9 @@ public class BoardRules
         boardCopy = boardOnlyResetTurn(boardCopy, playerTurn);
         // Calculate valid moves
         if (playerTurn == (int)Player.black)
-            ValidMove(boardCopy, (int)Player.white);
+            boardCopy = ValidMove(boardCopy, (int)Player.white);
         else if (playerTurn == (int)Player.white)
-            ValidMove(boardCopy, (int)Player.black);
+            boardCopy = ValidMove(boardCopy, (int)Player.black);
         // return board
         return boardCopy;
     }

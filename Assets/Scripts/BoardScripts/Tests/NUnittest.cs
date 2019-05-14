@@ -147,7 +147,7 @@ public class NUnittest
     }
 
     [Test]
-    public void NUnitGetNextBoardStateTest()
+    public void NUnitGetNextBoardStateBlackTest()
     {
         int[,] Nextboard2D = {
       // A  B  C  D  E  F  G  H
@@ -173,6 +173,35 @@ public class NUnittest
         {0, 0, 0, 0, 0, 0, 0, 0}  // 8
     };
         Assert.AreEqual(Expectedboard2D, BR.GetNextBoardState(Nextboard2D, (int)Player.black, 5, 4));
+    }
+
+    [Test]
+    public void NUnitGetNextBoardStatewhiteTest()
+    {
+        int[,] Nextboard2D = {
+      // A  B  C  D  E  F  G  H
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 1
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 2
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 3
+        {0, 0, 0, 2, 1, 0, 0, 0}, // 4
+        {0, 0, 0, 1, 1, 0, 0, 0}, // 5
+        {0, 0, 0, 0, 1, 0, 0, 0}, // 6
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 7
+        {0, 0, 0, 0, 0, 0, 0, 0}  // 8
+    };
+
+        int[,] Expectedboard2D = {
+      // A  B  C  D  E  F  G  H
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 1
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 2
+        {0, 0, 9, 9, 9, 9, 9, 0}, // 3
+        {0, 0, 0, 2, 2, 2, 0, 0}, // 4
+        {0, 0, 0, 1, 1, 0, 0, 0}, // 5
+        {0, 0, 0, 0, 1, 0, 0, 0}, // 6
+        {0, 0, 0, 0, 0, 0, 0, 0}, // 7
+        {0, 0, 0, 0, 0, 0, 0, 0}  // 8
+    };
+        Assert.AreEqual(Expectedboard2D, BR.GetNextBoardState(Nextboard2D, (int)Player.white, 3, 5));
     }
 
     [Test]
