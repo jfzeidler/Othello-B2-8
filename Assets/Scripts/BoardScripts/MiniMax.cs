@@ -106,11 +106,11 @@ public class MiniMax : BoardRules
 
         Move selectedMove = new Move(-1, -1, 0);
 
-        // If white turn (Minimizer)
+        // If white turn (Maximizer)
         if (playerTurn == 2)
             selectedMove.score = int.MinValue;
 
-        // If black turn (Maximizer)
+        // If black turn (Minimizer)
         else if (playerTurn == 1)
             selectedMove.score = int.MaxValue;
 

@@ -279,7 +279,10 @@ public class BoardRules
         // Reset board
         boardCopy = boardOnlyResetTurn(boardCopy, playerTurn);
         // Calculate valid moves
-        ValidMove(boardCopy, playerTurn);
+        if (playerTurn == (int)Player.black)
+            ValidMove(boardCopy, (int)Player.white);
+        else if (playerTurn == (int)Player.white)
+            ValidMove(boardCopy, (int)Player.black);
         // return board
         return boardCopy;
     }
