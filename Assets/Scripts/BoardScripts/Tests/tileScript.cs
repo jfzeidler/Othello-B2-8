@@ -1,3 +1,4 @@
+﻿using System.Collections;
 ﻿/*using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -110,4 +111,5 @@ public class tileScript : MonoBehaviour
         //The_Board.GetComponent<Bitboard>().bitboardResetTurn();
 
     }
+}
 }*/
