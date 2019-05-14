@@ -172,7 +172,7 @@ public class NUnittest
         {0, 0, 0, 0, 0, 0, 0, 0}, // 7
         {0, 0, 0, 0, 0, 0, 0, 0}  // 8
     };
-        Assert.AreEqual(Expectedboard2D, BR.GetNextBoardState(Nextboard2D, (int)Player.black, 5, 4));
+        Assert.AreEqual(Expectedboard2D, BR.GetNextBoardState(Nextboard2D, (int)Player.black, 4, 5));
     }
 
     [Test]
@@ -183,9 +183,9 @@ public class NUnittest
         {0, 0, 0, 0, 0, 0, 0, 0}, // 1
         {0, 0, 0, 0, 0, 0, 0, 0}, // 2
         {0, 0, 0, 0, 0, 0, 0, 0}, // 3
-        {0, 0, 0, 2, 1, 0, 0, 0}, // 4
+        {0, 0, 0, 2, 1, 9, 0, 0}, // 4
         {0, 0, 0, 1, 1, 0, 0, 0}, // 5
-        {0, 0, 0, 0, 1, 0, 0, 0}, // 6
+        {0, 0, 0, 9, 1, 9, 0, 0}, // 6
         {0, 0, 0, 0, 0, 0, 0, 0}, // 7
         {0, 0, 0, 0, 0, 0, 0, 0}  // 8
     };
@@ -201,7 +201,7 @@ public class NUnittest
         {0, 0, 0, 0, 0, 0, 0, 0}, // 7
         {0, 0, 0, 0, 0, 0, 0, 0}  // 8
     };
-        Assert.AreEqual(Expectedboard2D, BR.GetNextBoardState(Nextboard2D, (int)Player.white, 3, 5));
+        Assert.AreEqual(Expectedboard2D, BR.GetNextBoardState(Nextboard2D, (int)Player.white, 5, 3));
     }
 
     [Test]

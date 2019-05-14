@@ -29,7 +29,7 @@ public class BoardRules
                     if (CheckBoard2D[i, j] == (int)Player.white)
                     {
                         // If a opposite piece is found run CheckForAdjacent()
-                        CheckBoard2D = CheckForAdjacent(CheckBoard2D, i, j, playerTurn);
+                        CheckBoard2D = CheckForAdjacent(CheckBoard2D, i, j, (int)Player.black);
                     }
                 }
             }
@@ -44,7 +44,7 @@ public class BoardRules
                     if (CheckBoard2D[i, j] == (int)Player.black)
                     {
                         // If a opposite piece is found run CheckForAdjacent()
-                        CheckBoard2D = CheckForAdjacent(CheckBoard2D, i, j, playerTurn);
+                        CheckBoard2D = CheckForAdjacent(CheckBoard2D, i, j, (int)Player.white);
                     }
                 }
             }
@@ -276,7 +276,7 @@ public class BoardRules
         // Clone board
         int[,] boardCopy = (int[,])board2D.Clone();
         // Make board move
-        boardCopy[board2DX, board2DY] = playerTurn;
+        boardCopy[board2DY, board2DX] = playerTurn;
         // Capture pieces
         boardCopy = CaptureEnemyPlayer(boardCopy, board2DY, board2DX, playerTurn);
         // Reset board
