@@ -276,13 +276,16 @@ public class BoardRules
         // Clone board
         int[,] boardCopy = (int[,])board2D.Clone();
         // Make board move
-        boardCopy[board2DX, board2DY] = playerTurn;
+        boardCopy[board2DY, board2DX] = playerTurn;
         // Capture pieces
         CaptureEnemyPlayer(boardCopy, board2DY, board2DX, playerTurn);
         // Reset board
         boardCopy = boardOnlyResetTurn(boardCopy, playerTurn);
         // Calculate valid moves
-        ValidMove(boardCopy, playerTurn);
+        if (playerTurn == (int)Player.black)
+            ValidMove(boardCopy, (int)Player.white);
+        else if (playerTurn == (int)Player.white)
+            ValidMove(boardCopy, (int)Player.black);
         // return board
         return boardCopy;
     }
