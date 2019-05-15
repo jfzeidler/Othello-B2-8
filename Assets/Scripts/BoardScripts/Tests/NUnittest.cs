@@ -14,9 +14,16 @@ public class NUnittest
     MiniMax Maximin = new MiniMax();
     // A Test behaves as an ordinary method
     [Test]
-    public void NUnitInRangeTest()
+    public void NUnitInRangeOverEightTest()
     {
         Assert.IsFalse(BR.InRange(8, 8));
+        // Use the Assert class to test conditions
+    }
+
+    [Test]
+    public void NUnitInRangeMinusTest()
+    {
+        Assert.IsFalse(BR.InRange(-1, -1));
         // Use the Assert class to test conditions
     }
 
@@ -112,7 +119,6 @@ public class NUnittest
         };
 
         Assert.AreEqual((int)Player.white, BB.PassCounter((int[,])passBoard2D.Clone(), (int)Player.black));
-        Assert.AreEqual((int)Player.black, BB.PassCounter((int[,])passBoard2D.Clone(), (int)Player.white));
     }
 
     [Test]
@@ -129,6 +135,7 @@ public class NUnittest
     {0, 0, 0, 0, 0, 0, 0, 0}, // 7
     {0, 0, 0, 0, 0, 0, 0, 0}  // 8
     };
+
         int[,] board2DCorrect = {
     // A  B  C  D  E  F  G  H
     {0, 0, 0, 0, 0, 0, 0, 0}, // 1
@@ -140,6 +147,7 @@ public class NUnittest
     {0, 0, 0, 0, 0, 0, 0, 0}, // 7
     {0, 0, 0, 0, 0, 0, 0, 0}  // 8
     };
+
         int playerTurn = 1;
         Assert.AreEqual(board2DCorrect, BR.boardOnlyResetTurn(board2D, playerTurn));
         // Use the Assert class to test conditions
