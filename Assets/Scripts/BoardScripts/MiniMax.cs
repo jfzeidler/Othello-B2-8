@@ -33,7 +33,7 @@ public class MiniMax : BoardRules
     };
 
     // This method is used to calculate the score of the branch in Minimax
-    public int EvaluateBoard(int[,] board2D, int playerTurn)
+    public int EvaluateBoard(int[,] board2D, int minimaxTurn)
     {
         int Minimizer = 0;
         int Maximizer = 0;
@@ -42,10 +42,10 @@ public class MiniMax : BoardRules
         {
             for (int j = 0; j < 8; j++)
             {
-                if (board2D[i, j] == 1)
+                if (board2D[i, j] == (minimaxTurn == 1 ? 1 : 2))
                     Minimizer += evaluation[i, j];
 
-                else if (board2D[i, j] == 2)
+                else if (board2D[i, j] == (minimaxTurn == 1 ? 2 : 1))
                     Maximizer += evaluation[i, j];
             }
         }
@@ -72,27 +72,27 @@ public class MiniMax : BoardRules
     }
 
     // This is the MiniMax algorithm
-    public Move MiniMaxAlgorithm(int[,] board2D, int playerTurn, int maxDepth, int currentDepth, int alpha, int beta)
+    public Move MiniMaxAlgorithm(int[,] board2D, int playerTurn, int maxDepth, int currentDepth, int alpha, int beta, int minimaxTurn)
     {
         // If game over or maxDepth is reached
         if (CheckForNine(board2D) == true || currentDepth == maxDepth)
         {
-            return new Move(-1, -1, EvaluateBoard(board2D, playerTurn));
+            return new Move(-1, -1, EvaluateBoard(board2D, minimaxTurn));
         }
 
         Move selectedMove = new Move(-1, -1, 0);
 
         // If white turn (Maximizer)
-        if (playerTurn == 2)
+        if (playerTurn == (minimaxTurn == 1 ? 2 : 1))
             selectedMove.score = int.MinValue;
 
         // If black turn (Minimizer)
-        else if (playerTurn == 1)
+        else if (playerTurn == (minimaxTurn == 1 ? 1 : 2))
             selectedMove.score = int.MaxValue;
 
         List<Vector2> allMoves;
 
-        if (playerTurn == 2)
+        if (playerTurn == (minimaxTurn == 1 ? 2 : 1))
         {
             allMoves = ValidMoves(board2D, 2);
 
@@ -102,7 +102,7 @@ public class MiniMax : BoardRules
                 // Get the next board for MiniMax
                 int[,] newBoard = GetNextBoardState(board2D, playerTurn, (int)move.X, (int)move.Y);
                 // Get the score from the next MiniMax algorithm
-                int score = MiniMaxAlgorithm(newBoard, 1, maxDepth, (currentDepth + 1), alpha, beta).score;
+                int score = MiniMaxAlgorithm(newBoard, (minimaxTurn == 1 ? 1 : 2), maxDepth, (currentDepth + 1), alpha, beta, minimaxTurn).score;
 
                 if (score > selectedMove.score)
                 {
@@ -121,7 +121,7 @@ public class MiniMax : BoardRules
                 }
             }
         }
-        else if (playerTurn == 1)
+        else if (playerTurn == (minimaxTurn == 1 ? 1 : 2))
         {
             allMoves = ValidMoves(board2D, 1);
 
@@ -131,13 +131,14 @@ public class MiniMax : BoardRules
                 // Get the next board for MiniMax
                 int[,] newBoard = GetNextBoardState(board2D, playerTurn, (int)move.X, (int)move.Y);
                 // Get the score from the next MiniMax algorithm
-                int score = MiniMaxAlgorithm(newBoard, 2, maxDepth, (currentDepth + 1), alpha, beta).score;
+                int score = MiniMaxAlgorithm(newBoard, (minimaxTurn == 1 ? 2 : 1), maxDepth, (currentDepth + 1), alpha, beta, minimaxTurn).score;
 
                 if (score < selectedMove.score)
                 {
                     selectedMove.row = (int)move.X;
                     selectedMove.col = (int)move.Y;
                     selectedMove.score = score;
+                    
                     // Beta
                     if (alphaBetaOn == true)
                     {
@@ -157,9 +158,9 @@ public class MiniMax : BoardRules
     {
         int[] result = new int[3];
         // Get the best move from MiniMax
-        Move bestMove = MiniMaxAlgorithm(board2D, playerTurn, maxDepth, currentDepth, alpha, beta);
-        result[0] = (int)bestMove.row;
-        result[1] = (int)bestMove.col;
+        Move bestMove = MiniMaxAlgorithm(board2D, playerTurn, maxDepth, currentDepth, alpha, beta , (playerTurn == 1 ? 1 : 2));
+        result[0] = bestMove.row;
+        result[1] = bestMove.col;
         result[2] = bestMove.score;
 
         return result;
