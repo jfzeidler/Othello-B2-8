@@ -59,8 +59,8 @@ public class MiniMax : BoardRules
         List<Vector2> list = new List<Vector2>();
 
         for (int i = 0; i < 8; i++)
-    {
-        for (int j = 0; j < 8; j++)
+        {
+            for (int j = 0; j < 8; j++)
             {
                 if (board2D[i, j] == 9)
                 {
