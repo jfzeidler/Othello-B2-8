@@ -37,7 +37,6 @@ public class MiniMax : BoardRules
     {
         int Minimizer = 0;
         int Maximizer = 0;
-        int result = 0;
 
         for (int i = 0; i < 8; i++)
         {
@@ -78,7 +77,6 @@ public class MiniMax : BoardRules
         // If game over or maxDepth is reached
         if (CheckForNine(board2D) == true || currentDepth == maxDepth)
         {
-            //File.AppendAllText(fileName, Environment.NewLine + "Return" + Environment.NewLine);
             return new Move(-1, -1, EvaluateBoard(board2D, playerTurn));
         }
 
@@ -101,7 +99,6 @@ public class MiniMax : BoardRules
             // Calculate a move for each vector in allMoves
             foreach (Vector2 move in allMoves)
             {
-                //File.AppendAllText(fileName, "Chosen VECTOR WHITE: " + (int)move.X + " " + (int)move.Y + Environment.NewLine);
                 // Get the next board for MiniMax
                 int[,] newBoard = GetNextBoardState(board2D, playerTurn, (int)move.X, (int)move.Y);
                 // Get the score from the next MiniMax algorithm
@@ -112,8 +109,7 @@ public class MiniMax : BoardRules
                     selectedMove.row = (int)move.X;
                     selectedMove.col = (int)move.Y;
                     selectedMove.score = score;
-                    //File.AppendAllText(fileName, "BEST VECTOR MOVE WHITE FOR NOW:" + (int)move.X + " " + (int)move.Y + " " + score + Environment.NewLine + Environment.NewLine);
-
+                    
                     // Alpha
                     if (alphaBetaOn == true)
                     {
@@ -132,7 +128,6 @@ public class MiniMax : BoardRules
             // Calculate a move for each vector in allMoves
             foreach (Vector2 move in allMoves)
             {
-                //File.AppendAllText(fileName, "Chosen VECTOR BLACK: " + (int)move.X + " " + (int)move.Y + Environment.NewLine);
                 // Get the next board for MiniMax
                 int[,] newBoard = GetNextBoardState(board2D, playerTurn, (int)move.X, (int)move.Y);
                 // Get the score from the next MiniMax algorithm
@@ -143,7 +138,6 @@ public class MiniMax : BoardRules
                     selectedMove.row = (int)move.X;
                     selectedMove.col = (int)move.Y;
                     selectedMove.score = score;
-                    //File.AppendAllText(fileName, "BEST VECTOR MOVE BLACK FOR NOW:" + (int)move.X + " " + (int)move.Y + " " + score + Environment.NewLine + Environment.NewLine);
                     // Beta
                     if (alphaBetaOn == true)
                     {
@@ -163,12 +157,11 @@ public class MiniMax : BoardRules
     {
         int[] result = new int[3];
         // Get the best move from MiniMax
-        //File.AppendAllText(fileName, Environment.NewLine + "Run Minimax" + Environment.NewLine);
         Move bestMove = MiniMaxAlgorithm(board2D, playerTurn, maxDepth, currentDepth, alpha, beta);
         result[0] = (int)bestMove.row;
         result[1] = (int)bestMove.col;
         result[2] = bestMove.score;
-        //File.AppendAllText(fileName, "BEST VECTOR MOVE:" + bestMove.row + bestMove.col + bestMove.score + Environment.NewLine);
+
         return result;
     }
 

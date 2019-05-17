@@ -416,7 +416,7 @@ public class Bitboard : MonoBehaviour
             ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
         // Both method below is for debugging
         UnityEngine.Debug.Log(elapsedTime);
-        ShowAIPoints(cpuBestMove);
+        // ShowAIPoints(cpuBestMove);
     }
 
     // This method is used to show the help menu when the "HELP" button is pressed
