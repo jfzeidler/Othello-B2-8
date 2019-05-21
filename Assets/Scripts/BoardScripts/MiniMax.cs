@@ -33,7 +33,7 @@ public class MiniMax : BoardRules
     };
 
     // This method is used to calculate the score of the branch in Minimax
-    public int EvaluateBoard(int[,] board2D, int playerTurn)
+    public int EvaluateBoard(int[,] board2D)
     {
         int Minimizer = 0;
         int Maximizer = 0;
@@ -77,7 +77,7 @@ public class MiniMax : BoardRules
         // If game over or maxDepth is reached
         if (CheckForNine(board2D) == true || currentDepth == maxDepth)
         {
-            return new Move(-1, -1, EvaluateBoard(board2D, playerTurn));
+            return new Move(-1, -1, EvaluateBoard(board2D));
         }
 
         Move selectedMove = new Move(-1, -1, 0);
