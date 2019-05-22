@@ -76,9 +76,7 @@ public class MiniMax : BoardRules
     {
         // If game over or maxDepth is reached
         if (CheckForNine(board2D) == true || currentDepth == maxDepth)
-        {
             return new Move(-1, -1, EvaluateBoard(board2D));
-        }
 
         Move selectedMove = new Move(-1, -1, 0);
 
@@ -121,6 +119,7 @@ public class MiniMax : BoardRules
                 }
             }
         }
+
         else if (playerTurn == 1)
         {
             allMoves = ValidMoves(board2D, 1);
